@@ -7,4 +7,4 @@
 
 
 /* Course section navigation */
-.topnav{flex-wrap:wrap;gap:10px}.topnav a{display:inline-block;padding:9px 15px;border:1px solid #c9daea;border-radius:8px;background:#f5f8fc;font-weight:600}.topnav a:hover,.topnav a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:white}@media(max-width:760px){.topnav{width:100%}.topnav a{padding:7px 12px}}
+.topnav{flex-wrap:wrap;gap:10px}.topnav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border:2px solid var(--navy);border-radius:8px;background:white;color:var(--navy);font-weight:600;box-shadow:0 2px 0 #c9daea;text-decoration:none}.topnav a:hover,.topnav a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:white}@media(max-width:760px){.topnav{width:100%}.topnav a{padding:7px 12px}}
