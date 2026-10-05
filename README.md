@@ -1,26 +1,33 @@
 # WIX1002: Fundamentals of Programming
 
-Universiti Malaya course lecture notes, organised by week from week1 through week14.
+Universiti Malaya course materials organised into lectures, labs, and tutorials.
 
 ## Structure
 
-- index.html: course landing page with all 14 weeks
-- week1/index.html: Problem Solving in Programming & Concept of Vibe Coding
-- week2/index.html through week14/index.html: clearly labelled availability pages, ready to replace with lecture content
-- .nojekyll: static HTML publication
+```text
+index.html                 Course home; weekly cards link to lectures
+assets/course.css          Shared landing-page styles
+lectures/index.html        Lecture landing page
+lectures/week1/index.html  Existing Week 1 lecture
+lectures/week2/–week14/    Lecture availability pages
+labs/index.html            Lab landing page
+labs/week1/–week14/        Lab availability pages
+tutorials/index.html       Tutorial landing page
+tutorials/week1/–week14/   Tutorial availability pages
+```
 
-The Week 1 lecture includes reading and teaching modes, fullscreen controls, flowcharts, interactive examples, and quizzes. The UM logo is hosted on the university portal.
+Every weekly directory contains an index.html. Labs and tutorials are marked coming soon until materials are added. The Week 1 lecture retains its original content and interactive activities.
 
 ## GitHub Pages
 
-Publish from main, /(root), using Settings > Pages > Deploy from a branch.
+Publish from main, /(root), using Settings > Pages > Deploy from a branch. Keep .nojekyll at the repository root.
 
-Expected course URL once Pages is enabled and deployment succeeds:
-https://fsktmcoders.github.io/wix1002-lectures/
+Course home: https://fsktmcoders.github.io/wix1002/
 
-Week 1 URL:
-https://fsktmcoders.github.io/wix1002-lectures/week1/
+Week 1 lecture: https://fsktmcoders.github.io/wix1002/lectures/week1/
 
-## Adding a lecture
+## Adding materials
 
-Replace the appropriate weekN/index.html with its lecture, using relative links to ../ for the course page. Update the matching landing-page card and availability count. Do not mark a week available until its notes are ready.
+Replace the appropriate lectures/weekN/index.html, labs/weekN/index.html, or tutorials/weekN/index.html. Link back to the section landing page with ../ and to the course home with ../../. Shared assets are under ../../assets/ from weekly pages. Update the matching section landing page and its availability count. For lectures, also update the course-home card and count. Mark a week available only when its materials are ready.
+
+The UM logo loads from the university portal. Week 1 contains reading and teaching modes, fullscreen controls, flowcharts, interactive examples, and quizzes.
