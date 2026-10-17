@@ -8,3 +8,6 @@
 
 /* Course section navigation */
 .topnav{flex-wrap:wrap;gap:10px}.topnav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border:2px solid var(--navy);border-radius:8px;background:#eaf1f9;color:var(--navy);font-weight:700;box-shadow:0 3px 0 #b8cce0;text-decoration:none}.topnav a:hover,.topnav a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:white}@media(max-width:760px){.topnav{width:100%}.topnav a{padding:7px 12px}}
+
+/* Keep repository links readable across screen sizes. */
+.topbar{flex-wrap:wrap}.topnav{margin-left:auto}.topnav .repo-link{border-color:var(--teal);background:#e5f4f1;color:#08676b;white-space:nowrap}.topnav .repo-link:hover{background:var(--teal);border-color:var(--teal);color:white}
