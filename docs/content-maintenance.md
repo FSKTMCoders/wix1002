@@ -20,8 +20,8 @@ Retain this convention in titles, headings, navigation labels, downloads, and ca
 
 1. Read the source worksheet or lecture material and identify the learning outcomes, required inputs, units, sample runs, and question numbering.
 2. Replace the appropriate `<section>/weekN/index.html` availability page. Use an existing released page with suitable controls as a starting point, then update its title, description, headings, content, IDs, and navigation.
-3. Add relevant worked examples, visuals, checks, and explanations. Identify browser simulations as demonstrations; verify Java solutions separately with JDK 25.
-4. Keep an original worksheet download when source material is supplied. Put new PDF/image files beside the weekly page and link them with relative paths. Week 4 follows this pattern (`T-1002-03.pdf`, `L-1002-03.pdf`, and `Lab3-JDK25-Models.zip`). Existing Week 3 pages embed downloads; preserve those unless deliberately migrating them and updating every reference.
+3. Add relevant worked examples, visuals, checks, and explanations. Identify browser simulations as demonstrations; verify Java solutions separately with JDK 27.
+4. Keep an original worksheet download when source material is supplied. Put new PDF/image files beside the weekly page and link them with relative paths. Week 4 follows this pattern (`T-1002-03.pdf`, `L-1002-03.pdf`, and `Lab3-JDK27-Models.zip`). Existing Week 3 pages embed downloads; preserve those unless deliberately migrating them and updating every reference.
 5. Verify all download buttons, including generated Java files and any bundled ZIP. Keep downloaded models consistent with the displayed code and worksheet requirements.
 6. Update release cards and counts as described below only when the material is ready. Preview and validate before publishing.
 
@@ -69,7 +69,7 @@ When moving a highlight, update the corresponding featured card in root `index.h
 - [ ] Homepage highlights match the intended releases, and the README reflects the same availability.
 - [ ] Home, section, weekly, companion-repository, and in-page links reach the intended destinations.
 - [ ] Original PDFs, images, Java files, note exports, and ZIP downloads open and contain the intended material.
-- [ ] Changed examples and downloaded Java models compile/run on JDK 25; test normal cases, boundaries, and invalid input where relevant. Random examples should be checked for range and properties rather than an exact repeated output.
+- [ ] Changed examples and downloaded Java models compile/run on JDK 27; test normal cases, boundaries, and invalid input where relevant. Random examples should be checked for range and properties rather than an exact repeated output.
 - [ ] Interactive checks, generated outputs, feedback, and worked explanations agree with the Java models.
 - [ ] Saved notes/progress survive a reload where offered; export and reset work as labelled.
 - [ ] Layout works on a narrow screen; keyboard navigation, focus, accessible labels, teaching/fullscreen controls, and print output work where offered.

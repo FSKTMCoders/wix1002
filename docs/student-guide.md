@@ -14,7 +14,7 @@ Week 1's Tutorial 0 and Lab 0 provide introductory practice and workspace setup.
 
 ## Prepare Java
 
-Use **JDK 25** for the current Java materials. [Week 1 · Lab 0](https://fsktmcoders.github.io/wix1002/labs/week1/) explains NetBeans or VS Code setup, your first program, Git, GitHub, and student developer benefits. [Week 2 · Lab 1](https://fsktmcoders.github.io/wix1002/labs/week2/) adds JDK 25 checks, NetBeans project work, building a JAR, and debugging.
+Use **JDK 27** for the current Java materials. [Week 1 · Lab 0](https://fsktmcoders.github.io/wix1002/labs/week1/) explains NetBeans or VS Code setup, your first program, Git, GitHub, and student developer benefits. [Week 2 · Lab 1](https://fsktmcoders.github.io/wix1002/labs/week2/) adds JDK 27 checks, NetBeans project work, building a JAR, and debugging.
 
 In a terminal, check:
 
@@ -23,7 +23,7 @@ java --version
 javac --version
 ```
 
-Both should report version 25 for course examples that require JDK 25. Your IDE's project JDK can differ from the one on the terminal's PATH; check both if a program works in only one place.
+Both should report version 27 for course examples that require JDK 27. Your IDE's project JDK can differ from the one on the terminal's PATH; check both if a program works in only one place.
 
 For a downloaded conventional, single-file Java model without a package declaration, open a terminal in its folder:
 
@@ -32,7 +32,7 @@ javac BmiCalculator.java
 java BmiCalculator
 ```
 
-Use the filename and class name of your actual program. Projects with packages or build tools should follow the worksheet's IDE/project instructions. Some notes also show JDK 25 compact source files with `void main()` and `IO`; follow the command shown beside that example.
+Use the filename and class name of your actual program. Projects with packages or build tools should follow the worksheet's IDE/project instructions. Some notes also show JDK 27 compact source files with `void main()` and `IO`; follow the command shown beside that example.
 
 The website runs browser demonstrations and checks in JavaScript. These activities do not compile or execute your Java source. Use your JDK to verify the programs you write or download.
 

@@ -51,4 +51,4 @@ Use HTTP preview when checking module imports, downloads, and storage. Opening a
 
 ## Validation
 
-There is currently no repository test suite or checked-in CI workflow. For a documentation change, check Markdown rendering, links, and agreement with the site. For content or behaviour changes, use the [content validation checklist](content-maintenance.md#validation-checklist) and exercise the actual browser interactions you changed. Compile and run changed Java models with JDK 25.
+There is currently no repository test suite or checked-in CI workflow. For a documentation change, check Markdown rendering, links, and agreement with the site. For content or behaviour changes, use the [content validation checklist](content-maintenance.md#validation-checklist) and exercise the actual browser interactions you changed. Compile and run changed Java models with JDK 27.

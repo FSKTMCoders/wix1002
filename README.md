@@ -4,7 +4,7 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 **Lecturer:** Ts. Dr. Mohamad Hazim Md Hanif
 
-**Course Java version:** JDK 25
+**Course Java version:** JDK 27
 
 **Course structure:** 14 teaching weeks, with lectures, tutorials, and labs released progressively.
 
@@ -17,7 +17,7 @@ The website currently contains materials for **Weeks 1–4** in all three sectio
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
 | 1 | [Problem Solving in Programming & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week1/) | [Tutorial 0 · Problem solving & Java basics](https://fsktmcoders.github.io/wix1002/tutorials/week1/) | [Lab 0 · Java, Git & GitHub setup](https://fsktmcoders.github.io/wix1002/labs/week1/) |
-| 2 | [Java Fundamentals & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week2/) | [Tutorial 1 · IPO, algorithms & Java 25](https://fsktmcoders.github.io/wix1002/tutorials/week2/) | [Lab 1 · Getting started with Java 25](https://fsktmcoders.github.io/wix1002/labs/week2/) |
+| 2 | [Java Fundamentals & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week2/) | [Tutorial 1 · IPO, algorithms & Java 27](https://fsktmcoders.github.io/wix1002/tutorials/week2/) | [Lab 1 · Getting started with Java 27](https://fsktmcoders.github.io/wix1002/labs/week2/) |
 | 3 | [Flow of Control: Selection & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week3/) | [Tutorial 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/tutorials/week3/) | [Lab 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/labs/week3/) |
 | 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | [Tutorial 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/tutorials/week4/) | [Lab 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/labs/week4/) |
 
@@ -29,7 +29,7 @@ The website currently contains materials for **Weeks 1–4** in all three sectio
 - Tutorial 0 includes a 40-mark practice activity with feedback and saved progress. Later tutorials include planning exercises, answer checks, interactive models, and Java solutions.
 - Labs cover IDE setup, Git and GitHub, Java programs, visual explanations, and interactive calculation traces. Labs 2 and 3 also offer individual Java downloads and a ZIP of all six models.
 - Original worksheet PDFs are available from the Week 2–4 tutorial and lab pages.
-- Selected activities save notes or progress in the current browser and provide exports. Browser activities illustrate behaviour; run Java programs separately using JDK 25.
+- Selected activities save notes or progress in the current browser and provide exports. Browser activities illustrate behaviour; run Java programs separately using JDK 27.
 
 See the [student guide](docs/student-guide.md) for setup, saved progress, downloads, and the recommended study workflow.
 
@@ -53,7 +53,7 @@ cd wix1002
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in a modern browser. Stop the server with `Ctrl+C`. On Windows, use `py -m http.server 8000 --bind 127.0.0.1` if Python is installed through the launcher. JDK 25 is needed to run the Java examples, rather than to serve the website.
+Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in a modern browser. Stop the server with `Ctrl+C`. On Windows, use `py -m http.server 8000 --bind 127.0.0.1` if Python is installed through the launcher. JDK 27 is needed to run the Java examples, rather than to serve the website.
 
 ## Repository layout
 

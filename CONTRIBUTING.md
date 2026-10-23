@@ -17,7 +17,7 @@ Keep personal student details and verification documents out of public issues.
 
 1. Create a branch in your clone, or fork the repository if you do not have write access.
 2. Make a focused change and follow the site's teaching-week/worksheet numbering and relative-link conventions.
-3. Preview the result locally. Apply the validation checks relevant to your change; run modified Java models using JDK 25.
+3. Preview the result locally. Apply the validation checks relevant to your change; run modified Java models using JDK 27.
 4. Update the README or relevant guide if availability, controls, or maintenance behaviour changes.
 5. Review the diff and open a pull request explaining the problem, resulting behaviour, and validation performed. For visual changes, include screenshots when useful.
 

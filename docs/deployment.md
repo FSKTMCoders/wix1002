@@ -37,7 +37,7 @@ Check the hosted URLs explicitly: the site lives beneath `/wix1002/`, while the 
 | Styles, images, or downloads are missing | Relative path depth, exact filename case, committed assets, and the browser network panel. |
 | Homepage cards/counts are stale | Their HTML is updated manually; see the content maintenance guide. |
 | Landing background is static | Reduced-motion settings and WebGL availability. A static background is an intentional fallback. |
-| Java downloads fail to compile | The selected project/terminal JDK is 25 and the downloaded filename, class, package, and execution instructions agree. |
+| Java downloads fail to compile | The selected project/terminal JDK is 27 and the downloaded filename, class, package, and execution instructions agree. |
 | Local and live saved progress differ | Browser storage is tied to the address and browser profile; it is not synced. |
 
 ## Correct a published change
