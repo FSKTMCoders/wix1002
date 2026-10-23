@@ -6,7 +6,7 @@
 
 The site is static HTML, CSS, and JavaScript served directly by GitHub Pages. There is no application backend, Java execution service, package manifest, site generator, or build step. Browser interactions use JavaScript; Java source is teaching content or a downloadable model to run separately with a JDK.
 
-Each section has an index page and 14 teaching-week directories, each containing `index.html`. Weeks 1–3 contain released materials; Weeks 4–14 currently contain availability placeholders. Most released weekly pages keep their styles and scripts inline. Tutorial 0 uses separate shared files.
+Each section has an index page and 14 teaching-week directories, each containing `index.html`. Weeks 1–3 contain released materials in every section, and the Week 4 lecture is released; the remaining weekly pages currently contain availability placeholders. Most released weekly pages keep their styles and scripts inline. Tutorial 0 uses separate shared files.
 
 ## Preview locally
 

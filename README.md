@@ -12,13 +12,14 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 ## Available materials
 
-The website currently contains materials for **Weeks 1–3** in all three sections. Weeks 4–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight **Week 3 Lecture, Tutorial 2, and Lab 2**.
+The website currently contains materials for **Weeks 1–3** in all three sections, plus the **Week 4 lecture**. Tutorial 3 and Lab 3 (Week 4) and all Week 5–14 materials have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight **Week 3 Lecture, Tutorial 2, and Lab 2**.
 
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
 | 1 | [Problem Solving in Programming & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week1/) | [Tutorial 0 · Problem solving & Java basics](https://fsktmcoders.github.io/wix1002/tutorials/week1/) | [Lab 0 · Java, Git & GitHub setup](https://fsktmcoders.github.io/wix1002/labs/week1/) |
 | 2 | [Java Fundamentals & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week2/) | [Tutorial 1 · IPO, algorithms & Java 25](https://fsktmcoders.github.io/wix1002/tutorials/week2/) | [Lab 1 · Getting started with Java 25](https://fsktmcoders.github.io/wix1002/labs/week2/) |
 | 3 | [Flow of Control: Selection & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week3/) | [Tutorial 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/tutorials/week3/) | [Lab 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/labs/week3/) |
+| 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | Tutorial 3 · coming soon | Lab 3 · coming soon |
 
 **Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
 
