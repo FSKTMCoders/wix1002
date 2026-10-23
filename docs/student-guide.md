@@ -5,7 +5,7 @@
 ## Start here
 
 1. Open the lecture for your teaching week. Read the examples and predict outputs before trying the interactive activities.
-2. Complete the tutorial and lab linked from their section indexes. These practise the previous week's lecture: Week 3 contains Tutorial 2 and Lab 2, covering Java fundamentals from Week 2.
+2. Complete the tutorial and lab linked from their section indexes. These practise the previous week's lecture: Week 3 contains Tutorial 2 and Lab 2, covering Java fundamentals from Week 2; Week 4 contains Tutorial 3 and Lab 3, covering selection from Week 3.
 3. Attempt each problem before revealing models. Explain the algorithm, inputs, outputs, and test cases in your own words.
 4. Run Java solutions in your own IDE or terminal. Compare actual output with your predictions and correct any differences.
 5. Record your work in your own forks of the companion repositories, following their instructions below.
@@ -42,8 +42,8 @@ Controls vary by page:
 
 - **Teach mode**, **Previous/Next**, and **Fullscreen** support classroom presentation on lectures and selected activities. Reading mode shows the full lesson.
 - **Print / PDF** opens the browser print dialog. Choose your browser's PDF destination to save a copy.
-- **Download original … PDF** retrieves the source worksheet. Week 2 uses separate PDF files; Week 3 embeds its PDFs within the HTML page.
-- Java download buttons save model source files. Lab 2 offers **Download all Java models (ZIP)** as well as individual programs.
+- **Download original … PDF** retrieves the source worksheet. Weeks 2 and 4 use separate PDF files; Week 3 embeds its PDFs within the HTML page.
+- Java download buttons save model source files. Labs 2 and 3 offer **Download all Java models (ZIP)** as well as individual programs.
 - Note, checklist, or result export buttons save a local copy where offered.
 
 Keep the worksheet's required units and inputs when implementing solutions. In **Lab 2, Question 6**, temperatures must be entered in **Fahrenheit**, converted to **Celsius**, and then used in the water-energy equation.

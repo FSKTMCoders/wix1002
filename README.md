@@ -12,23 +12,23 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 ## Available materials
 
-The website currently contains materials for **Weeks 1–3** in all three sections, plus the **Week 4 lecture**. Tutorial 3 and Lab 3 (Week 4) and all Week 5–14 materials have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight **Week 3 Lecture, Tutorial 2, and Lab 2**.
+The website currently contains materials for **Weeks 1–4** in all three sections. Weeks 5–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight **Week 4 Lecture, Tutorial 3, and Lab 3**.
 
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
 | 1 | [Problem Solving in Programming & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week1/) | [Tutorial 0 · Problem solving & Java basics](https://fsktmcoders.github.io/wix1002/tutorials/week1/) | [Lab 0 · Java, Git & GitHub setup](https://fsktmcoders.github.io/wix1002/labs/week1/) |
 | 2 | [Java Fundamentals & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week2/) | [Tutorial 1 · IPO, algorithms & Java 25](https://fsktmcoders.github.io/wix1002/tutorials/week2/) | [Lab 1 · Getting started with Java 25](https://fsktmcoders.github.io/wix1002/labs/week2/) |
 | 3 | [Flow of Control: Selection & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week3/) | [Tutorial 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/tutorials/week3/) | [Lab 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/labs/week3/) |
-| 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | Tutorial 3 · coming soon | Lab 3 · coming soon |
+| 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | [Tutorial 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/tutorials/week4/) | [Lab 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/labs/week4/) |
 
-**Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
+**Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2; Week 4 contains Tutorial 3 and Lab 3. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
 
 ## Learning features
 
 - Lectures include reading and teaching views, fullscreen and print controls, worked examples, interactive activities, self-checks, and guided AI-assisted programming exercises.
 - Tutorial 0 includes a 40-mark practice activity with feedback and saved progress. Later tutorials include planning exercises, answer checks, interactive models, and Java solutions.
-- Labs cover IDE setup, Git and GitHub, Java programs, visual explanations, and interactive calculation traces. Lab 2 also offers individual Java downloads and a ZIP of all six models.
-- Original worksheet PDFs are available from the Week 2 and Week 3 tutorial and lab pages.
+- Labs cover IDE setup, Git and GitHub, Java programs, visual explanations, and interactive calculation traces. Labs 2 and 3 also offer individual Java downloads and a ZIP of all six models.
+- Original worksheet PDFs are available from the Week 2–4 tutorial and lab pages.
 - Selected activities save notes or progress in the current browser and provide exports. Browser activities illustrate behaviour; run Java programs separately using JDK 25.
 
 See the [student guide](docs/student-guide.md) for setup, saved progress, downloads, and the recommended study workflow.

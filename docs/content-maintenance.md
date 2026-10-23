@@ -11,6 +11,7 @@ Directory names describe the **teaching week**, while tutorial/lab titles descri
 | 1 | `lectures/week1/` | Tutorial 0 · `tutorials/week1/` | Lab 0 · `labs/week1/` |
 | 2 | `lectures/week2/` | Tutorial 1 · `tutorials/week2/` | Lab 1 · `labs/week2/` |
 | 3 | `lectures/week3/` | Tutorial 2 · `tutorials/week3/` | Lab 2 · `labs/week3/` |
+| 4 | `lectures/week4/` | Tutorial 3 · `tutorials/week4/` | Lab 3 · `labs/week4/` |
 | N | `lectures/weekN/` | Tutorial N−1 · `tutorials/weekN/` | Lab N−1 · `labs/weekN/` |
 
 Retain this convention in titles, headings, navigation labels, downloads, and cards. Companion repository folders use worksheet numbers, for example `tutorial-02/` and `lab-02/`. Do not rename website week directories to match those folders.
@@ -20,7 +21,7 @@ Retain this convention in titles, headings, navigation labels, downloads, and ca
 1. Read the source worksheet or lecture material and identify the learning outcomes, required inputs, units, sample runs, and question numbering.
 2. Replace the appropriate `<section>/weekN/index.html` availability page. Use an existing released page with suitable controls as a starting point, then update its title, description, headings, content, IDs, and navigation.
 3. Add relevant worked examples, visuals, checks, and explanations. Identify browser simulations as demonstrations; verify Java solutions separately with JDK 25.
-4. Keep an original worksheet download when source material is supplied. Put new PDF/image files beside the weekly page and link them with relative paths. Existing Week 3 pages embed downloads; preserve those unless deliberately migrating them and updating every reference.
+4. Keep an original worksheet download when source material is supplied. Put new PDF/image files beside the weekly page and link them with relative paths. Week 4 follows this pattern (`T-1002-03.pdf`, `L-1002-03.pdf`, and `Lab3-JDK25-Models.zip`). Existing Week 3 pages embed downloads; preserve those unless deliberately migrating them and updating every reference.
 5. Verify all download buttons, including generated Java files and any bundled ZIP. Keep downloaded models consistent with the displayed code and worksheet requirements.
 6. Update release cards and counts as described below only when the material is ready. Preview and validate before publishing.
 
@@ -57,7 +58,7 @@ Update the [README materials table](../README.md#available-materials) and curren
 
 ## Manage NEW banners separately
 
-The homepage currently highlights **Week 3 Lecture, Tutorial 2, and Lab 2**. NEW banners are an editorial choice, separate from whether a page is available. Publishing or correcting material should retain the current highlights unless the release update also calls for moving them.
+The homepage currently highlights **Week 4 Lecture, Tutorial 3, and Lab 3**. NEW banners are an editorial choice, separate from whether a page is available. Publishing or correcting material should retain the current highlights unless the release update also calls for moving them.
 
 When moving a highlight, update the corresponding featured card in root `index.html`: its link, displayed week or worksheet number, heading, description, and call to action. The current featured cards use `.available` and `.new-release`; retain the reduced-motion treatment for the animation. Check all three cards rather than assuming their labels share the same number.
 
