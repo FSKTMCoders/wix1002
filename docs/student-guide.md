@@ -5,7 +5,7 @@
 ## Start here
 
 1. Open the lecture for your teaching week. Read the examples and predict outputs before trying the interactive activities.
-2. Complete the tutorial and lab linked from their section indexes. These practise the previous week's lecture: Week 3 contains Tutorial 2 and Lab 2, covering Java fundamentals from Week 2; Week 4 contains Tutorial 3 and Lab 3, covering selection from Week 3.
+2. Complete the tutorial and lab linked from their section indexes. These practise the previous week's lecture: Week 3 contains Tutorial 2 and Lab 2, covering Java fundamentals from Week 2; Week 4 contains Tutorial 3 and Lab 3, covering selection from Week 3; Week 5 contains Tutorial 4 and Lab 4, covering repetition from Week 4.
 3. Attempt each problem before revealing models. Explain the algorithm, inputs, outputs, and test cases in your own words.
 4. Run Java solutions in your own IDE or terminal. Compare actual output with your predictions and correct any differences.
 5. Record your work in your own forks of the companion repositories, following their instructions below.

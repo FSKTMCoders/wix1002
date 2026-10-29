@@ -12,7 +12,7 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 ## Available materials
 
-The website currently contains materials for **Weeks 1–4** in all three sections. Weeks 5–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight **Week 4 Lecture, Tutorial 3, and Lab 3**.
+The website currently contains materials for **Weeks 1–5** in all three sections. Weeks 6–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight **Week 5 Lecture, Tutorial 4, and Lab 4**.
 
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
@@ -20,8 +20,9 @@ The website currently contains materials for **Weeks 1–4** in all three sectio
 | 2 | [Java Fundamentals & Concept of Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week2/) | [Tutorial 1 · IPO, algorithms & Java 27](https://fsktmcoders.github.io/wix1002/tutorials/week2/) | [Lab 1 · Getting started with Java 27](https://fsktmcoders.github.io/wix1002/labs/week2/) |
 | 3 | [Flow of Control: Selection & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week3/) | [Tutorial 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/tutorials/week3/) | [Lab 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/labs/week3/) |
 | 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | [Tutorial 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/tutorials/week4/) | [Lab 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/labs/week4/) |
+| 5 | [Arrays & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week5/) | [Tutorial 4 · Flow of Control (Repetition)](https://fsktmcoders.github.io/wix1002/tutorials/week5/) | [Lab 4 · Flow of Control (Repetition)](https://fsktmcoders.github.io/wix1002/labs/week5/) |
 
-**Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2; Week 4 contains Tutorial 3 and Lab 3. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
+**Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2; Week 4 contains Tutorial 3 and Lab 3; Week 5 contains Tutorial 4 and Lab 4. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
 
 ## Learning features
 
