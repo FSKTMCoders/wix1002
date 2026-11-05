@@ -6,7 +6,7 @@
 
 The site is static HTML, CSS, and JavaScript served directly by GitHub Pages. There is no application backend, Java execution service, package manifest, site generator, or build step. Browser interactions use JavaScript; Java source is teaching content or a downloadable model to run separately with a JDK.
 
-Each section has an index page and 14 teaching-week directories, each containing `index.html`. Weeks 1–5 contain released materials in every section; Weeks 6–14 currently contain availability placeholders. Most released weekly pages keep their styles and scripts inline. Tutorial 0 uses separate shared files.
+Each section has an index page and 14 teaching-week directories, each containing `index.html`. Weeks 1–5 contain released materials in every section, and Week 6 has a released lecture. The Week 6 tutorial and lab pages are Viva 1 Session notices (there is no tutorial or lab that week), and Weeks 7–14 currently contain availability placeholders. Most released weekly pages keep their styles and scripts inline. Tutorial 0 uses separate shared files.
 
 ## Preview locally
 

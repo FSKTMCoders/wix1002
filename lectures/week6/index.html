@@ -1,1 +1,776 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="WIX1002 Week 6 lectures materials."><title>Week 6 Lectures · WIX1002</title><link rel="stylesheet" href="../../assets/course.css"></head><body><header><div class="topbar"><a href="../../" aria-label="WIX1002 course home"><img class="logo" src="https://portal.um.edu.my/frontpage-umportal/assets/images/img-logo-UM-new.webp" alt="Universiti Malaya"></a><span class="courselabel">WIX1002 · LECTURES</span><nav class="topnav" aria-label="Course navigation"><a href="../../lectures/" aria-current="page">Lectures</a><a href="../../labs/">Labs</a><a href="../../tutorials/">Tutorials</a></nav></div></header><main><div class="placeholder"><div class="eyebrow">WIX1002 · LECTURES · WEEK 06</div><h1>Lecture notes<br><span>coming soon</span></h1><p>Week 6 lectures materials have not been released yet.</p><div class="actions"><a class="open" href="../">All weekly lectures</a><a class="secondary" href="../../">Course home</a></div></div></main><footer><span>Faculty Of Computer Science and Information Technology<br>Universiti Malaya</span><span>WIX1002 · Fundamentals of Programming</span></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="WIX1002 Week 6 arrays in depth for JDK 27: multidimensional and ragged arrays, bubble sort and binary search step-by-step steppers with predict modes, tracing practice, linear search variants, cost comparison, and vibe coding review."><title>Week 6 · Arrays in Depth &amp; Vibe Coding · WIX1002</title><style>
+:root{--ink:#18304b;--navy:#092b58;--blue:#175db0;--teal:#087f83;--gold:#efbd44;--paper:#f5f8fc;--line:#d7e3ee;--muted:#51657b}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;font:18px/1.65 "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper)}a{color:var(--blue)}button,input{font:inherit}button,a.button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #ecad27;outline-offset:4px}header{height:82px;background:white;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 30px;border-bottom:1px solid var(--line);gap:20px}.brand{display:flex;align-items:center;gap:20px}.brand img{width:188px;height:55px;object-fit:contain}.brand small{font-size:13px;line-height:1.45;color:var(--muted);border-left:1px solid var(--line);padding-left:20px}.tools{display:flex;gap:8px;align-items:center}.secondary{background:white;border:1px solid #b7cce0;color:var(--navy);border-radius:8px;padding:8px 15px;font-size:14px}.button{background:var(--navy);color:white;border:0;border-radius:8px;padding:11px 20px;display:inline-block;text-decoration:none;font-size:16px}.progress{height:3px;background:var(--gold);position:fixed;top:81px;left:0;z-index:30;width:0}.layout{display:grid;grid-template-columns:275px minmax(0,1fr);max-width:1600px;margin:auto}aside{position:sticky;top:85px;height:calc(100vh - 85px);overflow:auto;padding:26px 20px 40px;border-right:1px solid var(--line)}aside h3{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:0 12px 16px}nav a{display:flex;gap:12px;padding:10px 12px;font-size:13px;line-height:1.4;color:var(--muted);text-decoration:none;border-radius:7px}nav a span{font-weight:700;color:#899aaf}nav a:hover,nav a.active{background:#e5eef9;color:var(--navy)}main{min-width:0;padding:34px 45px 80px}.lesson{background:white;border:1px solid var(--line);border-radius:16px;padding:44px;margin-bottom:32px;box-shadow:0 4px 14px #15375504;scroll-margin-top:100px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:3px;color:var(--teal)}.eyebrow span{color:#8b9eb3}h2{font-size:clamp(30px,3vw,46px);line-height:1.2;letter-spacing:-1.2px;color:var(--navy);margin:14px 0 18px}h3{font-size:21px;line-height:1.35;color:var(--navy);margin:16px 0 10px}p{margin:12px 0}.lead{font-size:21px;line-height:1.55;color:var(--muted);margin-bottom:28px}.accent{color:var(--teal)}.instructor{font-size:22px;font-weight:650}.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}.bigidea{font-size:26px;line-height:1.4;margin:28px 0}.heroart{padding:35px;background:#edf5fb;border-radius:20px;text-align:center}.orbit{border:1px solid #b8cce0;border-radius:10px;background:white;padding:14px;font-size:18px;font-weight:600}.orbit.dark{color:white;background:var(--navy);border:0}.linkline{width:2px;height:25px;background:var(--teal);margin:auto}.heroart p{font-size:14px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}.cards article{border-top:3px solid var(--teal);padding:8px 19px 18px;background:#f4f8fc;border-radius:0 0 9px 9px}.cards p{margin-bottom:0}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin:22px 0}.split>div{min-width:0}.callout{border-left:4px solid var(--teal);background:#eaf7f5;border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}.activity{border:1px solid #eed58e;background:#fff9e8;padding:20px 24px;border-radius:10px;margin:24px 0}.activity>b{color:#80601a}.note,.source{font-size:14px;color:var(--muted);margin:20px 0}.note{padding-top:15px;border-top:1px solid var(--line)}pre{background:#102943;color:#e4f2ff;border-radius:10px;padding:22px;overflow:auto;font:15px/1.8 Consolas,"Courier New",monospace;tab-size:4;margin:15px 0}code{font-family:Consolas,"Courier New",monospace;font-size:.9em;background:#eaf0f7;padding:2px 5px;border-radius:4px;color:#164880}pre code{background:none;padding:0;color:inherit;font-size:inherit}.tablewrap{overflow:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:16px;text-align:left}th{background:#edf3fa;color:var(--navy);font-size:13px;letter-spacing:.3px}th,td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}td:first-child{font-weight:600}details{border:1px solid var(--line);border-radius:8px;margin:15px 0;background:#fbfdff}summary{cursor:pointer;font-weight:600;padding:15px 19px;color:var(--navy)}details>div,details>p,details>pre{margin:0;padding:0 20px 20px}details>pre{margin:10px 20px 20px;padding:16px}ul,ol{padding-left:24px}li{padding-left:5px;margin:8px 0}.steps{list-style:none;counter-reset:step;padding:0}.steps li{counter-increment:step;position:relative;border-bottom:1px solid var(--line);padding:16px 0 16px 58px;margin:0}.steps li::before{content:counter(step);position:absolute;left:0;top:18px;width:34px;height:34px;border-radius:50%;background:#e7f1fb;color:var(--blue);font-weight:700;text-align:center;line-height:34px}.steps p{margin:5px 0}.ipo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.ipo article{background:#edf4fb;padding:22px;border-radius:12px}.ipo article:nth-child(2){background:#e9f7f4}.ipo article:nth-child(3){background:#fff6da}.ipo span{font-size:12px;letter-spacing:2px;font-weight:700}.ipo label{display:block;font-size:14px}.ipo input{width:100%;border:1px solid #b9cddd;border-radius:6px;padding:10px;background:white}.result{font-size:23px;font-weight:700;color:var(--navy);display:block;margin-top:20px;overflow-wrap:anywhere}.symbols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;text-align:center;font-size:14px}.symbols svg{width:100%;height:90px;fill:#edf4fb;stroke:#175db0;stroke-width:2}.symbols p{margin:5px 0}.flowchart{width:100%;max-height:650px;background:#f7faff;border-radius:12px;padding:10px}.flowchart rect,.flowchart g path{fill:#e4f1fa;stroke:#244f80;stroke-width:2}.flowchart g:has(path) path{fill:#edf8f1}.flowchart text{font:17px "Segoe UI",sans-serif;fill:#18304b}.flowchart .arrow{fill:none;stroke:#244f80;stroke-width:2}.tint{background:#eef4fa;padding:20px;border-radius:10px}.quizitem{padding:24px 0;border-bottom:1px solid var(--line)}.quizitem h3{font-size:19px}.answers{display:grid;gap:8px}.answers button{text-align:left;background:white;border:1px solid #bfd2e4;border-radius:7px;padding:12px 16px;color:var(--ink);font-size:16px}.answers button.selected{border:2px solid var(--blue);background:#eef5ff}.feedback{font-size:16px;padding:12px 0}.correct{color:#076d50}.incorrect{color:#8c431c}.bottomnav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--line);padding:10px 30px;display:none;align-items:center;justify-content:center;gap:22px;z-index:30}.bottomnav span{font-size:14px;color:var(--muted)}body.teach .layout{display:block;max-width:1250px}body.teach aside{display:none}body.teach main{padding:26px 35px 95px}body.teach .lesson{display:none;margin:0;min-height:calc(100vh - 215px)}body.teach .lesson.current{display:block}body.teach .bottomnav{display:flex}body.teach h2{font-size:42px}footer{text-align:center;color:var(--muted);font-size:13px;padding:10px 20px 50px}#menuButton{display:none}
+@media(max-width:1100px){.layout{grid-template-columns:230px minmax(0,1fr)}main{padding:25px}.lesson{padding:30px}.three,.ipo{grid-template-columns:1fr}.three pre{font-size:14px}.hero{grid-template-columns:1fr}.heroart{display:none}.symbols{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){body{font-size:17px}header{padding:10px 15px;height:76px}.brand img{width:145px;height:48px}.brand small{display:none}.tools{gap:5px}.secondary{padding:7px 9px;font-size:12px}.progress{top:75px}#menuButton{display:block}.layout{display:block}aside{display:none;position:fixed;top:76px;left:0;background:white;z-index:19;width:min(340px,90vw);height:calc(100vh - 76px)}body.menu-open aside{display:block}main{padding:18px 12px 50px}.lesson{padding:24px 19px;border-radius:10px}.cards,.split{grid-template-columns:1fr;gap:16px}h2,body.teach h2{font-size:31px}.lead{font-size:19px}.symbols{grid-template-columns:repeat(2,1fr)}body.teach main{padding:18px 12px 90px}.bottomnav{padding:10px}pre{font-size:13px;padding:16px}th,td{padding:12px;font-size:14px}.instructor{font-size:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,aside,.tools,.progress,.bottomnav,footer,.button,.secondary{display:none!important}.layout{display:block}main{padding:0}.lesson,body.teach .lesson{display:block!important;min-height:0;border:0;box-shadow:none;padding:16px 0;margin:0 0 30px;break-inside:auto}h2{font-size:27px}.lead{font-size:17px}body{background:white;font-size:13px}pre{white-space:pre-wrap;background:#f0f4f9;color:#162c43;font-size:11px}h2,h3,summary{break-after:avoid}tr,pre,.cards article,.activity{break-inside:avoid}.flowchart{max-height:430px}details>div,details>p{display:block}.heroart{display:none}table{font-size:12px}.quizitem{break-inside:avoid}}
+
+/* Larger lecture typography and explicit form contrast. */
+:root{color-scheme:light}body{font-size:22px;line-height:1.65}.layout{max-width:1800px;grid-template-columns:270px minmax(0,1fr)}main{padding:32px}.lesson{padding:40px}h2,body.teach h2{font-size:clamp(38px,3.5vw,54px)}h3{font-size:26px}.lead{font-size:26px}.instructor{font-size:27px}.bigidea{font-size:31px}.eyebrow{font-size:15px}nav a{font-size:16px}nav a span{font-size:14px}.note,.source{font-size:18px}.brand small{font-size:15px}.secondary{font-size:16px}.button{font-size:20px}.bottomnav span{font-size:18px}pre{font-size:19px;line-height:1.8}table{font-size:20px}th{font-size:17px}.symbols{font-size:19px}.symbols svg{height:110px}.result{font-size:30px}.ipo label{font-size:19px}.ipo span{font-size:16px}.quizitem h3{font-size:24px}.answers button,.feedback{font-size:21px}.orbit{font-size:23px}.heroart p{font-size:18px}.flowchart text{font-size:20px}body.teach .layout{max-width:1600px}.three{grid-template-columns:1fr}.three article{display:grid;grid-template-columns:1fr 1.5fr;column-gap:25px}.three article h3{grid-column:1;grid-row:1}.three article p{grid-column:1;grid-row:2}.three article pre{grid-column:2;grid-row:1 / span 3;font-size:19px;white-space:pre-wrap}.ipo input,.circlelab input{color:#092b58!important;-webkit-text-fill-color:#092b58!important;caret-color:#092b58;opacity:1;color-scheme:light;background:#fff!important;border:2px solid #829fbc;border-radius:8px;font:700 27px/1.4 "Segoe UI",Arial,sans-serif;width:100%;min-height:64px;padding:12px 16px}.ipo input::selection,.circlelab input::selection{background:#cfe5ff;color:#092b58}input:focus-visible{outline:3px solid #e4af29;outline-offset:3px}#screenStatus:not(:empty){position:fixed;top:90px;right:25px;max-width:420px;background:#fff7df;border:1px solid #e3c471;padding:15px;z-index:100;font-size:18px;border-radius:8px}.newvisual{background:#f3f8fe;border:1px solid #cbdced;border-radius:15px;padding:26px;margin:28px 0 34px}.newvisual>svg{display:block;width:100%;height:auto}.newvisual figcaption{font-size:18px;color:#4d647c;margin-top:20px;line-height:1.6}.vtitle{font:700 23px "Segoe UI",Arial,sans-serif;fill:#092b58}.vsub{font:20px "Segoe UI",Arial,sans-serif;fill:#3d5872}.visualkicker,.languagevisual span,.javajourney span,.aiworkflow span,.formularesult span{font-size:15px;color:#087f83;letter-spacing:1.3px;font-weight:700;display:block;margin-bottom:10px}.languagevisual,.javajourney,.aiworkflow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.languagevisual>div,.javajourney>div,.aiworkflow>div{padding:20px;background:#fff;border:1px solid #cfdeee;border-radius:10px;min-width:0}.languagevisual strong,.javajourney strong,.aiworkflow strong{display:block;font-size:25px;color:#092b58;margin-bottom:15px}.languagevisual code,.javajourney code{display:block;overflow-wrap:anywhere;font-size:18px;margin-bottom:15px}.languagevisual p,.aiworkflow p{font-size:20px}.languagevisual figcaption{grid-column:1 / -1}.binary{font:23px Consolas,monospace;letter-spacing:2px;color:#175db0;padding:8px;background:#eef5fd}.javajourney small{font-size:19px;display:block;color:#4d647c}.javajourney small code{display:inline;font-size:inherit}.platforms{margin:20px 0 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px;font-size:20px}.platforms span{padding:8px 20px;border:1px solid #aac6e1;border-radius:6px;background:#fff}.selectionlab,.circlelab{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.selectionlab figcaption,.circlelab figcaption{grid-column:1 / -1}.selectionlab label,.circlelab label{font-size:22px;font-weight:600;display:block}.selectionlab input{width:100%;margin:22px 0 4px;accent-color:#175db0;min-height:25px}.rangelabels{display:flex;justify-content:space-between;font-size:18px}.decisionoutput{border-left:4px solid #087f83;padding:20px;background:#e2f5ee;border-radius:0 12px 12px 0}.decisionoutput strong{display:block;font-size:27px;margin:15px 0}.decisionoutput p{font-size:20px}.classframe{padding:22px;border:3px solid #175db0;border-radius:12px;color:#175db0}.methodframe{padding:20px;border:3px solid #087f83;border-radius:10px;margin-top:18px;color:#087f83}.statementframe{padding:18px;border-left:5px solid #bb870b;background:#fff6d9;color:#18304b;margin-top:18px}.statementframe code{font-size:22px;overflow-wrap:anywhere}.statementframe p{font-size:20px}.feedbackstrip{background:#e1f2ed;border-left:5px solid #087f83;padding:18px;margin-top:20px;font-size:21px}.circlelab svg{width:100%;height:auto}.formularesult{padding:18px;background:white;border-radius:9px;margin-top:18px;border:1px solid #cbdced}.formularesult output{font-size:28px;font-weight:700;color:#092b58}#circleFeedback{font-size:19px}.heroart{display:block}
+@media(max-width:1200px){.languagevisual,.javajourney,.aiworkflow{grid-template-columns:1fr}.languagevisual figcaption{grid-column:1}.newvisual>svg{min-width:650px}.newvisual:has(>svg){overflow-x:auto}.ipo{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.heroart{padding:20px}.newvisual .vsub{font-size:21px}.symbols{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){body{font-size:20px}header{height:auto;min-height:112px;flex-wrap:wrap;padding:10px 14px;gap:9px}.brand{width:100%}.brand img{width:165px;height:45px}.tools{width:100%;justify-content:space-between}.secondary{font-size:13px;padding:7px 9px}.progress{top:111px}aside{top:112px;height:calc(100vh - 112px)}html{scroll-padding-top:128px}.lesson{scroll-margin-top:128px;padding:25px 20px}main{padding:16px 12px}.lead{font-size:23px}h2,body.teach h2{font-size:36px}h3{font-size:25px}.instructor{font-size:23px}.bigidea{font-size:26px}pre{font-size:17px}.note,.source{font-size:17px}th,td{font-size:18px;padding:12px}.selectionlab,.circlelab{grid-template-columns:1fr}.selectionlab figcaption,.circlelab figcaption{grid-column:1}.three article{display:block}.three article pre{font-size:17px}.newvisual{padding:18px;margin:25px 0}.statementframe code{font-size:17px}.classframe,.methodframe{padding:15px}.heroart p{font-size:18px}.symbols{font-size:17px;grid-template-columns:repeat(2,1fr)}.button{font-size:18px}body.teach main{padding-bottom:100px}.bottomnav span{font-size:16px}}
+@media print{.newvisual{break-inside:avoid;padding:15px;margin:16px 0}.newvisual>svg{min-width:0;max-height:240px}.newvisual figcaption{font-size:11px}.languagevisual,.javajourney,.aiworkflow{grid-template-columns:repeat(3,1fr)}.languagevisual strong,.javajourney strong,.aiworkflow strong{font-size:16px}.newvisual p,.newvisual small{font-size:12px}.newvisual span,.languagevisual code,.javajourney code{font-size:10px}body{font-size:13px}h2,body.teach h2{font-size:27px}h3{font-size:18px}.lead{font-size:17px}table,th,td{font-size:12px}pre,.three article pre{font-size:11px}.note{font-size:11px}.circlelab{grid-template-columns:1fr 1fr}.formularesult output{font-size:18px}.ipo input,.circlelab input{font-size:18px;min-height:40px}#screenStatus{display:none}}
+.facultyname{font-size:25px;line-height:1.55;color:var(--navy);margin:0 0 25px}.facultyname strong{font-weight:700;display:inline-block;margin-top:8px}@media(max-width:760px){.facultyname{font-size:22px}}@media print{.facultyname{font-size:17px}}.coursehome{display:inline-block;color:#087f83;font-size:20px;font-weight:650;text-decoration:none;margin:0 0 22px;padding:8px 0}body.teach .coursehome{font-size:18px;margin-bottom:8px}@media print{.coursehome{display:none}}
+input[type=number],select{color:#092b58;background:#fff;border:2px solid #829fbc;border-radius:8px;font:700 25px/1.4 Arial;padding:12px;width:100%;max-width:340px;display:block;margin:12px 0}input[type=checkbox]{width:23px;height:23px;accent-color:#087f83;vertical-align:middle;margin-right:8px}label{font-size:22px;display:block}.controls{display:flex;flex-wrap:wrap;gap:25px}.trace{display:grid;gap:10px;margin:20px 0}.trace div{padding:12px 16px;border-left:4px solid #9fb3c9;background:#e9f0f7;font-size:21px}.trace div.taken{border-color:#087f83;background:#e2f4ee}.trace div.skipped{opacity:.65}.prompt{border:1px solid #cbdced;background:#f0f6fd;border-radius:12px;padding:25px}.download{margin-bottom:15px}pre{tab-size:4}.heroart .cards{font-size:20px}body.teach .lesson{height:auto} @media print{details{break-inside:auto}.download{display:none}.trace{display:block}}@media(max-width:760px){header{height:125px;display:grid;grid-template-columns:1fr;gap:4px;padding:8px 15px}.brand img{height:45px}.tools{display:flex;justify-content:flex-start;gap:5px}.tools .secondary{font-size:12px;padding:7px 8px}.progress{top:124px}aside{top:125px;height:calc(100vh - 125px)}.lesson{scroll-margin-top:140px}html{scroll-padding-top:140px}.controls{display:block}.controls label{margin:10px 0}.trace div{font-size:18px}label{font-size:20px}}
+@media print{body{font-size:13px}.lead{font-size:17px}h2,body.teach h2{font-size:27px}h3{font-size:18px}pre{font-size:11px}th,td{font-size:12px}.eyebrow,.note,.source{font-size:11px}.newvisual{padding:12px}.result{font-size:17px}.trace div{font-size:13px}.facultyname,.instructor{font-size:17px}input[type=number],select{font-size:15px}.cards{display:block}.cards article{margin-bottom:12px}}
+
+.countcells{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:20px 0}.countcells span{display:block;text-align:center;padding:10px 0;border-radius:6px;font-weight:700;border:2px solid #b7cce0;background:#fff;color:#092b58}.countcells .added,.labelgrid .added{background:#e2f4ee;border-color:#087f83}.countcells .jump,.labelgrid .jump{background:#fff1d0;border-color:#bb870b}.countcells .skipped,.labelgrid .skipped{opacity:.45;background:#eef2f6}.labelgrid{display:grid;grid-template-columns:repeat(5,34px);grid-auto-rows:22px;gap:4px;margin:20px 0}.labelgrid span{border:2px solid #b7cce0;border-radius:4px;background:#fff}.newvisual>svg.compact{min-width:0;max-width:380px;margin:auto}#bugCode{min-height:150px}.controls input[type=number]{max-width:200px}.controls select{max-width:200px}#sentinelInput{color:#092b58;background:#fff;border:2px solid #829fbc;border-radius:8px;font:700 25px/1.4 Consolas,monospace;padding:12px;width:100%;margin:12px 0}@media(max-width:760px){.countcells{grid-template-columns:repeat(5,minmax(0,1fr))}#sentinelInput{font-size:19px}}@media print{.countcells span{padding:4px 0;font-size:12px}.labelgrid{grid-template-columns:repeat(5,20px);grid-auto-rows:12px}#sentinelInput{font-size:13px}}
+
+p code,li code,.callout code,.note code,td code{overflow-wrap:anywhere}.arr{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.arr span{min-width:62px;text-align:center;border:2px solid #b7cce0;border-radius:7px;background:#fff;padding:6px 6px 4px;font:700 22px/1.3 Consolas,"Courier New",monospace;color:#092b58}.arr span small{display:block;font:600 14px/1.3 "Segoe UI",Arial,sans-serif;color:#51657b}.arr span.hit{background:#e2f4ee;border-color:#087f83}.arr span.cmp{background:#fff1d0;border-color:#bb870b}.arr span.swap{background:#ffe3d6;border-color:#c0562a}.arr span.sorted{background:#e5eef9;border-color:#175db0}.arr span.final{color:#175db0;border-color:#175db0;background:#e5eef9}.arr span.out{opacity:.38}.arr span.bad{background:#fde6e1;border-color:#b5432a}.arr.small{gap:4px}.arr.small span{min-width:34px;font-size:16px;padding:3px 4px}.passes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.passes .arr{margin:6px 0;flex-wrap:nowrap}.passes .arr span{min-width:46px;font-size:19px}.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:17px;color:var(--muted);margin-top:10px}.legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:2px solid;vertical-align:-2px;margin-right:6px}.grid2d{display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));gap:6px;max-width:640px;margin:15px 0}.grid2d .hdr{font-size:15px;color:#51657b;text-align:center;align-self:center;font-weight:600}.grid2d button{border:2px solid #b7cce0;border-radius:7px;background:#fff;padding:10px 4px;font:700 20px Consolas,monospace;color:#092b58}.grid2d button.rowsel{background:#eef5ff}.grid2d button.colsel{background:#f3f8ee}.grid2d button.hit{background:#e2f4ee;border-color:#087f83}.ragged>div{margin:4px 0;font-size:18px}.clock{display:grid;gap:10px}.clock div{font:19px/1.5 Consolas,monospace;background:#102943;color:#e4f2ff;padding:12px 16px;border-radius:8px;overflow-wrap:anywhere}.clock b{color:#efbd44;font:600 15px "Segoe UI",Arial,sans-serif;display:block}input[type=text]{color:#092b58;background:#fff;border:2px solid #829fbc;border-radius:8px;font:700 22px/1.4 Consolas,monospace;padding:12px;width:100%;display:block;margin:12px 0}textarea.inputbox{width:100%;min-height:130px;font:700 21px/1.5 Consolas,monospace;color:#092b58;border:2px solid #829fbc;border-radius:8px;padding:12px;background:#fff;margin:12px 0}.controls>div{min-width:0}select{max-width:100%!important}
+@media(max-width:760px){.arr span{min-width:44px;font-size:18px}.passes{grid-template-columns:1fr}.passes .arr span{min-width:38px;font-size:16px}.grid2d button{font-size:16px;padding:8px 2px}input[type=text],textarea.inputbox{font-size:18px}}
+@media print{.arr span{font-size:12px;min-width:28px;padding:2px}.arr span small{font-size:9px}.passes .arr span{font-size:12px;min-width:28px}.grid2d button{font-size:12px;padding:3px}.clock div{font-size:11px;background:#f0f4f9;color:#162c43}input[type=text],textarea.inputbox{font-size:13px;min-height:0}.legend{font-size:11px}}
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.parts span{background:#fff;border:2px solid #b7cce0;border-radius:9px;padding:10px 12px;font-weight:600;color:#092b58;font-size:16px}.parts b{display:inline-block;width:26px;height:26px;border-radius:50%;background:#087f83;color:#fff;text-align:center;line-height:26px;margin-right:8px;font-size:14px}
+.memory{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}.memref{display:flex;gap:8px;align-items:center;font:700 20px Consolas,monospace;color:#092b58;padding-top:10px}.memrows>div{display:flex;gap:10px;align-items:center;margin:4px 0}.memrows>div>span{color:#51657b}.memrows .arr{margin:4px 0}.memory figcaption{flex-basis:100%}
+table.mini{font-size:15px}table.mini td,table.mini th{padding:8px 10px}
+.grid2d>span:not(.hdr){border:2px solid #b7cce0;border-radius:7px;background:#fff;padding:8px 4px;font:700 20px Consolas,monospace;color:#092b58;text-align:center}.grid2d>span small{display:block;font:600 13px "Segoe UI",Arial,sans-serif;color:#51657b}.grid2d>span.rowsel{background:#eef5ff}.grid2d>span.hit{background:#e2f4ee;border-color:#087f83}.grid2d.tot{grid-template-columns:auto repeat(3,minmax(0,1fr));max-width:560px}.grid2d.four{grid-template-columns:auto repeat(4,minmax(0,1fr));max-width:520px}.grid2d button.hdrbtn{font:600 14px "Segoe UI",Arial,sans-serif;padding:8px 6px;background:#edf3fa}.grid2d button.hdrbtn.on{background:#fff1d0;border-color:#bb870b}
+.passtable td{vertical-align:middle}.passtable .arr{margin:0}
+.bars{display:grid;gap:8px;margin-top:16px}.bars div{display:grid;grid-template-columns:minmax(120px,240px) 1fr auto;gap:10px;align-items:center;font-size:14px}.bars i{display:block;height:16px;background:#175db0;border-radius:4px}.bars b{font:600 14px Consolas,monospace}
+.rangebar{position:relative;height:22px;background:#e4ebf3;border-radius:11px;margin:18px 0 6px;overflow:hidden}.rangebar.slim{height:10px;margin:4px 0 12px}#gRange,#bvRange{position:absolute;top:0;bottom:0;background:#087f83;opacity:.75;transition:left .35s,width .35s}#gMark{position:absolute;top:-2px;bottom:-2px;width:4px;background:#bb870b}
+tr.hitrow td{background:#e2f4ee;font-weight:700}tr.cmprow td{background:#fff9e8}
+.stepgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:start;margin-top:12px}.stepgrid>div{min-width:0}
+pre.codelines{padding:14px 0;font-size:14px;line-height:1.55;white-space:pre}pre.codelines .line{display:block;padding:1px 16px;border-left:4px solid transparent}pre.codelines .line.now{background:#2d4a6b;border-left-color:#efbd44;color:#fff}
+.vars{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.vars span{background:#fff;border:1px solid #b7cce0;border-radius:7px;padding:5px 10px;font:700 17px Consolas,monospace;color:#092b58}.vars small{display:block;font:600 12px "Segoe UI",Arial,sans-serif;color:#51657b}
+.holdbox{display:inline-block;border:2px dashed #c0562a;border-radius:8px;padding:6px 12px;font:600 15px "Segoe UI",Arial,sans-serif;color:#8c431c;background:#fff}.holdbox span{font:700 20px Consolas,monospace;margin-left:6px}
+.say{display:block;margin-top:14px;padding:12px 16px;border-left:4px solid #087f83;background:#e2f4ee;font-size:19px;line-height:1.5;color:#123}
+.ask{border:1px solid #eed58e;background:#fff9e8;border-radius:10px;padding:14px 18px;margin:14px 0}.ask>b{display:block;margin-bottom:10px;color:#5d4612}
+.qline{font-size:19px;font-weight:600;color:#092b58}.emptyrow{font-size:14px;color:#51657b;margin:4px 0}.result.bad{color:#8c431c}
+.arr.ptrs span small{white-space:nowrap}
+@media(max-width:900px){.stepgrid{grid-template-columns:1fr}}
+@media(max-width:760px){.parts{grid-template-columns:1fr}.grid2d>span:not(.hdr){font-size:16px;padding:6px 2px}.bars div{grid-template-columns:1fr;gap:4px}.say{font-size:16px}.vars span{font-size:15px}pre.codelines{font-size:12px}}
+@media print{.grid2d>span:not(.hdr){font-size:12px;padding:3px}.vars span{font-size:11px}.say{font-size:12px}pre.codelines{font-size:10px}.ask,.controls button{display:none}}
+</style></head><body><header><div class="brand"><img src="https://portal.um.edu.my/frontpage-umportal/assets/images/img-logo-UM-new.webp" alt="Universiti Malaya logo"><small>WIX1002<br>Fundamentals of Programming</small></div><div class="tools"><button class="secondary" id="menuButton">Contents</button><button class="secondary" id="teachButton" aria-pressed="false">Teach mode</button><button class="secondary" id="fullscreenButton" aria-pressed="false">Fullscreen</button><button class="secondary" id="printButton">Print / PDF</button></div></header><div id="screenStatus" role="status" aria-live="polite"></div><div class="progress"></div><div class="layout"><aside><h3>Week 6 · Arrays in Depth</h3><nav><a href="#s1"><span>01</span>Arrays in Depth &amp; Vibe Coding</a><a href="#s2"><span>02</span>Learning outcomes and lesson route</a><a href="#s3"><span>03</span>Part A · A 2D array is an array of arrays</a><a href="#s4"><span>04</span>Creating and initialising 2D arrays</a><a href="#s5"><span>05</span>Traversal order: row by row or column by column</a><a href="#s6"><span>06</span>Row totals and column averages</a><a href="#s7"><span>07</span>Common 2D patterns</a><a href="#s8"><span>08</span>Ragged arrays: rows with their own length</a><a href="#s9"><span>09</span>Ragged arrays in practice: Pascal's triangle</a><a href="#s10"><span>10</span>Part B · Bubble sort: what each pass guarantees</a><a href="#s11"><span>11</span>Bubble sort step by step</a><a href="#s12"><span>12</span>Practice: trace bubble sort yourself</a><a href="#s13"><span>13</span>The swap, line by line</a><a href="#s14"><span>14</span>Improving bubble sort</a><a href="#s15"><span>15</span>How much work does bubble sort do?</a><a href="#s16"><span>16</span>Sorting parallel arrays</a><a href="#s17"><span>17</span>Part C · Linear search variants</a><a href="#s18"><span>18</span>Linear search with Strings</a><a href="#s19"><span>19</span>Linear search in a 2D array</a><a href="#s20"><span>20</span>Part D · Binary search step by step</a><a href="#s21"><span>21</span>Binary search trace table</a><a href="#s22"><span>22</span>Practice: trace binary search yourself</a><a href="#s23"><span>23</span>Binary search as a guessing game</a><a href="#s24"><span>24</span>Binary search bugs</a><a href="#s25"><span>25</span>Linear or binary search?</a><a href="#s26"><span>26</span>Case study: sort records, then search by ID</a><a href="#s27"><span>27</span>Vibe coding: specify, then review array algorithms</a><a href="#s28"><span>28</span>Self-check and exit ticket</a><a href="#s29"><span>29</span>Key takeaways, practice, and references</a></nav></aside><main><a class="coursehome" href="../">← All weekly lectures</a><section id="s1" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 01</span></div><h2>Arrays in Depth &amp; Vibe Coding</h2><p class="lead">Week 6 · WIX1002 Fundamentals of Programming · JDK 27</p><div class="hero"><div><p class="facultyname">Faculty Of Computer Science and Information Technology<br><strong>Universiti Malaya</strong></p><p class="instructor">Ts. Dr. Mohamad Hazim Md Hanif</p><p>Year 1 · Semester 1 · Bachelor of Computer Science</p><p class="bigidea">Week 5 introduced arrays. This week we slow down on the four ideas that need the most practice: tables in two dimensions, bubble sort, linear search, and binary search.</p><a class="button" href="#s2">Start the lecture</a></div><div class="heroart"><div class="orbit dark">int[][] marks = new int[4][3];</div><div class="linkline"></div><div class="parts"><span><b>A</b>Multidimensional arrays</span><span><b>B</b>Bubble sort</span><span><b>C</b>Linear search</span><span><b>D</b>Binary search</span></div><p>No new syntax this week: deeper tracing, better versions, and the mistakes to avoid.</p></div></div></section><section id="s2" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 02</span></div><h2>Learning outcomes and lesson route</h2><p class="lead">Trace, improve, and choose array algorithms with confidence.</p><ol><li>Explain a two-dimensional array as an array of arrays, and use <code>length</code> correctly for rows and columns.</li><li>Traverse a table row by row and column by column to compute row totals, column averages, maxima, diagonals, and transposes.</li><li>Build and process ragged arrays whose rows have different lengths.</li><li>Trace bubble sort pass by pass, state what each pass guarantees, and improve it with a shrinking range and an early exit.</li><li>Adapt linear search to find the first, last, or every match, to search Strings, and to search a 2D table.</li><li>Trace binary search with low, middle, and high, and recognise the bugs that break it.</li><li>Compare the cost of the algorithms and choose between them; review AI-generated array code with targeted tests.</li></ol><div class="callout">Route: Week 5 recap → <b>A</b> 2D arrays (memory, traversal, totals, patterns, ragged arrays) → <b>B</b> bubble sort (invariant, step-by-step stepper, tracing practice, the swap, improvements, cost, parallel arrays) → <b>C</b> linear search (variants, Strings, 2D) → <b>D</b> binary search (step-by-step stepper, trace table, tracing practice, guessing game, bugs, cost) → case study → vibe coding review → self-check.</div><div class="activity"><b>Try it first · Week 5 recap</b><p>Without looking back: what are the valid indexes of <code>int[] a = new int[6];</code>? Which search needs sorted data? What does one pass of bubble sort guarantee?</p></div><details><summary>Reveal answer</summary><div><p>Indexes 0 to 5. Binary search needs ascending (sorted) data. After one pass, the largest value is at the last index. This lecture builds on all three answers.</p></div></details></section><section id="s3" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 03</span></div><h2>Part A · A 2D array is an array of arrays</h2><p class="lead">The outer array holds references to row arrays.</p><pre><code>int[][] marks = new int[4][3];   // 4 rows (students), 3 columns (tests)</code></pre><div class="split"><figure class="newvisual memory"><div class="memref"><b>marks</b><span>→</span></div><div class="memrows"><div><code>marks[0]</code><span>→</span><div class="arr small"><span>0</span><span>0</span><span>0</span></div></div><div><code>marks[1]</code><span>→</span><div class="arr small"><span>0</span><span>0</span><span>0</span></div></div><div><code>marks[2]</code><span>→</span><div class="arr small"><span>0</span><span>0</span><span>0</span></div></div><div><code>marks[3]</code><span>→</span><div class="arr small"><span>0</span><span>0</span><span>0</span></div></div></div><figcaption>One outer array of 4 references; each reference points to its own int[3] row. New int elements start at 0.</figcaption></figure><div><table class="mini"><thead><tr><th>Expression</th><th>Type</th><th>Value</th></tr></thead><tbody><tr><td><code>marks</code></td><td>int[][]</td><td>the whole table</td></tr><tr><td><code>marks.length</code></td><td>int</td><td>4 (rows)</td></tr><tr><td><code>marks[1]</code></td><td>int[]</td><td>row 1</td></tr><tr><td><code>marks[1].length</code></td><td>int</td><td>3 (columns in row 1)</td></tr><tr><td><code>marks[1][2]</code></td><td>int</td><td>one element</td></tr></tbody></table></div></div><p>Read <code>marks[r][c]</code> from left to right: first choose row <code>r</code>, then column <code>c</code> inside that row. This is why the row index always comes first.</p><div class="activity"><b>Try it first</b><p>For <code>double[][] t = new double[2][5];</code> how many double values are stored? What is printed by <code>System.out.println(t[1].length + t.length);</code>?</p></div><details><summary>Reveal answer</summary><div><p>2 × 5 = 10 values, each 0.0. The output is 7: <code>t[1].length</code> is 5 columns and <code>t.length</code> is 2 rows.</p></div></details></section><section id="s4" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 04</span></div><h2>Creating and initialising 2D arrays</h2><p class="lead">Three ways to get a table, and one row at a time.</p><div class="cards three"><article><h3>Size first</h3><pre><code>int[][] m = new int[3][4];
+m[0][0] = 5;</code></pre><p>All 12 elements start at 0.</p></article><article><h3>Initialiser list</h3><pre><code>int[][] marks = {
+    {78, 66, 90},
+    {62, 74, 88}
+};</code></pre><p>Each inner brace is one row. The compiler counts the rows and columns.</p></article><article><h3>Rows later</h3><pre><code>int[][] tri = new int[3][];
+tri[0] = new int[1];
+tri[1] = new int[2];
+tri[2] = new int[3];</code></pre><p>Only the row count is fixed first: a ragged array.</p></article></div><div class="tablewrap"><table><thead><tr><th>Element type</th><th>Default value</th><th>Example</th></tr></thead><tbody><tr><td>int, long, double</td><td>0 / 0.0</td><td><code>new double[2][2]</code> → all 0.0</td></tr><tr><td>boolean</td><td>false</td><td><code>new boolean[8][8]</code> → a board of false</td></tr><tr><td>char</td><td>'\u0000'</td><td>prints as an invisible character</td></tr><tr><td>String (objects)</td><td>null</td><td><code>new String[3][2]</code> → calling a method on an element throws NullPointerException</td></tr></tbody></table></div><p class="note">Common compile errors: <code>int[][] m = new int[][4];</code> (the first size is required) and <code>int m[3][4];</code> (Java does not put sizes in the declaration). <code>int[] m[]</code> compiles but is hard to read; keep <code>int[][] m</code>.</p></section><section id="s5" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 05</span></div><h2>Traversal order: row by row or column by column</h2><p class="lead">Swap the loops, change the order of visits.</p><div class="split"><div><h3>Row-major (rows outside)</h3><pre><code>for (int row = 0; row &lt; m.length; row++)
+    for (int col = 0; col &lt; m[row].length; col++)
+        visit(m[row][col]);</code></pre></div><div><h3>Column-major (columns outside)</h3><pre><code>for (int col = 0; col &lt; m[0].length; col++)
+    for (int row = 0; row &lt; m.length; row++)
+        visit(m[row][col]);</code></pre></div></div><div class="newvisual"><h3>Traversal explorer</h3><div class="controls"><div style="flex:1 1 220px"><label for="travOrder">Order</label><select id="travOrder"><option value="row">Row by row</option><option value="col">Column by column</option></select></div></div><div class="controls" style="margin-top:14px"><button class="button" id="travStep" type="button">Next visit</button><button class="secondary" id="travAll" type="button">Visit all</button><button class="secondary" id="travReset" type="button">Reset</button></div><div id="travBox" class="grid2d visits" role="group" aria-label="Visit order of a 4 by 5 table"></div><output id="travResult" class="result" aria-live="polite"></output></div><p>Each cell shows its value <code>m[row][col]</code> and, once visited, the visit number. Both orders visit all 20 cells exactly once; only the order differs. The inner loop variable changes fastest.</p><p class="note">The column-major loop uses <code>m[0].length</code> as the column count. That is only safe for a rectangular table; on a ragged array, use row-major order with <code>m[row].length</code>.</p></section><section id="s6" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 06</span></div><h2>Row totals and column averages</h2><p class="lead">Which loop is outside decides what you accumulate.</p><div class="newvisual"><h3>Marks table: click a row or column header</h3><div id="totBox" class="grid2d tot" role="group" aria-label="Marks table with row and column headers"></div><output id="totResult" class="result" aria-live="polite"></output><div id="totTrace" class="trace" aria-live="polite"></div></div><div class="split"><div><h3>Row total (one student)</h3><pre><code>int rowTotal = 0;                 // reset for each row
+for (int col = 0; col &lt; marks[row].length; col++)
+    rowTotal += marks[row][col];</code></pre></div><div><h3>Column average (one test)</h3><pre><code>int colTotal = 0;                 // reset for each column
+for (int row = 0; row &lt; marks.length; row++)
+    colTotal += marks[row][col];
+double avg = (double) colTotal / marks.length;</code></pre></div></div><div class="callout">Put the accumulator <strong>inside</strong> the outer loop when you need one total per row or per column. Put it <strong>before</strong> both loops when you need one grand total.</div><details><summary>Full program: MarksTable.java</summary><div><pre><code>public class MarksTable {
+    public static void main(String[] args) {
+        String[] names = {"Aina", "Ben", "Chen", "Devi"};
+        String[] tests = {"Quiz", "Mid", "Final"};
+        int[][] marks = {
+            {78, 66, 90},     // row 0: Aina
+            {62, 74, 88},     // row 1: Ben
+            {85, 59, 77},     // row 2: Chen
+            {71, 80, 64}      // row 3: Devi
+        };
+
+        // header row
+        System.out.print("Name");
+        for (int col = 0; col &lt; tests.length; col++) {
+            System.out.print("\t" + tests[col]);
+        }
+        System.out.println("\tTotal\tAverage");
+
+        // one row per student: the inner loop walks across the columns
+        for (int row = 0; row &lt; marks.length; row++) {
+            int rowTotal = 0;
+            System.out.print(names[row]);
+            for (int col = 0; col &lt; marks[row].length; col++) {
+                System.out.print("\t" + marks[row][col]);
+                rowTotal += marks[row][col];
+            }
+            double rowAverage = (double) rowTotal / marks[row].length;
+            System.out.printf("\t%d\t%.2f%n", rowTotal, rowAverage);
+        }
+
+        // column averages: the outer loop chooses the column
+        System.out.print("Average");
+        for (int col = 0; col &lt; tests.length; col++) {
+            int colTotal = 0;
+            for (int row = 0; row &lt; marks.length; row++) {
+                colTotal += marks[row][col];
+            }
+            System.out.printf("\t%.2f", (double) colTotal / marks.length);
+        }
+        System.out.println();
+
+        // highest mark and where it is
+        int maxRow = 0, maxCol = 0;
+        for (int row = 0; row &lt; marks.length; row++) {
+            for (int col = 0; col &lt; marks[row].length; col++) {
+                if (marks[row][col] &gt; marks[maxRow][maxCol]) {
+                    maxRow = row;
+                    maxCol = col;
+                }
+            }
+        }
+        System.out.println("Highest mark: " + marks[maxRow][maxCol] + " by "
+                + names[maxRow] + " in " + tests[maxCol]
+                + " (marks[" + maxRow + "][" + maxCol + "])");
+    }
+}</code></pre><button class="secondary download" data-name="MarksTable.java">Download MarksTable.java</button></div></details><pre><code>run:
+Name	Quiz	Mid	Final	Total	Average
+Aina	78	66	90	234	78.00
+Ben	62	74	88	224	74.67
+Chen	85	59	77	221	73.67
+Devi	71	80	64	215	71.67
+Average	74.00	69.75	79.75
+Highest mark: 90 by Aina in Final (marks[0][2])</code></pre><div class="activity"><b>Try it first</b><p>A student moves <code>int rowTotal = 0;</code> above both loops. What does the Total column show for Ben?</p></div><details><summary>Reveal answer</summary><div><p>458: Aina's 234 is never cleared, so Ben's total becomes 234 + 224. The accumulator must be reset at the start of every row.</p></div></details></section><section id="s7" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 07</span></div><h2>Common 2D patterns</h2><p class="lead">Maximum, diagonals, a single row or column, and the transpose.</p><div class="newvisual"><h3>Pattern explorer on a 4 × 4 matrix</h3><div class="controls"><div style="flex:1 1 260px"><label for="patSelect">Pattern</label><select id="patSelect"><option value="max">Largest value and its position</option><option value="diag">Main diagonal (row == col)</option><option value="anti">Anti-diagonal (row + col == n − 1)</option><option value="row">One row: m[2][col]</option><option value="col">One column: m[row][1]</option><option value="border">Border cells</option><option value="trans">Transpose: t[col][row] = m[row][col]</option></select></div><button class="secondary" id="patRandom" type="button">Random values</button><button class="secondary" id="patOrdered" type="button">1 to 16</button></div><div id="patBox" class="grid2d four" role="group" aria-label="4 by 4 matrix"></div><output id="patResult" class="result" aria-live="polite"></output><pre><code id="patCode"></code></pre></div><div class="cards"><article><h3>Diagonals need one loop</h3><p>On the main diagonal the row and column are equal, so <code>m[i][i]</code> with a single loop visits all of it. Nested loops with <code>if (row == col)</code> also work, but check n × n cells to use n.</p></article><article><h3>Track the position, not just the value</h3><p>Keep <code>maxRow</code> and <code>maxCol</code>. The value is then <code>m[maxRow][maxCol]</code>, and you can still report where it was.</p></article><article><h3>Transpose into a new array</h3><p>A transpose of an r × c table is c × r: <code>new int[m[0].length][m.length]</code>. Copying into a new array avoids overwriting values you still need.</p></article></div><details><summary>Full program: MatrixPatterns.java (includes Pascal's triangle from the next section)</summary><div><pre><code>public class MatrixPatterns {
+    public static void main(String[] args) {
+        int[][] m = new int[4][4];
+
+        // fill 1 to 16 in row-major order
+        int value = 1;
+        for (int row = 0; row &lt; m.length; row++) {
+            for (int col = 0; col &lt; m[row].length; col++) {
+                m[row][col] = value++;
+            }
+        }
+        System.out.println("Matrix m");
+        for (int[] row : m) {                 // each row is an int[]
+            for (int v : row) {
+                System.out.printf("%4d", v);
+            }
+            System.out.println();
+        }
+
+        // diagonals: one loop is enough because row and column are linked
+        int mainSum = 0, antiSum = 0;
+        for (int i = 0; i &lt; m.length; i++) {
+            mainSum += m[i][i];
+            antiSum += m[i][m.length - 1 - i];
+        }
+        System.out.println("Main diagonal sum = " + mainSum);
+        System.out.println("Anti-diagonal sum = " + antiSum);
+
+        // transpose: row r of m becomes column r of t
+        int[][] t = new int[m[0].length][m.length];
+        for (int row = 0; row &lt; m.length; row++) {
+            for (int col = 0; col &lt; m[row].length; col++) {
+                t[col][row] = m[row][col];
+            }
+        }
+        System.out.println("Transpose t");
+        for (int[] row : t) {
+            for (int v : row) {
+                System.out.printf("%4d", v);
+            }
+            System.out.println();
+        }
+
+        // ragged array: Pascal's triangle, row r has r + 1 elements
+        int[][] pascal = new int[6][];
+        for (int row = 0; row &lt; pascal.length; row++) {
+            pascal[row] = new int[row + 1];
+            pascal[row][0] = 1;
+            pascal[row][row] = 1;
+            for (int col = 1; col &lt; row; col++) {
+                pascal[row][col] = pascal[row - 1][col - 1] + pascal[row - 1][col];
+            }
+        }
+        System.out.println("Pascal's triangle");
+        for (int row = 0; row &lt; pascal.length; row++) {
+            for (int col = 0; col &lt; pascal[row].length; col++) {
+                System.out.print(pascal[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
+}</code></pre><button class="secondary download" data-name="MatrixPatterns.java">Download MatrixPatterns.java</button></div></details></section><section id="s8" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 08</span></div><h2>Ragged arrays: rows with their own length</h2><p class="lead">Create the outer array first, then each row separately.</p><div class="split"><div><pre><code>int[][] num = new int[3][];   // 3 rows; every num[r] is still null
+num[0] = new int[3];
+num[1] = new int[10];
+num[2] = new int[5];
+
+// shortcut with an initialiser list
+int[][] days = { {1, 2}, {3, 4, 5, 6}, {7} };</code></pre><p>Because a 2D array is an array of arrays, nothing forces the rows to have the same length. A table where rows differ is called a <strong>ragged</strong> (or jagged) array. Until a row is created, <code>num[r]</code> is <code>null</code>, and <code>num[r].length</code> throws NullPointerException.</p></div><div class="newvisual" style="margin-top:15px"><h3>Ragged array builder</h3><label for="rgLens">Row lengths (0 to 12 each, up to 6 rows)</label><input id="rgLens" type="text" value="3 10 5"><label style="margin-top:8px"><input id="rgNull" type="checkbox">Leave the last row uncreated (null)</label><div id="rgBox" class="ragged" aria-live="polite"></div><output id="rgResult" class="result" aria-live="polite"></output></div></div><div class="newvisual"><h3>Is this access valid?</h3><div class="controls"><div style="flex:0 1 140px"><label for="rgRow">Row r</label><input id="rgRow" type="number" step="1" value="0"></div><div style="flex:0 1 140px"><label for="rgCol">Column c</label><input id="rgCol" type="number" step="1" value="3"></div></div><output id="rgAccess" class="result" aria-live="polite"></output><p class="note">Uses the ragged array you built above. Try the last index of each row, one past it, and a negative index.</p></div><div class="callout">Rule for ragged arrays: the outer loop uses <code>num.length</code>, and the inner loop must use <strong><code>num[row].length</code></strong>. Column-by-column traversal and fixed column counts are unsafe because a column may not exist in every row.</div><pre><code>int total = 0;                                   // count every element
+for (int row = 0; row &lt; num.length; row++) {
+    for (int col = 0; col &lt; num[row].length; col++) {
+        total++;
+    }
+    System.out.println("Row " + row + " has " + num[row].length + " columns");
+}
+System.out.println("Elements: " + total);      // 3 + 10 + 5 = 18</code></pre><div class="activity"><b>Try it first</b><p>For <code>int[][] days = { {1, 2}, {3, 4, 5, 6}, {7} };</code> give <code>days.length</code>, <code>days[1].length</code>, <code>days[2][0]</code>, and say what <code>days[2][1]</code> does.</p></div><details><summary>Reveal answer</summary><div><p>3 rows; row 1 has 4 elements; <code>days[2][0]</code> is 7; <code>days[2][1]</code> throws ArrayIndexOutOfBoundsException because row 2 has only index 0. Type 2 4 1 into the builder above to check.</p></div></details></section><section id="s9" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 09</span></div><h2>Ragged arrays in practice: Pascal's triangle</h2><p class="lead">Each row's length depends on its row number.</p><pre><code>int[][] pascal = new int[6][];               // 6 rows, no columns yet
+for (int row = 0; row &lt; pascal.length; row++) {
+    pascal[row] = new int[row + 1];          // row r has r + 1 elements
+    pascal[row][0] = 1;
+    pascal[row][row] = 1;
+    for (int col = 1; col &lt; row; col++)
+        pascal[row][col] = pascal[row - 1][col - 1] + pascal[row - 1][col];
+}</code></pre><div class="newvisual"><h3>Pascal's triangle builder</h3><div class="controls"><div style="flex:0 1 200px"><label for="pasRows">Number of rows (1–12)</label><input id="pasRows" type="number" min="1" max="12" step="1" value="6"></div></div><div id="pasBox" class="ragged pascal" aria-live="polite"></div><output id="pasResult" class="result" aria-live="polite"></output></div><p>Each element is the sum of the two elements above it. The inner loop starts at 1 and stops before <code>row</code> because the first and last elements are already 1.</p><div class="activity"><b>Try it first</b><p>How many int elements does a 6-row Pascal array hold? Why would <code>for (int col = 0; col < 6; col++)</code> crash when printing it?</p></div><details><summary>Reveal answer</summary><div><p>1 + 2 + 3 + 4 + 5 + 6 = 21. A fixed 6 assumes every row has 6 columns; row 0 has only index 0, so <code>pascal[0][1]</code> throws ArrayIndexOutOfBoundsException. Use <code>pascal[row].length</code>.</p></div></details><p class="note">Beyond two dimensions: <code>int[][][] attendance = new int[14][5][3];</code> could store 14 weeks × 5 days × 3 classes. The same rule applies: one index and one loop per dimension, and each <code>length</code> belongs to its own level.</p></section><section id="s10" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 10</span></div><h2>Part B · Bubble sort: what each pass guarantees</h2><p class="lead">After pass k, the k largest values are in their final places.</p><p>Bubble sort repeatedly compares <strong>neighbours</strong> and swaps any pair that is out of order. The key fact for tracing, testing, and improving it is the <strong>pass invariant</strong>:</p><div class="callout">After pass 1 the largest value is at index n − 1. After pass 2 the two largest are at n − 2 and n − 1. After pass k, the last k positions hold the k largest values in order, so at most n − 1 passes are needed.</div><div class="newvisual"><h3>Pass-by-pass table</h3><div class="controls"><div style="flex:3 1 320px"><label for="bpInput">Array values (2 to 10)</label><input id="bpInput" type="text" value="29 10 14 37 13"></div><button class="secondary" id="bpRandom" type="button">Random 7</button></div><div class="tablewrap"><table class="passtable"><thead><tr><th>After</th><th>Array</th><th>Swaps</th></tr></thead><tbody id="bpRows"></tbody></table></div><output id="bpResult" class="result" aria-live="polite"></output><div class="legend"><span><i style="background:#e5eef9;border-color:#175db0"></i>guaranteed final place</span><span><i style="background:#ffe3d6;border-color:#c0562a"></i>moved during this pass</span></div></div><p>Notice that the array can become sorted <em>before</em> the last pass. The invariant only promises the tail; the front may be sorted early by luck.</p><div class="activity"><b>Try it first</b><p>Write the array after each pass for <code>5 1 4 2 8</code>.</p></div><details><summary>Reveal answer</summary><div><p>Pass 1: 1 4 2 5 8 · Pass 2: 1 2 4 5 8 · Pass 3: 1 2 4 5 8 (no swaps) · Pass 4: unchanged. The array is sorted after pass 2; passes 3 and 4 only confirm it. Type the values above to check.</p></div></details></section><section id="s11" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 11</span></div><h2>Bubble sort step by step</h2><p class="lead">Watch every comparison and every line of the swap, or predict them yourself.</p><div class="newvisual stepper"><div class="controls"><div style="flex:3 1 300px"><label for="bsInput">Array values (2 to 10)</label><input id="bsInput" type="text" value="29 10 14 37 13"></div></div><div class="controls" style="margin-top:12px"><button class="button" id="bsNext" type="button">Next step</button><button class="secondary" id="bsAuto" type="button" aria-pressed="false">Play</button><button class="secondary" id="bsReset" type="button">Reset</button><button class="secondary" id="bsRandom" type="button">Random 6</button></div><label style="margin-top:12px"><input id="bsPredict" type="checkbox">Predict mode: I decide swap or keep before each comparison</label><div id="bsAsk" class="ask" hidden><b id="bsQ"></b><div class="controls"><button class="button" id="bsSwapAns" type="button">Swap</button><button class="secondary" id="bsKeepAns" type="button">Keep</button></div><div id="bsFeedback" class="feedback" aria-live="polite"></div></div><div class="stepgrid"><div><div id="bsCells" class="arr ptrs" aria-hidden="true"></div><div class="holdbox">hold <span id="bsHold">–</span></div><div id="bsVars" class="vars" aria-live="polite"></div></div><pre class="codelines" aria-label="Bubble sort code with the current line highlighted"><code id="bsCode"></code></pre></div><output id="bsSay" class="say" aria-live="polite"></output><output id="bsScore" class="feedback" aria-live="polite"></output><div class="legend"><span><i style="background:#fff1d0;border-color:#bb870b"></i>b[i] and b[i + 1] compared</span><span><i style="background:#ffe3d6;border-color:#c0562a"></i>being swapped</span><span><i style="background:#e5eef9;border-color:#175db0"></i>final place</span></div></div><p>One <strong>step</strong> is one line of the algorithm: a comparison, one of the three swap lines, or the end-of-pass check. Watch the <code>hold</code> box during a swap: for a moment, the same value appears twice in the array, and <code>hold</code> is the only copy of the other one.</p><p class="note">This stepper runs the improved version (the inner loop stops at <code>b.length - pass</code>, and the sort ends early after a pass with no swaps). Why these improvements are safe is explained in “Improving bubble sort”.</p></section><section id="s12" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 12</span></div><h2>Practice: trace bubble sort yourself</h2><p class="lead">Exam-style: write the array after each pass.</p><div class="newvisual"><h3>Bubble sort tracing question</h3><p id="bqQ" class="qline"></p><div class="controls"><div style="flex:2 1 260px"><label for="bqP1">Array after pass 1</label><input id="bqP1" type="text" placeholder="e.g. 3 5 1 …"></div><div style="flex:2 1 260px"><label for="bqP2">Array after pass 2</label><input id="bqP2" type="text"></div><div style="flex:1 1 140px"><label for="bqSw">Swaps in pass 1</label><input id="bqSw" type="number" min="0" step="1"></div></div><div class="controls" style="margin-top:14px"><button class="button" id="bqCheck" type="button">Check my answers</button><button class="secondary" id="bqShow" type="button">Show the worked answer</button><button class="secondary" id="bqNew" type="button">New question</button></div><div id="bqFeedback" class="feedback" aria-live="polite"></div><div id="bqWork" class="trace" aria-live="polite"></div></div><div class="callout">Method that never fails: write the array, bracket the first pair, decide <em>swap</em> or <em>keep</em>, rewrite the array, move the bracket one place right. Stop the pass at the sorted tail. The last value of each pass is the largest of the unsorted part: use it to check your work.</div></section><section id="s13" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 13</span></div><h2>The swap, line by line</h2><p class="lead">Three assignments and a temporary variable.</p><div class="split"><div><pre><code>if (b[i] &gt; b[i + 1]) {
+    int hold = b[i];      // 1. keep a copy of the left value
+    b[i] = b[i + 1];      // 2. copy the right value left
+    b[i + 1] = hold;      // 3. put the saved value right
+}</code></pre><div class="tablewrap"><table class="mini"><thead><tr><th>After line</th><th>b[i]</th><th>b[i+1]</th><th>hold</th></tr></thead><tbody><tr><td>start</td><td>29</td><td>10</td><td>–</td></tr><tr><td>1</td><td>29</td><td>10</td><td>29</td></tr><tr><td>2</td><td>10</td><td>10</td><td>29</td></tr><tr><td>3</td><td>10</td><td>29</td><td>29</td></tr></tbody></table></div></div><div><h3>Wrong: no temporary variable</h3><pre><code>b[i] = b[i + 1];          // 10 10
+b[i + 1] = b[i];          // 10 10 : 29 is lost</code></pre><h3>Wrong: comparison sign</h3><pre><code>if (b[i] &gt;= b[i + 1])     // also swaps equal values</code></pre><p>The result is still sorted, but equal values are swapped needlessly, so the sort does extra work and no longer keeps equal items in their original order.</p></div></div><div class="callout">Ascending order: swap when <code>b[i] &gt; b[i + 1]</code>. Descending order: swap when <code>b[i] &lt; b[i + 1]</code>. Nothing else changes.</div><p class="note">Keeping equal items in their original order is called <strong>stability</strong>. With a strict <code>&gt;</code> (or <code>&lt;</code>) bubble sort is stable, which matters when you sort records that tie, as in the ranking example later.</p></section><section id="s14" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 14</span></div><h2>Improving bubble sort</h2><p class="lead">Skip the sorted tail, and stop when a pass makes no swaps.</p><pre><code>for (int pass = 1; pass &lt; b.length; pass++) {
+    boolean swapped = false;
+    for (int i = 0; i &lt; b.length - pass; i++) {   // 1. skip the sorted tail
+        if (b[i] &gt; b[i + 1]) {
+            int hold = b[i];
+            b[i] = b[i + 1];
+            b[i + 1] = hold;
+            swapped = true;
+        }
+    }
+    if (!swapped) break;                         // 2. no swaps: already sorted
+}</code></pre><div class="newvisual"><h3>Compare the three versions</h3><div class="controls"><div style="flex:3 1 320px"><label for="bcInput">Array values (2 to 30)</label><input id="bcInput" type="text" value="29 10 14 37 13"></div></div><div class="controls" style="margin-top:12px"><button class="secondary" id="bcRandom" type="button">Random 10</button><button class="secondary" id="bcSorted" type="button">Already sorted</button><button class="secondary" id="bcReversed" type="button">Reversed</button></div><div class="tablewrap"><table><thead><tr><th>Version</th><th>Inner loop</th><th>Passes</th><th>Comparisons</th><th>Swaps</th></tr></thead><tbody id="bcRows"></tbody></table></div><output id="bcResult" class="result" aria-live="polite"></output></div><p>All three versions make the <strong>same swaps</strong> and produce the same sorted array. The improvements only remove comparisons that cannot cause a swap.</p><details><summary>Full program: BubbleSortCompare.java</summary><div><pre><code>public class BubbleSortCompare {
+    public static void main(String[] args) {
+        // a 2D array of test cases: each row is one array to sort
+        int[][] tests = {
+            {29, 10, 14, 37, 13},     // random order
+            {10, 13, 14, 29, 37},     // already sorted
+            {37, 29, 14, 13, 10}      // reversed
+        };
+        String[] labels = {"Random  ", "Sorted  ", "Reversed"};
+
+        System.out.println("Case     \tVersion\tPasses\tCompares\tSwaps");
+        for (int t = 0; t &lt; tests.length; t++) {
+            // version 1: basic, 2: skip the sorted tail, 3: tail + early exit
+            for (int version = 1; version &lt;= 3; version++) {
+                int[] b = new int[tests[t].length];
+                for (int i = 0; i &lt; b.length; i++) {
+                    b[i] = tests[t][i];          // sort a copy, not the test row
+                }
+
+                int passes = 0, compares = 0, swaps = 0;
+                for (int pass = 1; pass &lt; b.length; pass++) {
+                    passes++;
+                    boolean swapped = false;
+                    int limit = (version == 1) ? b.length - 1 : b.length - pass;
+                    for (int i = 0; i &lt; limit; i++) {
+                        compares++;
+                        if (b[i] &gt; b[i + 1]) {
+                            int hold = b[i];
+                            b[i] = b[i + 1];
+                            b[i + 1] = hold;
+                            swaps++;
+                            swapped = true;
+                        }
+                    }
+                    if (version == 3 &amp;&amp; !swapped) {
+                        break;                   // no swaps: already sorted
+                    }
+                }
+                System.out.println(labels[t] + "\t" + version + "\t" + passes
+                        + "\t" + compares + "\t\t" + swaps);
+            }
+        }
+    }
+}</code></pre><button class="secondary download" data-name="BubbleSortCompare.java">Download BubbleSortCompare.java</button></div></details><pre><code>run:
+Case     	Version	Passes	Compares	Swaps
+Random  	1	4	16		5
+Random  	2	4	10		5
+Random  	3	4	10		5
+Sorted  	1	4	16		0
+Sorted  	2	4	10		0
+Sorted  	3	1	4		0
+Reversed	1	4	16		10
+Reversed	2	4	10		10
+Reversed	3	4	10		10</code></pre><p class="note">The test cases are stored in a 2D array: each row is one array to sort. The program copies each row before sorting, so every version starts from the same data.</p></section><section id="s15" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 15</span></div><h2>How much work does bubble sort do?</h2><p class="lead">Count comparisons to compare algorithms without a stopwatch.</p><div class="newvisual"><h3>Work counter</h3><div class="controls"><div style="flex:0 1 220px"><label for="costN">Array length n (1–1,000,000)</label><input id="costN" type="number" min="1" max="1000000" step="1" value="20"></div></div><div class="tablewrap"><table><thead><tr><th>Algorithm</th><th>Best case</th><th>Worst case</th></tr></thead><tbody id="costRows"></tbody></table></div><div id="costBars" class="bars" aria-hidden="true"></div></div><ul><li><strong>Basic bubble sort</strong> always makes (n − 1) × (n − 1) comparisons.</li><li><strong>Skipping the tail</strong> makes (n − 1) + (n − 2) + … + 1 = n(n − 1) / 2 comparisons.</li><li><strong>Early exit</strong> needs only one pass, n − 1 comparisons, if the data is already sorted, but is still about n² / 2 in the worst case (reversed data).</li></ul><p>When n doubles, n² grows four times. That is why bubble sort is fine for 20 marks but slow for a million records; later courses meet faster sorts. Java's own <code>Arrays.sort</code> is the practical choice in real programs, but in this course you write the loop yourself so you understand it.</p><div class="activity"><b>Try it first</b><p>Using the skip-the-tail formula, how many comparisons does bubble sort make for 10 values? For 100?</p></div><details><summary>Reveal answer</summary><div><p>10 × 9 / 2 = 45, and 100 × 99 / 2 = 4,950. Ten times more data needs about a hundred times more comparisons.</p></div></details></section><section id="s16" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 16</span></div><h2>Sorting parallel arrays</h2><p class="lead">When you swap one array, swap its partners too.</p><p>Parallel arrays store related data at the same index: <code>names[i]</code> and <code>marks[i]</code> describe the same student. Sorting must keep those pairs together.</p><div class="newvisual"><h3>Ranking explorer</h3><div class="controls"><div style="flex:1 1 220px"><label for="pmOrder">Order</label><select id="pmOrder"><option value="desc">Highest mark first</option><option value="asc">Lowest mark first</option></select></div></div><label style="margin-top:12px"><input id="pmBug" type="checkbox">Bug: swap marks only, forget the names</label><div class="tablewrap"><table><thead><tr><th>Rank</th><th>Name</th><th>Mark</th><th>Correct?</th></tr></thead><tbody id="pmRows"></tbody></table></div><output id="pmResult" class="result" aria-live="polite"></output></div><details><summary>Full program: SortByMark.java</summary><div><pre><code>public class SortByMark {
+    public static void main(String[] args) {
+        // parallel arrays: index i describes the same student in both arrays
+        String[] names = {"Aina", "Ben", "Chen", "Devi", "Elle", "Faiz"};
+        int[] marks = {72, 85, 64, 90, 85, 58};
+
+        // bubble sort in descending order of mark
+        for (int pass = 1; pass &lt; marks.length; pass++) {
+            for (int i = 0; i &lt; marks.length - pass; i++) {
+                if (marks[i] &lt; marks[i + 1]) {      // &lt; gives descending order
+                    int holdMark = marks[i];
+                    marks[i] = marks[i + 1];
+                    marks[i + 1] = holdMark;
+
+                    String holdName = names[i];     // swap the partner too
+                    names[i] = names[i + 1];
+                    names[i + 1] = holdName;
+                }
+            }
+        }
+
+        System.out.println("Rank\tName\tMark");
+        for (int i = 0; i &lt; marks.length; i++) {
+            System.out.println((i + 1) + "\t" + names[i] + "\t" + marks[i]);
+        }
+    }
+}</code></pre><button class="secondary download" data-name="SortByMark.java">Download SortByMark.java</button></div></details><pre><code>run:
+Rank	Name	Mark
+1	Devi	90
+2	Ben	85
+3	Elle	85
+4	Aina	72
+5	Chen	64
+6	Faiz	58</code></pre><p>Ben and Elle both have 85. Because the comparison is a strict <code>&lt;</code>, they are never swapped with each other, so Ben stays ahead of Elle as in the original list (a stable sort).</p><p class="note">With a 2D table, a whole row can be swapped in three lines because each row is a reference: <code>int[] holdRow = marks[i]; marks[i] = marks[i + 1]; marks[i + 1] = holdRow;</code>. The case study uses this.</p></section><section id="s17" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 17</span></div><h2>Part C · Linear search variants</h2><p class="lead">First match, last match, every match, or a count.</p><div class="newvisual"><h3>Linear search with a choice of goal</h3><div class="controls"><div style="flex:3 1 300px"><label for="lvInput">Array values</label><input id="lvInput" type="text" value="8 42 8 64 21 8 54"></div><div style="flex:1 1 120px"><label for="lvKey">Key</label><input id="lvKey" type="number" step="1" value="8"></div><div style="flex:1 1 200px"><label for="lvMode">Goal</label><select id="lvMode"><option value="first">First occurrence (break)</option><option value="last">Last occurrence (search backwards)</option><option value="all">All positions (no break)</option><option value="count">Count occurrences</option></select></div></div><div id="lvCells" class="arr" aria-hidden="true"></div><output id="lvResult" class="result" aria-live="polite"></output><pre><code id="lvCode"></code></pre></div><div class="cards three"><article><h3>Stop early</h3><p>First and last occurrence <code>break</code> at the first match in their direction of travel.</p></article><article><h3>Never stop early</h3><p>All positions and counting must look at every element, so they never <code>break</code>: n comparisons every time.</p></article><article><h3>Not found</h3><p>Start the position at −1 (and the count at 0). If the loop finishes without a match, the starting value is the answer.</p></article></div><details><summary>Full program: LinearSearchVariants.java (variants, Strings, and 2D)</summary><div><pre><code>public class LinearSearchVariants {
+    public static void main(String[] args) {
+        int[] data = {8, 42, 8, 64, 21, 8, 54};
+        int key = 8;
+
+        // first occurrence: stop at the first match
+        int first = -1;
+        for (int i = 0; i &lt; data.length; i++) {
+            if (data[i] == key) {
+                first = i;
+                break;
+            }
+        }
+
+        // last occurrence: search from the end
+        int last = -1;
+        for (int i = data.length - 1; i &gt;= 0; i--) {
+            if (data[i] == key) {
+                last = i;
+                break;
+            }
+        }
+
+        // count and list every occurrence: no break
+        int count = 0;
+        System.out.print("All positions of " + key + ":");
+        for (int i = 0; i &lt; data.length; i++) {
+            if (data[i] == key) {
+                count++;
+                System.out.print(" " + i);
+            }
+        }
+        System.out.println();
+        System.out.println("First = " + first + ", last = " + last + ", count = " + count);
+
+        // searching Strings: compare contents with equals, not ==
+        String[] names = {"Aina", "Ben", "Chen", "Devi"};
+        String target = "chen";
+        int position = -1;
+        for (int i = 0; i &lt; names.length; i++) {
+            if (names[i].equalsIgnoreCase(target)) {
+                position = i;
+                break;
+            }
+        }
+        System.out.println(target + " found at index " + position);
+
+        // searching a 2D array: report the row and the column
+        int[][] marks = { {78, 66, 90}, {62, 74, 88}, {85, 59, 77}, {71, 80, 64} };
+        int find = 88, foundRow = -1, foundCol = -1;
+        for (int row = 0; row &lt; marks.length &amp;&amp; foundRow == -1; row++) {
+            for (int col = 0; col &lt; marks[row].length; col++) {
+                if (marks[row][col] == find) {
+                    foundRow = row;
+                    foundCol = col;
+                    break;                  // leaves the inner loop only
+                }
+            }
+        }
+        if (foundRow != -1) {
+            System.out.println(find + " found at marks[" + foundRow + "][" + foundCol + "]");
+        } else {
+            System.out.println(find + " is not in the table");
+        }
+    }
+}</code></pre><button class="secondary download" data-name="LinearSearchVariants.java">Download LinearSearchVariants.java</button></div></details><pre><code>run:
+All positions of 8: 0 2 5
+First = 0, last = 5, count = 3
+chen found at index 2
+88 found at marks[1][2]</code></pre></section><section id="s18" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 18</span></div><h2>Linear search with Strings</h2><p class="lead">Compare contents with equals, not ==.</p><pre><code>String[] names = {"Aina", "Ben", "Chen", "Devi"};
+int position = -1;
+for (int i = 0; i &lt; names.length; i++) {
+    if (names[i].equals(target)) {     // same characters?
+        position = i;
+        break;
+    }
+}</code></pre><div class="newvisual"><h3>String search</h3><div class="controls"><div style="flex:2 1 240px"><label for="strKey">Name to find</label><input id="strKey" type="text" value="chen"></div></div><label style="margin-top:12px"><input id="strCase" type="checkbox">Use equalsIgnoreCase</label><div id="strCells" class="arr" aria-hidden="true"></div><output id="strResult" class="result" aria-live="polite"></output></div><div class="split"><div><h3>Why not ==?</h3><p>For objects such as String, <code>==</code> asks whether two variables refer to the <em>same object</em>. A name typed with Scanner is a new String object, so <code>==</code> can be false even when the letters match. <code>equals</code> compares the characters.</p></div><div><h3>Case and spaces</h3><p><code>equals</code> is case-sensitive: "chen" does not equal "Chen". Use <code>equalsIgnoreCase</code> when case should not matter, and <code>trim()</code> on input that may carry spaces.</p></div></div></section><section id="s19" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 19</span></div><h2>Linear search in a 2D array</h2><p class="lead">Report a row and a column, and leave both loops.</p><div class="newvisual"><h3>Find a mark in the table</h3><div class="controls"><div style="flex:0 1 200px"><label for="ssKey">Mark to find</label><input id="ssKey" type="number" step="1" value="88"></div></div><div id="ssBox" class="grid2d tot" role="group" aria-label="Marks table searched row by row"></div><output id="ssResult" class="result" aria-live="polite"></output></div><pre><code>int foundRow = -1, foundCol = -1;
+for (int row = 0; row &lt; marks.length &amp;&amp; foundRow == -1; row++) {
+    for (int col = 0; col &lt; marks[row].length; col++) {
+        if (marks[row][col] == find) {
+            foundRow = row;
+            foundCol = col;
+            break;              // leaves the inner loop only
+        }
+    }
+}</code></pre><p>A plain <code>break</code> only leaves the <strong>inner</strong> loop. The outer condition <code>foundRow == -1</code> stops the outer loop too. A labelled break from Week 4 (<code>search: for (...)</code> then <code>break search;</code>) is another way to leave both loops.</p><div class="activity"><b>Try it first</b><p>Without the <code>&amp;&amp; foundRow == -1</code> condition, what is wrong when the key appears in two rows?</p></div><details><summary>Reveal answer</summary><div><p>The outer loop keeps going, so a later match overwrites foundRow and foundCol: the search reports the <em>last</em> row that contains the key, not the first, and checks more cells than needed.</p></div></details></section><section id="s20" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 20</span></div><h2>Part D · Binary search step by step</h2><p class="lead">Three pointers, one comparison, half of the range gone.</p><div class="callout">Binary search keeps one promise, its <strong>invariant</strong>: if the key is in the array, it lies between index <code>low</code> and index <code>high</code>. Each comparison keeps the promise while discarding half of the range. When <code>low &gt; high</code> the range is empty, so the key is not there.</div><div class="newvisual stepper"><div class="controls"><div style="flex:3 1 300px"><label for="bvInput">Array values (ascending, up to 20)</label><input id="bvInput" type="text" value="3 8 12 17 21 26 30 35 41 47 52 58 63 70 76"></div><div style="flex:1 1 120px"><label for="bvKey">Key</label><input id="bvKey" type="number" step="1" value="58"></div></div><div class="controls" style="margin-top:12px"><button class="button" id="bvNext" type="button">Next step</button><button class="secondary" id="bvAuto" type="button" aria-pressed="false">Play</button><button class="secondary" id="bvReset" type="button">Reset</button><button class="secondary" id="bvRandom" type="button">Random array and key</button></div><label style="margin-top:12px"><input id="bvPredict" type="checkbox">Predict mode: I calculate middle and choose the direction</label><div id="bvAskMid" class="ask" hidden><b id="bvQMid"></b><div class="controls"><div style="flex:0 1 160px"><label for="bvMidAns">middle =</label><input id="bvMidAns" type="number" step="1"></div><button class="button" id="bvMidCheck" type="button">Check</button></div><div id="bvMidFb" class="feedback" aria-live="polite"></div></div><div id="bvAskDir" class="ask" hidden><b id="bvQDir"></b><div class="controls"><button class="secondary" id="bvLeft" type="button">Go left (high = middle − 1)</button><button class="button" id="bvFound" type="button">Found</button><button class="secondary" id="bvRight" type="button">Go right (low = middle + 1)</button></div><div id="bvDirFb" class="feedback" aria-live="polite"></div></div><div class="stepgrid"><div><div id="bvCells" class="arr ptrs" aria-hidden="true"></div><div class="rangebar slim" aria-hidden="true"><div id="bvRange"></div></div><div id="bvVars" class="vars" aria-live="polite"></div></div><pre class="codelines" aria-label="Binary search code with the current line highlighted"><code id="bvCode"></code></pre></div><output id="bvSay" class="say" aria-live="polite"></output><output id="bvScore" class="feedback" aria-live="polite"></output></div><p>Read the pointers under the cells: <b>L</b> is low, <b>M</b> is middle, <b>H</b> is high. The bar under the array shows the part that is still being searched. Integer division rounds down: middle of 0 and 13 is 13 / 2 = 6.</p><div class="activity"><b>Try it first</b><p>Switch on predict mode, then search for 58, then for 9 (missing). How many comparisons did each take?</p></div><details><summary>Reveal answer</summary><div><p>58: middles 7 (35, go right), 11 (58, found): 2 comparisons. 9: middles 7 (35, left), 3 (17, left), 1 (8, right), 2 (12, left), then low (2) &gt; high (1): 4 comparisons, not found.</p></div></details></section><section id="s21" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 21</span></div><h2>Binary search trace table</h2><p class="lead">The written-exam format: one row per comparison.</p><div class="newvisual"><h3>Binary search trace table</h3><div class="controls"><div style="flex:3 1 320px"><label for="btInput">Array values (ascending)</label><input id="btInput" type="text" value="2 4 11 18 29 36 36 38 42 45 46 51 54 60 70 74 82 88 94 98"></div><div style="flex:1 1 120px"><label for="btKey">Key</label><input id="btKey" type="number" step="1" value="50"></div></div><div class="controls" style="margin-top:14px"><button class="button" id="btStep" type="button">Next step</button><button class="secondary" id="btRun" type="button">Run to end</button><button class="secondary" id="btReset" type="button">Reset</button></div><div id="btCells" class="arr small" aria-hidden="true"></div><div class="tablewrap"><table class="mini"><thead><tr><th>Step</th><th>low</th><th>high</th><th>middle</th><th>num[middle]</th><th>Decision</th></tr></thead><tbody id="btRows"></tbody></table></div><output id="btResult" class="result" aria-live="polite"></output></div><details><summary>Full program: BinarySearchTrace.java</summary><div><pre><code>import java.util.Scanner;
+
+public class BinarySearchTrace {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] num = {2, 4, 11, 18, 29, 36, 36, 38, 42, 45,
+                     46, 51, 54, 60, 70, 74, 82, 88, 94, 98};   // ascending
+
+        System.out.print("Enter number to search : ");
+        int key = input.nextInt();
+
+        int low = 0;
+        int high = num.length - 1;
+        int position = -1, steps = 0;
+
+        System.out.println("low\thigh\tmiddle\tnum[middle]\tdecision");
+        while (low &lt;= high) {
+            int middle = (low + high) / 2;
+            steps++;
+            System.out.print(low + "\t" + high + "\t" + middle + "\t" + num[middle] + "\t\t");
+            if (key == num[middle]) {
+                System.out.println("found");
+                position = middle;
+                break;
+            } else if (key &lt; num[middle]) {
+                System.out.println("go left: high = " + (middle - 1));
+                high = middle - 1;
+            } else {
+                System.out.println("go right: low = " + (middle + 1));
+                low = middle + 1;
+            }
+        }
+
+        if (position != -1) {
+            System.out.println("Found in position " + position + " after " + steps + " comparisons");
+        } else {
+            System.out.println(key + " is not in the array (" + steps + " comparisons)");
+        }
+    }
+}</code></pre><button class="secondary download" data-name="BinarySearchTrace.java">Download BinarySearchTrace.java</button></div></details><pre><code>run:
+Enter number to search : 50
+low	high	middle	num[middle]	decision
+0	19	9	45		go right: low = 10
+10	19	14	70		go left: high = 13
+10	13	11	51		go left: high = 10
+10	10	10	46		go right: low = 11
+50 is not in the array (4 comparisons)</code></pre><p>When the key is missing, the search ends with <code>low</code> one place after <code>high</code>. <code>low</code> (11) is the index where 50 would be inserted to keep the array sorted.</p></section><section id="s22" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 22</span></div><h2>Practice: trace binary search yourself</h2><p class="lead">Exam-style: list every middle index and the result.</p><div class="newvisual"><h3>Binary search tracing question</h3><p id="bxQ" class="qline"></p><div id="bxCells" class="arr small" aria-hidden="true"></div><div class="controls"><div style="flex:2 1 260px"><label for="bxMids">Middle indexes examined, in order</label><input id="bxMids" type="text" placeholder="e.g. 7 3 5"></div><div style="flex:1 1 180px"><label for="bxPos">Returned position (−1 if not found)</label><input id="bxPos" type="number" step="1"></div></div><div class="controls" style="margin-top:14px"><button class="button" id="bxCheck" type="button">Check my answers</button><button class="secondary" id="bxShow" type="button">Show the worked answer</button><button class="secondary" id="bxNew" type="button">New question</button></div><div id="bxFeedback" class="feedback" aria-live="polite"></div><div class="tablewrap"><table class="mini" hidden id="bxTable"><thead><tr><th>Step</th><th>low</th><th>high</th><th>middle</th><th>num[middle]</th><th>Decision</th></tr></thead><tbody id="bxRows"></tbody></table></div></div><div class="callout">Method: write low and high; compute middle = (low + high) / 2 rounding down; compare the key with num[middle]; cross out the half that cannot contain the key by moving high to middle − 1 or low to middle + 1. Repeat until found or low &gt; high.</div></section><section id="s23" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 23</span></div><h2>Binary search as a guessing game</h2><p class="lead">Guess the middle; every answer halves what is left.</p><div class="newvisual"><h3>I will guess your number</h3><p>Think of a whole number from 1 to 100. Answer honestly: is your number higher or lower than my guess?</p><div class="controls"><button class="button" id="gStart" type="button">Start a new game</button><button class="secondary" id="gHigher" type="button">Higher</button><button class="secondary" id="gLower" type="button">Lower</button><button class="secondary" id="gCorrect" type="button">Correct</button></div><div class="rangebar" aria-hidden="true"><div id="gRange"></div><div id="gMark"></div></div><output id="gStatus" class="result" aria-live="polite"></output><div id="gTrace" class="trace" aria-live="polite"></div></div><p>Each guess is <code>(low + high) / 2</code>. “Higher” means <code>low = guess + 1</code>, “Lower” means <code>high = guess - 1</code>. From 100 possibilities the range shrinks 100 → 50 → 25 → 12 → 6 → 3 → 1, so 7 guesses always suffice, because 2⁷ = 128 ≥ 100.</p><details><summary>Console version: GuessMyNumber.java</summary><div><pre><code>import java.util.Scanner;
+
+public class GuessMyNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int low = 1, high = 100, guesses = 0;
+        boolean found = false;
+
+        System.out.println("Think of a whole number from 1 to 100.");
+        while (low &lt;= high) {
+            int guess = (low + high) / 2;            // binary search: try the middle
+            guesses++;
+            System.out.print("Guess " + guesses + ": is it " + guess
+                    + "? Type H (higher), L (lower) or C (correct): ");
+            String answer = input.next().toUpperCase();
+
+            if (answer.equals("C")) {
+                found = true;
+                System.out.println("Got it in " + guesses + " guesses!");
+                break;
+            } else if (answer.equals("H")) {
+                low = guess + 1;                     // discard the lower half
+            } else if (answer.equals("L")) {
+                high = guess - 1;                    // discard the upper half
+            } else {
+                System.out.println("Please type H, L or C.");
+                guesses--;                           // that try does not count
+            }
+        }
+        if (!found) {
+            System.out.println("No number is left: one of the answers was not consistent.");
+        }
+    }
+}</code></pre><button class="secondary download" data-name="GuessMyNumber.java">Download GuessMyNumber.java</button></div></details><div class="activity"><b>Try it first</b><p>How many guesses are enough for a number from 1 to 1,000? From 1 to 1,000,000?</p></div><details><summary>Reveal answer</summary><div><p>10 guesses for 1,000 (2¹⁰ = 1,024) and 20 guesses for 1,000,000 (2²⁰ = 1,048,576).</p></div></details></section><section id="s24" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 24</span></div><h2>Binary search bugs</h2><p class="lead">Small changes to the bounds break the algorithm.</p><div class="newvisual"><h3>Run a buggy version</h3><p>Array: <code>10 20 30 40 50 60 70</code> (indexes 0 to 6).</p><div class="controls"><div style="flex:2 1 300px"><label for="bugVariant">Version</label><select id="bugVariant"><option value="ok">Correct: while (low &lt;= high), high = middle − 1, low = middle + 1</option><option value="lt">Bug 1: while (low &lt; high)</option><option value="hi">Bug 2: high = middle (no − 1)</option><option value="lo">Bug 3: low = middle (no + 1)</option><option value="unsorted">Bug 4: data not sorted (40 70 10 60 20 50 30)</option></select></div><div style="flex:1 1 120px"><label for="bugKey">Key</label><input id="bugKey" type="number" step="1" value="70"></div></div><div id="bugCells" class="arr" aria-hidden="true"></div><output id="bugResult" class="result" aria-live="polite"></output><div id="bugTrace" class="trace" aria-live="polite"></div></div><div class="tablewrap"><table><thead><tr><th>Bug</th><th>Symptom</th><th>Try key</th></tr></thead><tbody><tr><td><code>low &lt; high</code></td><td>Stops when one element is left without checking it: misses some keys</td><td>70 or 10</td></tr><tr><td><code>high = middle</code></td><td>The range may never shrink: infinite loop for a missing key</td><td>5</td></tr><tr><td><code>low = middle</code></td><td>Same problem from the other side: infinite loop</td><td>70 or 75</td></tr><tr><td>Unsorted data</td><td>Discards the half that contains the key: “not found” although present</td><td>10 or 70</td></tr></tbody></table></div><p class="note">The simulator stops after 12 steps and reports an infinite loop. In Java the real program would hang; press Ctrl+C (or the IDE's stop button) to end it.</p></section><section id="s25" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 25</span></div><h2>Linear or binary search?</h2><p class="lead">Choose by data size, order, and how often you search.</p><div class="tablewrap"><table><thead><tr><th></th><th>Linear search</th><th>Binary search</th></tr></thead><tbody><tr><td>Data must be sorted</td><td>No</td><td>Yes, ascending</td></tr><tr><td>Worst-case comparisons for n</td><td>n</td><td>about log₂ n (20 for a million)</td></tr><tr><td>Finds the first of several equal keys</td><td>Yes, naturally</td><td>Not guaranteed</td></tr><tr><td>Works on Strings, 2D arrays, any condition</td><td>Yes</td><td>Only with a sorted order to compare against</td></tr><tr><td>Code length and risk of bugs</td><td>Short and simple</td><td>Bounds must be exactly right</td></tr></tbody></table></div><div class="cards"><article><h3>One search, unsorted data</h3><p>Use linear search. Sorting first costs about n² / 2 comparisons with bubble sort, far more than one linear search.</p></article><article><h3>Many searches, same data</h3><p>Sort once, then use binary search every time. The sorting cost is shared by all the searches.</p></article></div><div class="activity"><b>Try it first</b><p>An app looks up 1,000 student IDs in a list of 1,000 unsorted students. Compare the worst-case comparisons for (a) 1,000 linear searches and (b) one improved bubble sort plus 1,000 binary searches.</p></div><details><summary>Reveal answer</summary><div><p>(a) 1,000 × 1,000 = 1,000,000. (b) Sorting: 1,000 × 999 / 2 = 499,500, plus 1,000 × 10 = 10,000 for the searches, about 509,500. Sorting first wins when there are many searches; with only a few searches, linear search wins.</p></div></details></section><section id="s26" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 26</span></div><h2>Case study: sort records, then search by ID</h2><p class="lead">A 2D table, parallel arrays, bubble sort, and binary search together.</p><p>Five students have an ID, a name, and three marks. The program sorts the records by ID (moving each whole record), prints the table with averages, then finds a student by ID with binary search.</p><div class="newvisual"><h3>Look up a student</h3><div class="controls"><div style="flex:0 1 220px"><label for="srKey">Student ID</label><input id="srKey" type="number" step="1" value="2750"></div></div><div class="tablewrap"><table><thead><tr><th>Index</th><th>ID</th><th>Name</th><th>Quiz</th><th>Mid</th><th>Final</th><th>Average</th></tr></thead><tbody id="srRows"></tbody></table></div><output id="srResult" class="result" aria-live="polite"></output></div><details><summary>Full program: StudentRecords.java</summary><div><pre><code>import java.util.Scanner;
+
+public class StudentRecords {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] ids = {3042, 1187, 2750, 1503, 4011};
+        String[] names = {"Aina", "Ben", "Chen", "Devi", "Elle"};
+        int[][] marks = {               // Quiz, Mid, Final for each student
+            {78, 66, 90},
+            {62, 74, 88},
+            {85, 59, 77},
+            {71, 80, 64},
+            {90, 82, 95}
+        };
+
+        // 1. bubble sort by ID; every swap moves the whole record
+        for (int pass = 1; pass &lt; ids.length; pass++) {
+            boolean swapped = false;
+            for (int i = 0; i &lt; ids.length - pass; i++) {
+                if (ids[i] &gt; ids[i + 1]) {
+                    int holdId = ids[i];
+                    ids[i] = ids[i + 1];
+                    ids[i + 1] = holdId;
+
+                    String holdName = names[i];
+                    names[i] = names[i + 1];
+                    names[i + 1] = holdName;
+
+                    int[] holdRow = marks[i];        // swap row references
+                    marks[i] = marks[i + 1];
+                    marks[i + 1] = holdRow;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+
+        // 2. print the table with each student's average
+        System.out.println("ID\tName\tQuiz\tMid\tFinal\tAverage");
+        for (int row = 0; row &lt; ids.length; row++) {
+            int total = 0;
+            System.out.print(ids[row] + "\t" + names[row]);
+            for (int col = 0; col &lt; marks[row].length; col++) {
+                System.out.print("\t" + marks[row][col]);
+                total += marks[row][col];
+            }
+            System.out.printf("\t%.2f%n", (double) total / marks[row].length);
+        }
+
+        // 3. binary search: the IDs are now in ascending order
+        System.out.print("Enter student ID : ");
+        int key = input.nextInt();
+        int low = 0, high = ids.length - 1, position = -1;
+        while (low &lt;= high) {
+            int middle = (low + high) / 2;
+            if (ids[middle] == key) {
+                position = middle;
+                break;
+            } else if (key &lt; ids[middle]) {
+                high = middle - 1;
+            } else {
+                low = middle + 1;
+            }
+        }
+
+        if (position == -1) {
+            System.out.println("No student with ID " + key);
+        } else {
+            System.out.print(names[position] + " (row " + position + "):");
+            for (int col = 0; col &lt; marks[position].length; col++) {
+                System.out.print(" " + marks[position][col]);
+            }
+            System.out.println();
+        }
+    }
+}</code></pre><button class="secondary download" data-name="StudentRecords.java">Download StudentRecords.java</button></div></details><pre><code>run:
+ID	Name	Quiz	Mid	Final	Average
+1187	Ben	62	74	88	74.67
+1503	Devi	71	80	64	71.67
+2750	Chen	85	59	77	73.67
+3042	Aina	78	66	90	78.00
+4011	Elle	90	82	95	89.00
+Enter student ID : 2750
+Chen (row 2): 85 59 77</code></pre><div class="activity"><b>Try it first</b><p>Which three things must move together in every swap? What goes wrong if the marks rows are not swapped?</p></div><details><summary>Reveal answer</summary><div><p>The ID, the name, and the marks row. If only IDs and names move, each student is shown with another student's marks, although every column looks plausible. Test with a record you can check by hand.</p></div></details></section><section id="s27" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 27</span></div><h2>Vibe coding: specify, then review array algorithms</h2><p class="lead">Ask for the algorithm you are learning, then test the edges.</p><div class="prompt"><span class="visualkicker">A PROMPT WITH EXPLICIT CONSTRAINTS</span><p>Write a Java 27 console program in a class named <code>TestScores</code>, using only a main method, Scanner, arrays, and loops (no collections, no Arrays.sort, no user-defined methods). Store marks for r students and c tests in an int[r][c] table (1 to 10 each, marks 0 to 100). Print the table with each student's total and each test's average to 2 decimal places. Sort the students by total in descending order with bubble sort, swapping whole rows and the parallel names array, with an early exit when a pass makes no swaps. Then read a total and use linear search to print every student with that total, or “No student has that total”. Comment each loop with what it repeats and why it stops.</p></div><h3>Review: three bugs an AI assistant might produce</h3><div class="cards three"><article><h3>1 · Wrong length</h3><pre><code>for (int r = 0; r &lt; marks.length; r++)
+  for (int c = 0; c &lt; marks.length; c++)
+    total += marks[r][c];</code></pre><p>Works for 3 × 3. Fails for 4 × 3.</p></article><article><h3>2 · Lost value</h3><pre><code>if (total[i] &lt; total[i + 1]) {
+  total[i] = total[i + 1];
+  total[i + 1] = total[i];
+}</code></pre><p>The “sorted” totals contain duplicates.</p></article><article><h3>3 · Endless search</h3><pre><code>while (low &lt;= high) {
+  int mid = (low + high) / 2;
+  if (key == a[mid]) break;
+  else if (key &lt; a[mid]) high = mid;
+  else low = mid;
+}</code></pre><p>Hangs for some keys.</p></article></div><details><summary>Reveal the corrections</summary><div><pre><code>// 1: columns come from the row's own length
+for (int c = 0; c &lt; marks[r].length; c++)
+
+// 2: save the left value first
+int hold = total[i];
+total[i] = total[i + 1];
+total[i + 1] = hold;
+
+// 3: exclude middle from the next range
+high = mid - 1;   // and
+low = mid + 1;</code></pre></div></details><h3>Test table for this week's algorithms</h3><div class="tablewrap"><table><thead><tr><th>Test</th><th>Input idea</th><th>What it reveals</th></tr></thead><tbody><tr><td>Non-square table</td><td>r = 4, c = 3 and r = 1, c = 5</td><td>Row and column lengths mixed up</td></tr><tr><td>Ties</td><td>Two students with the same total</td><td>Stable order and “every match” search</td></tr><tr><td>Sorted / reversed input</td><td>Totals already in order, and in reverse</td><td>Early exit and worst-case swaps</td></tr><tr><td>Key at the ends</td><td>Smallest and largest values</td><td>Off-by-one bounds</td></tr><tr><td>Key missing</td><td>Below, between, and above the data</td><td>The “not found” path and infinite loops</td></tr><tr><td>Single element</td><td>r = 1</td><td>Loops that assume at least two items; low = high</td></tr></tbody></table></div><p class="note">Follow-up prompt: “Trace your bubble sort for totals 10 30 20 and your search for a missing key. Show i, pass, low, middle, and high at every step, and explain why no index leaves the valid range.”</p></section><section id="s28" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 28</span></div><h2>Self-check and exit ticket</h2><p class="lead">Predict first, then reveal.</p><div class="activity"><b>Try it first</b><p>1. What is printed?</p><pre><code>int[][] g = { {1, 2, 3}, {4, 5}, {6} };
+System.out.println(g.length + " " + g[1].length + " " + g[2][0]);</code></pre></div><details><summary>Reveal answer</summary><div><p><code>3 2 6</code>: 3 rows; row 1 has 2 elements; <code>g[2][0]</code> is 6.</p></div></details><div class="activity"><b>Try it first</b><p>2. For <code>int[][] m = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };</code> what is the sum of the main diagonal? Of column 2?</p></div><details><summary>Reveal answer</summary><div><p>Main diagonal: 1 + 5 + 9 = 15. Column 2: 3 + 6 + 9 = 18.</p></div></details><div class="activity"><b>Try it first</b><p>3. Improved bubble sort (skip the tail, early exit) on <code>3 1 2 4 5</code>: how many passes and comparisons?</p></div><details><summary>Reveal answer</summary><div><p>Pass 1 makes 4 comparisons and 2 swaps (3/1, 3/2) giving 1 2 3 4 5. Pass 2 makes 3 comparisons and no swaps, so the loop exits. 2 passes, 7 comparisons.</p></div></details><div class="activity"><b>Try it first</b><p>4. Linear search for the <em>last</em> 7 in <code>7 3 7 9 7 1</code>, searching backwards: how many comparisons?</p></div><details><summary>Reveal answer</summary><div><p>Index 5 (1), index 4 (7, match): 2 comparisons, position 4.</p></div></details><div class="activity"><b>Try it first</b><p>5. Binary search for 15 in <code>3 6 9 12 15 18 21 24</code>. List low, high, and middle for each step.</p></div><details><summary>Reveal answer</summary><div><p>(0, 7, 3): 12 &lt; 15 → low = 4. (4, 7, 5): 18 &gt; 15 → high = 4. (4, 4, 4): 15 found at position 4. Three comparisons.</p></div></details><div class="activity"><b>Exit ticket · 3 minutes</b><ol><li>Explain why <code>m[row].length</code> is safer than <code>m[0].length</code> in a nested loop.</li><li>State what bubble sort guarantees after pass k, and how the early exit uses a boolean.</li><li>Give one situation for linear search and one for binary search, and the reason for each.</li></ol></div></section><section id="s29" class="lesson"><div class="eyebrow">WEEK 06 <span>/ 29</span></div><h2>Key takeaways, practice, and references</h2><p class="lead">Trace by hand first; then let the code and the tests agree.</p><div class="cards"><article><h3>Multidimensional arrays</h3><p>An array of arrays. <code>m.length</code> counts rows; <code>m[r].length</code> counts the columns of row r. The outer loop chooses what you total; reset accumulators inside it.</p></article><article><h3>Bubble sort</h3><p>After pass k the k largest values are final. Skip the sorted tail and stop when a pass makes no swaps. About n² / 2 comparisons in the worst case. Swap partners in parallel arrays.</p></article><article><h3>Linear search</h3><p>Any order, any type, any condition. Break for first or last; never break for all or count. Use <code>equals</code> for Strings; report row and column in 2D.</p></article><article><h3>Binary search</h3><p>Sorted data only. Keep the key inside low…high; <code>low &lt;= high</code>, <code>middle ± 1</code>. About log₂ n comparisons: 20 for a million.</p></article></div><h3>Practice before the tutorial and lab</h3><ol><li>Read a 3 × 4 table of integers with Scanner and print the row totals, column totals, and the grand total.</li><li>Check whether a square matrix is symmetric (<code>m[r][c] == m[c][r]</code> for every cell), stopping at the first mismatch.</li><li>Store a 5-row ragged array where row r holds the first r + 1 multiples of 3, and print it with a nested loop that never uses a fixed column count.</li><li>Sort an array of String names alphabetically with bubble sort, using <code>compareTo</code> in place of <code>&gt;</code>.</li><li>Change BinarySearchTrace so that, among duplicates, it returns the <em>first</em> matching position (hint: on a match, record it and continue with <code>high = middle - 1</code>).</li></ol><h3>Sources and further reading</h3><ul><li>Course material: L-1002-05.ppt, Chapter 5: Arrays (multidimensional arrays, bubble sort, linear search, and binary search). Week 6 has no new topic; this lecture revisits these four parts of the Week 5 material in more depth, with new worked examples, interactive explorers, and AI review activities.</li><li><a href="../week5/">Week 5 lecture: Arrays &amp; Vibe Coding</a></li><li><a href="https://docs.oracle.com/javase/specs/jls/se27/html/jls-10.html">Java SE 27 language specification: Chapter 10, Arrays</a></li><li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html">The Java Tutorials: arrays</a></li><li><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Arrays.html">Java SE 27 API: java.util.Arrays</a></li><li><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html">Java SE 27 API: java.lang.String (equals, equalsIgnoreCase, compareTo)</a></li></ul><p class="note">Prepared November 2026 for JDK 27. Examples use established language features with no preview flags, keep the conventional class/main structure, and avoid user-defined methods, which come later in the course. Browser models use JavaScript; run downloaded Java programs with the course JDK. Tutorial and lab are separate materials.</p></section></main></div><div class="bottomnav"><button class="secondary" id="prev">← Previous</button><span id="pageCount"></span><button class="button" id="next">Next →</button></div><footer>Universiti Malaya · Ts. Dr. Mohamad Hazim Md Hanif · WIX1002 · Week 6 · JDK 27</footer><script>
+const lessons=[...document.querySelectorAll('.lesson')];let current=0,teach=false;
+const links=[...document.querySelectorAll('nav a')];
+function go(n){current=Math.max(0,Math.min(lessons.length-1,n));lessons.forEach((s,i)=>s.classList.toggle('current',i===current));links.forEach((a,i)=>a.classList.toggle('active',i===current));document.querySelector('#pageCount').textContent=`${current+1} / ${lessons.length}`;document.querySelector('#prev').disabled=current===0;document.querySelector('#next').disabled=current===lessons.length-1;if(teach){history.replaceState(null,'',`#s${current+1}`);window.scrollTo({top:0,behavior:'instant'});}document.querySelector('.progress').style.width=`${(current+1)/lessons.length*100}%`;}
+links.forEach((a,i)=>a.addEventListener('click',e=>{document.body.classList.remove('menu-open');if(teach){e.preventDefault();go(i)}}));
+document.querySelector('#teachButton').onclick=()=>{teach=!teach;document.body.classList.toggle('teach',teach);document.querySelector('#teachButton').textContent=teach?'Reading mode':'Teach mode';document.querySelector('#teachButton').setAttribute('aria-pressed',String(teach));go(current);if(!teach)lessons[current].scrollIntoView();};
+document.querySelector('#menuButton').onclick=()=>document.body.classList.toggle('menu-open');
+document.querySelector('#printButton').onclick=()=>{const ds=[...document.querySelectorAll('details')];const states=ds.map(d=>d.open);ds.forEach(d=>d.open=true);window.print();ds.forEach((d,i)=>d.open=states[i]);};
+document.querySelector('#prev').onclick=()=>go(current-1);document.querySelector('#next').onclick=()=>go(current+1);
+document.addEventListener('keydown',e=>{if(!teach||/INPUT|TEXTAREA|SELECT|SUMMARY/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(current+1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(current-1)}if(e.key==='Escape'&&!document.fullscreenElement)document.querySelector('#teachButton').click();});
+const observer=new IntersectionObserver(entries=>{if(teach)return;const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);if(visible.length)go(lessons.indexOf(visible[0].target));},{rootMargin:'-85px 0px -40% 0px',threshold:[0,.1,.3]});lessons.forEach(s=>observer.observe(s));
+const initial=Number(location.hash.replace('#s',''))-1;go(Number.isFinite(initial)&&initial>=0?initial:0);
+const fullscreenButton=document.querySelector('#fullscreenButton');
+fullscreenButton.addEventListener('click',async()=>{try{document.querySelector('#screenStatus').textContent='';if(document.fullscreenElement){await document.exitFullscreen();}else if(document.documentElement.requestFullscreen){await document.documentElement.requestFullscreen();}else{throw new Error('unsupported');}}catch(error){document.querySelector('#screenStatus').textContent='Fullscreen is unavailable in this viewer. Open the HTML file in a browser tab, then try again.';}});
+document.addEventListener('fullscreenchange',()=>{const active=!!document.fullscreenElement;fullscreenButton.textContent=active?'Exit fullscreen':'Fullscreen';fullscreenButton.setAttribute('aria-pressed',String(active));});
+
+
+document.querySelector('a.button[href="#s2"]').addEventListener('click',e=>{if(teach){e.preventDefault();go(1);}});
+function trace(target,rows){document.querySelector(target).replaceChildren(...rows.map(([text,state])=>{const d=document.createElement('div');d.textContent=text;d.className=state;return d;}));}
+function readInt(e){if(e.value.trim()==='')return null;const n=Number(e.value);return Number.isInteger(n)&&n>=-2147483648&&n<=2147483647?n:null;}
+function cells(target,items){document.querySelector(target).replaceChildren(...items.map(([v,label,cls])=>{const s=document.createElement('span');s.textContent=v;if(label){const sm=document.createElement('small');sm.textContent=label;s.appendChild(sm);}if(cls)s.className=cls;return s;}));}
+function parseInts(text){const t=text.trim();if(t==='')return [];const out=[];for(const p of t.split(/[\s,]+/).filter(Boolean)){if(!/^[+-]?\d+$/.test(p)||Math.abs(Number(p))>2147483647)return null;out.push(Number(p));}return out;}
+function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function rowsOf(target,rows){document.querySelector(target).replaceChildren(...rows.map(r=>{const tr=document.createElement('tr');r.forEach(c=>{const td=document.createElement('td');if(c instanceof Node)td.appendChild(c);else td.textContent=c;tr.appendChild(td);});return tr;}));}
+function miniArr(values,classes){const d=el('div',undefined,'arr small');values.forEach((v,k)=>d.appendChild(el('span',String(v),classes?classes[k]:'')));return d;}
+const fmt2=x=>(Math.round(x*100)/100).toFixed(2);
+// ---- traversal
+const tv=[[3,8,1,9,4],[7,2,6,5,0],[9,4,8,1,3],[2,7,5,6,8]];let tvStep=0;
+function tvOrder(){const o=[];if(document.querySelector('#travOrder').value==='row'){for(let r=0;r<4;r++)for(let c=0;c<5;c++)o.push([r,c]);}else{for(let c=0;c<5;c++)for(let r=0;r<4;r++)o.push([r,c]);}return o;}
+function tvRender(){const order=tvOrder(),visit={};order.slice(0,tvStep).forEach(([r,c],k)=>visit[r+','+c]=k+1);const kids=[el('span','','hdr')];for(let c=0;c<5;c++)kids.push(el('span',`col ${c}`,'hdr'));tv.forEach((row,r)=>{kids.push(el('span',`row ${r}`,'hdr'));row.forEach((v,c)=>{const n=visit[r+','+c],last=tvStep>0&&order[tvStep-1][0]===r&&order[tvStep-1][1]===c;const s=el('span',String(v),last?'hit':n?'rowsel':'');s.appendChild(el('small',n?`#${n}`:' '));kids.push(s);});});document.querySelector('#travBox').replaceChildren(...kids);const out=document.querySelector('#travResult');if(tvStep===0){out.textContent='Ready: 0 of 20 cells visited';}else{const [r,c]=order[tvStep-1];out.textContent=`Visit ${tvStep} of 20: row = ${r}, col = ${c} → m[${r}][${c}] = ${tv[r][c]}`+(tvStep===20?' · all cells visited':'');}document.querySelector('#travStep').disabled=tvStep>=20;}
+document.querySelector('#travStep').addEventListener('click',()=>{if(tvStep<20)tvStep++;tvRender();});document.querySelector('#travAll').addEventListener('click',()=>{tvStep=20;tvRender();});document.querySelector('#travReset').addEventListener('click',()=>{tvStep=0;tvRender();});document.querySelector('#travOrder').addEventListener('change',()=>{tvStep=0;tvRender();});tvRender();
+// ---- totals
+const names4=['Aina','Ben','Chen','Devi'],tests3=['Quiz','Mid','Final'],mk=[[78,66,90],[62,74,88],[85,59,77],[71,80,64]];
+function totBuild(sel){const kids=[el('span','','hdr')];tests3.forEach((t,c)=>{const b=el('button',`${t} · col ${c}`,'hdrbtn'+(sel&&sel.c===c?' on':''));b.type='button';b.setAttribute('aria-label',`Column average for ${t}, column ${c}`);b.addEventListener('click',()=>totPick({c}));kids.push(b);});mk.forEach((row,r)=>{const b=el('button',`${names4[r]} · row ${r}`,'hdrbtn'+(sel&&sel.r===r?' on':''));b.type='button';b.setAttribute('aria-label',`Row total for ${names4[r]}, row ${r}`);b.addEventListener('click',()=>totPick({r}));kids.push(b);row.forEach((v,c)=>{const on=sel&&(sel.r===r||sel.c===c);kids.push(el('span',String(v),'cell'+(on?' hit':'')));});});document.querySelector('#totBox').replaceChildren(...kids);}
+function totPick(sel){totBuild(sel);const rows=[];let total=0;if(sel.r!==undefined){const r=sel.r;mk[r].forEach((v,c)=>{const b=total;total+=v;rows.push([`col = ${c}: rowTotal = ${b} + marks[${r}][${c}] (${v}) = ${total}`,'taken']);});trace('#totTrace',rows);document.querySelector('#totResult').textContent=`${names4[r]}: total = ${total}, average = ${total} / ${mk[r].length} = ${fmt2(total/mk[r].length)}`;}else{const c=sel.c;mk.forEach((row,r)=>{const b=total;total+=row[c];rows.push([`row = ${r}: colTotal = ${b} + marks[${r}][${c}] (${row[c]}) = ${total}`,'taken']);});trace('#totTrace',rows);document.querySelector('#totResult').textContent=`${tests3[c]}: total = ${total}, average = ${total} / ${mk.length} = ${fmt2(total/mk.length)}`;}}
+totPick({r:1});
+// ---- patterns
+let pm=Array.from({length:4},(_,r)=>Array.from({length:4},(_,c)=>r*4+c+1));
+const patCode={max:`int maxRow = 0, maxCol = 0;
+for (int row = 0; row < m.length; row++)
+    for (int col = 0; col < m[row].length; col++)
+        if (m[row][col] > m[maxRow][maxCol]) {
+            maxRow = row;
+            maxCol = col;
+        }`,diag:`int sum = 0;
+for (int i = 0; i < m.length; i++)
+    sum += m[i][i];`,anti:`int sum = 0;
+for (int i = 0; i < m.length; i++)
+    sum += m[i][m.length - 1 - i];`,row:`int sum = 0;
+for (int col = 0; col < m[2].length; col++)
+    sum += m[2][col];`,col:`int sum = 0;
+for (int row = 0; row < m.length; row++)
+    sum += m[row][1];`,border:`int sum = 0;
+for (int row = 0; row < m.length; row++)
+    for (int col = 0; col < m[row].length; col++)
+        if (row == 0 || row == m.length - 1
+                || col == 0 || col == m[row].length - 1)
+            sum += m[row][col];`,trans:`int[][] t = new int[m[0].length][m.length];
+for (int row = 0; row < m.length; row++)
+    for (int col = 0; col < m[row].length; col++)
+        t[col][row] = m[row][col];`};
+function patRender(){const p=document.querySelector('#patSelect').value,n=4;let sel=()=>false,grid=pm,msg='';const sumOf=f=>{let s=0,parts=[];for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(f(r,c)){s+=pm[r][c];parts.push(pm[r][c]);}return `${parts.join(' + ')} = ${s}`;};
+if(p==='max'){let mr=0,mc=0;for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(pm[r][c]>pm[mr][mc]){mr=r;mc=c;}sel=(r,c)=>r===mr&&c===mc;msg=`Largest value ${pm[mr][mc]} at m[${mr}][${mc}] (first one found, scanning row by row)`;}
+else if(p==='diag'){sel=(r,c)=>r===c;msg=`Main diagonal: ${sumOf(sel)}`;}
+else if(p==='anti'){sel=(r,c)=>r+c===n-1;msg=`Anti-diagonal: ${sumOf(sel)}`;}
+else if(p==='row'){sel=r=>r===2;msg=`Row 2: ${sumOf(sel)}`;}
+else if(p==='col'){sel=(r,c)=>c===1;msg=`Column 1: ${sumOf(sel)}`;}
+else if(p==='border'){sel=(r,c)=>r===0||r===n-1||c===0||c===n-1;msg=`Border (12 cells): ${sumOf(sel)}`;}
+else{grid=pm[0].map((_,c)=>pm.map(row=>row[c]));sel=(r,c)=>r===c;msg='Showing t, the transpose: row r of m is now column r of t. The diagonal stays in place.';}
+const kids=[el('span','','hdr')];for(let c=0;c<n;c++)kids.push(el('span',`col ${c}`,'hdr'));grid.forEach((row,r)=>{kids.push(el('span',`row ${r}`,'hdr'));row.forEach((v,c)=>kids.push(el('span',String(v),'cell'+(sel(r,c)?' hit':''))));});document.querySelector('#patBox').replaceChildren(...kids);document.querySelector('#patResult').textContent=msg;document.querySelector('#patCode').textContent=patCode[p];}
+document.querySelector('#patSelect').addEventListener('change',patRender);document.querySelector('#patRandom').addEventListener('click',()=>{pm=pm.map(row=>row.map(()=>Math.floor(Math.random()*100)));patRender();});document.querySelector('#patOrdered').addEventListener('click',()=>{pm=Array.from({length:4},(_,r)=>Array.from({length:4},(_,c)=>r*4+c+1));patRender();});patRender();
+// ---- pascal
+function pasRender(){const n=readInt(document.querySelector('#pasRows')),out=document.querySelector('#pasResult'),box=document.querySelector('#pasBox');if(n===null||n<1||n>12){box.replaceChildren();out.textContent='Enter a whole number from 1 to 12.';return;}const p=[];let total=0;for(let r=0;r<n;r++){p[r]=new Array(r+1);p[r][0]=p[r][r]=1;for(let c=1;c<r;c++)p[r][c]=p[r-1][c-1]+p[r-1][c];total+=r+1;}box.replaceChildren(...p.map((row,r)=>{const d=el('div');d.appendChild(el('b',`pascal[${r}]`));d.append(` · length ${row.length}`);d.appendChild(miniArr(row));return d;}));out.textContent=`pascal.length = ${n} rows · ${total} elements in total (1 + 2 + … + ${n})`;}
+document.querySelector('#pasRows').addEventListener('input',pasRender);pasRender();
+// ---- bubble passes
+function bubbleRun(a0,version){const b=a0.slice();let passes=0,comps=0,swaps=0;const snaps=[];for(let pass=1;pass<b.length;pass++){passes++;let swapped=false;const moved=new Set(),lim=version===1?b.length-1:b.length-pass;let ps=0;for(let i=0;i<lim;i++){comps++;if(b[i]>b[i+1]){const h=b[i];b[i]=b[i+1];b[i+1]=h;swaps++;ps++;swapped=true;moved.add(i);moved.add(i+1);}}snaps.push({arr:b.slice(),moved,swaps:ps,pass});if(version===3&&!swapped)break;}return {b,passes,comps,swaps,snaps};}
+function bpRender(){const v=parseInts(document.querySelector('#bpInput').value),out=document.querySelector('#bpResult');if(v===null||v.length<2||v.length>10){rowsOf('#bpRows',[]);out.textContent='Enter 2 to 10 whole numbers.';return;}const r=bubbleRun(v,2),n=v.length;const rows=[['start',miniArr(v),'–']];let sortedAt=null;r.snaps.forEach(s=>{const cls=s.arr.map((_,k)=>k>=n-s.pass?'final':s.moved.has(k)?'swap':'');rows.push([`pass ${s.pass}`,miniArr(s.arr,cls),String(s.swaps)]);if(sortedAt===null&&s.arr.every((x,k)=>k===0||s.arr[k-1]<=x))sortedAt=s.pass;});rowsOf('#bpRows',rows);out.textContent=`${n} values → ${n-1} passes guarantee the order`+(sortedAt!==null?` · already sorted after pass ${sortedAt}`:'');}
+document.querySelector('#bpInput').addEventListener('input',bpRender);document.querySelector('#bpRandom').addEventListener('click',()=>{document.querySelector('#bpInput').value=Array.from({length:7},()=>Math.floor(Math.random()*100)).join(' ');bpRender();});bpRender();
+// ---- compare versions
+function bcRender(){const v=parseInts(document.querySelector('#bcInput').value),out=document.querySelector('#bcResult');if(v===null||v.length<2||v.length>30){rowsOf('#bcRows',[]);out.textContent='Enter 2 to 30 whole numbers.';return;}const labels=[['1 · basic','i < b.length - 1'],['2 · skip the tail','i < b.length - pass'],['3 · tail + early exit','i < b.length - pass']];const res=[1,2,3].map(k=>bubbleRun(v,k));rowsOf('#bcRows',res.map((r,k)=>[labels[k][0],el('code',labels[k][1]),String(r.passes),String(r.comps),String(r.swaps)]));out.textContent=`Sorted: ${res[0].b.join(' ')} · saved ${res[0].comps-res[2].comps} of ${res[0].comps} comparisons`;}
+const bcIn=document.querySelector('#bcInput');bcIn.addEventListener('input',bcRender);
+document.querySelector('#bcRandom').addEventListener('click',()=>{bcIn.value=Array.from({length:10},()=>Math.floor(Math.random()*100)).join(' ');bcRender();});
+document.querySelector('#bcSorted').addEventListener('click',()=>{const v=parseInts(bcIn.value);if(v&&v.length>1){bcIn.value=v.slice().sort((a,b)=>a-b).join(' ');bcRender();}});
+document.querySelector('#bcReversed').addEventListener('click',()=>{const v=parseInts(bcIn.value);if(v&&v.length>1){bcIn.value=v.slice().sort((a,b)=>b-a).join(' ');bcRender();}});bcRender();
+// ---- cost
+const nf=x=>x.toLocaleString('en-US');
+function costRender(){const n=readInt(document.querySelector('#costN'));if(n===null||n<1||n>1000000){rowsOf('#costRows',[['Enter a whole number from 1 to 1,000,000.','','']]);document.querySelector('#costBars').replaceChildren();return;}const lg=Math.floor(Math.log2(n))+1;const rows=[['Bubble sort, basic',(n-1)*(n-1),(n-1)*(n-1)],['Bubble sort, skip the tail',n*(n-1)/2,n*(n-1)/2],['Bubble sort, tail + early exit',n-1,n*(n-1)/2],['Linear search',1,n],['Binary search (sorted data)',1,lg]];rowsOf('#costRows',rows.map(r=>[r[0],nf(r[1]),nf(r[2])]));const max=Math.max(...rows.map(r=>r[2]),1);document.querySelector('#costBars').replaceChildren(...rows.map(r=>{const d=el('div');d.appendChild(el('span',r[0]));const bar=el('i');bar.style.width=`${Math.max(0.6,Math.log10(r[2]+1)/Math.log10(max+1)*100)}%`;d.appendChild(bar);d.appendChild(el('b',nf(r[2])));return d;}));}
+document.querySelector('#costN').addEventListener('input',costRender);costRender();
+// ---- parallel arrays
+const pNames=['Aina','Ben','Chen','Devi','Elle','Faiz'],pMarks=[72,85,64,90,85,58];
+function pmRender(){const desc=document.querySelector('#pmOrder').value==='desc',bug=document.querySelector('#pmBug').checked;const n=pNames.slice(),m=pMarks.slice();for(let pass=1;pass<m.length;pass++)for(let i=0;i<m.length-pass;i++)if(desc?m[i]<m[i+1]:m[i]>m[i+1]){let h=m[i];m[i]=m[i+1];m[i+1]=h;if(!bug){h=n[i];n[i]=n[i+1];n[i+1]=h;}}let wrong=0;rowsOf('#pmRows',n.map((name,i)=>{const ok=pMarks[pNames.indexOf(name)]===m[i];if(!ok)wrong++;return [String(i+1),name,String(m[i]),ok?'✓':`✗ ${name} scored ${pMarks[pNames.indexOf(name)]}`];}));document.querySelector('#pmResult').textContent=bug?`${wrong} of 6 rows pair a name with someone else's mark. The marks column alone looks perfectly sorted.`:'Every name still has its own mark.'+(desc?' Ben stays ahead of Elle (both 85): a stable sort.':' Ben stays ahead of Elle (both 85).');}
+document.querySelector('#pmOrder').addEventListener('change',pmRender);document.querySelector('#pmBug').addEventListener('change',pmRender);pmRender();
+// ---- linear variants
+const lvCode={first:`int position = -1;
+for (int i = 0; i < data.length; i++)
+    if (data[i] == key) { position = i; break; }`,last:`int position = -1;
+for (int i = data.length - 1; i >= 0; i--)
+    if (data[i] == key) { position = i; break; }`,all:`for (int i = 0; i < data.length; i++)
+    if (data[i] == key)
+        System.out.print(i + " ");`,count:`int count = 0;
+for (int i = 0; i < data.length; i++)
+    if (data[i] == key)
+        count++;`};
+function lvRender(){const v=parseInts(document.querySelector('#lvInput').value),k=readInt(document.querySelector('#lvKey')),mode=document.querySelector('#lvMode').value,out=document.querySelector('#lvResult');document.querySelector('#lvCode').textContent=lvCode[mode];if(v===null||v.length===0||v.length>30||k===null){cells('#lvCells',[]);out.textContent='Enter 1 to 30 whole numbers and a whole-number key.';return;}const cls=v.map(()=>'out');let comps=0,msg;if(mode==='first'||mode==='last'){let pos=-1;const idx=mode==='first'?v.map((_,i)=>i):v.map((_,i)=>v.length-1-i);for(const i of idx){comps++;cls[i]='cmp';if(v[i]===k){pos=i;cls[i]='hit';break;}}msg=pos>=0?`${mode==='first'?'First':'Last'} occurrence: position ${pos} · ${comps} comparison${comps===1?'':'s'}`:`${k} is not in the array · position = -1 · ${comps} comparisons`;cells('#lvCells',v.map((x,i)=>[x,`[${i}]`,cls[i]==='out'?'out':cls[i]==='hit'?'hit':'']));}else{const hits=[];v.forEach((x,i)=>{if(x===k)hits.push(i);});cells('#lvCells',v.map((x,i)=>[x,`[${i}]`,x===k?'hit':'']));msg=mode==='all'?(hits.length?`Positions: ${hits.join(' ')} · ${v.length} comparisons`:`No positions: ${k} is not in the array · ${v.length} comparisons`):`count = ${hits.length} · ${v.length} comparisons`;}out.textContent=msg;}
+['lvInput','lvKey'].forEach(id=>document.getElementById(id).addEventListener('input',lvRender));document.querySelector('#lvMode').addEventListener('change',lvRender);lvRender();
+// ---- string search
+const sNames=['Aina','Ben','Chen','Devi'];
+function strRender(){const key=document.querySelector('#strKey').value,ic=document.querySelector('#strCase').checked;let pos=-1;const cls=sNames.map(()=>'out');for(let i=0;i<sNames.length;i++){const eq=ic?sNames[i].toLowerCase()===key.toLowerCase():sNames[i]===key;cls[i]='cmp';if(eq){pos=i;cls[i]='hit';break;}}cells('#strCells',sNames.map((s,i)=>[s,`[${i}]`,cls[i]==='cmp'?'':cls[i]]));const m=ic?'equalsIgnoreCase':'equals';document.querySelector('#strResult').textContent=pos>=0?`names[${pos}].${m}("${key}") → true · position ${pos}`:`No element ${m} "${key}" → position -1`+(!ic&&sNames.some(s=>s.toLowerCase()===key.toLowerCase())?' (case differs: try equalsIgnoreCase)':key!==key.trim()&&sNames.some(s=>s.toLowerCase()===key.trim().toLowerCase())?' (extra spaces: use trim())':'');}
+document.querySelector('#strKey').addEventListener('input',strRender);document.querySelector('#strCase').addEventListener('change',strRender);strRender();
+// ---- 2D search
+function ssRender(){const k=readInt(document.querySelector('#ssKey')),out=document.querySelector('#ssResult');const visit={};let fr=-1,fc=-1,n=0;if(k!==null){outer:for(let r=0;r<mk.length;r++)for(let c=0;c<mk[r].length;c++){n++;visit[r+','+c]=n;if(mk[r][c]===k){fr=r;fc=c;break outer;}}}const kids=[el('span','','hdr')];tests3.forEach((t,c)=>kids.push(el('span',`col ${c}`,'hdr')));mk.forEach((row,r)=>{kids.push(el('span',`row ${r}`,'hdr'));row.forEach((v,c)=>{const s=el('span',String(v),'cell'+(r===fr&&c===fc?' hit':visit[r+','+c]?' rowsel':''));s.appendChild(el('small',visit[r+','+c]?`#${visit[r+','+c]}`:' '));kids.push(s);});});document.querySelector('#ssBox').replaceChildren(...kids);out.textContent=k===null?'Enter a whole number.':fr>=0?`${k} found at marks[${fr}][${fc}] (${names4[fr]}, ${tests3[fc]}) · ${n} cells checked`:`${k} is not in the table · all ${n} cells checked`;}
+document.querySelector('#ssKey').addEventListener('input',ssRender);ssRender();
+// ---- binary trace table
+let bt=null;
+function btReset(){const v=parseInts(document.querySelector('#btInput').value),k=readInt(document.querySelector('#btKey'));if(v===null||v.length===0||v.length>30||k===null){bt=null;cells('#btCells',[]);rowsOf('#btRows',[]);document.querySelector('#btResult').textContent='Enter 1 to 30 whole numbers and a whole-number key.';return;}bt={a:v,key:k,low:0,high:v.length-1,mid:-1,pos:-1,done:false,rows:[],sorted:v.every((x,i)=>i===0||v[i-1]<=x)};btRender();}
+function btStep(){const b=bt;if(!b||b.done)return;if(b.low>b.high){b.done=true;return;}b.mid=Math.trunc((b.low+b.high)/2);const m=b.a[b.mid],row=[String(b.rows.length+1),String(b.low),String(b.high),String(b.mid),String(m)];if(b.key===m){row.push('found');b.pos=b.mid;b.done=true;}else if(b.key<m){row.push(`${b.key} < ${m}: go left, high = ${b.mid-1}`);b.high=b.mid-1;}else{row.push(`${b.key} > ${m}: go right, low = ${b.mid+1}`);b.low=b.mid+1;}b.rows.push(row);if(!b.done&&b.low>b.high)b.done=true;}
+function btRender(){const b=bt;cells('#btCells',b.a.map((v,k)=>{const t=[];if(!b.done&&k===b.low)t.push('L');if(k===b.mid)t.push('M');if(!b.done&&k===b.high)t.push('H');return [v,`[${k}]${t.length?' '+t.join(''):''}`,k===b.pos?'hit':k===b.mid?'cmp':(k<b.low||k>b.high)?'out':''];}));rowsOf('#btRows',b.rows);const n=b.rows.length;document.querySelector('#btResult').textContent=(b.sorted?'':'Warning: not in ascending order, so binary search may be wrong. ')+(b.pos>=0?`Found in position ${b.pos} after ${n} comparison${n===1?'':'s'}`:b.done?`low (${b.low}) > high (${b.high}): ${b.key} is not in the array after ${n} comparisons`:`low = ${b.low}, high = ${b.high}: ${b.high-b.low+1} candidate${b.high-b.low===0?'':'s'} left`);document.querySelector('#btStep').disabled=b.done;}
+document.querySelector('#btStep').addEventListener('click',()=>{btStep();if(bt)btRender();});document.querySelector('#btRun').addEventListener('click',()=>{if(!bt)return;while(!bt.done)btStep();btRender();});document.querySelector('#btReset').addEventListener('click',btReset);['btInput','btKey'].forEach(id=>document.getElementById(id).addEventListener('input',btReset));btReset();
+// ---- guessing game
+let gm=null;
+function gRender(){const btns=['#gHigher','#gLower','#gCorrect'];const playing=gm&&!gm.over;btns.forEach(s=>document.querySelector(s).disabled=!playing);const range=document.querySelector('#gRange'),mark=document.querySelector('#gMark');if(!gm){range.style.left='0%';range.style.width='100%';mark.style.display='none';document.querySelector('#gStatus').textContent='Press Start, then answer each guess.';trace('#gTrace',[]);return;}const lo=Math.min(gm.low,100),hi=Math.max(gm.high,gm.low-1);range.style.left=`${(lo-1)}%`;range.style.width=`${Math.max(0,hi-lo+1)}%`;mark.style.display=gm.guess?'block':'none';if(gm.guess)mark.style.left=`calc(${gm.guess-0.5}% - 2px)`;trace('#gTrace',gm.rows);document.querySelector('#gStatus').textContent=gm.msg;}
+function gNext(){if(gm.low>gm.high){gm.over=true;gm.guess=null;gm.msg=`low (${gm.low}) > high (${gm.high}): no number is left, so one of the answers was not consistent.`;return;}gm.guess=Math.trunc((gm.low+gm.high)/2);gm.count++;gm.msg=`Guess ${gm.count}: is it ${gm.guess}? (low = ${gm.low}, high = ${gm.high}, ${gm.high-gm.low+1} possible)`;}
+document.querySelector('#gStart').addEventListener('click',()=>{gm={low:1,high:100,count:0,guess:null,rows:[],over:false};gNext();gRender();});
+document.querySelector('#gHigher').addEventListener('click',()=>{if(!gm||gm.over)return;gm.rows.push([`${gm.guess}: higher → low = ${gm.guess+1}`,'']);gm.low=gm.guess+1;gNext();gRender();});
+document.querySelector('#gLower').addEventListener('click',()=>{if(!gm||gm.over)return;gm.rows.push([`${gm.guess}: lower → high = ${gm.guess-1}`,'']);gm.high=gm.guess-1;gNext();gRender();});
+document.querySelector('#gCorrect').addEventListener('click',()=>{if(!gm||gm.over)return;gm.rows.push([`${gm.guess}: correct`,'taken']);gm.over=true;gm.msg=`Your number is ${gm.guess}. Found in ${gm.count} guess${gm.count===1?'':'es'} (never more than 7).`;gm.low=gm.high=gm.guess;gRender();});gRender();
+// ---- buggy binary search
+function bugRender(){const variant=document.querySelector('#bugVariant').value,k=readInt(document.querySelector('#bugKey')),out=document.querySelector('#bugResult');const a=variant==='unsorted'?[40,70,10,60,20,50,30]:[10,20,30,40,50,60,70];if(k===null){cells('#bugCells',a.map((v,i)=>[v,`[${i}]`,'']));trace('#bugTrace',[]);out.textContent='Enter a whole-number key.';return;}let low=0,high=a.length-1,pos=-1,steps=0,hung=false,lastMid=-1;const rows=[];const cond=()=>variant==='lt'?low<high:low<=high;while(cond()){if(steps>=12){hung=true;break;}const mid=Math.trunc((low+high)/2);steps++;lastMid=mid;if(a[mid]===k){rows.push([`low = ${low}, high = ${high}, middle = ${mid}: ${a[mid]} == ${k} → found`,'taken']);pos=mid;break;}if(k<a[mid]){const nh=variant==='hi'?mid:mid-1;rows.push([`low = ${low}, high = ${high}, middle = ${mid}: ${k} < ${a[mid]} → high = ${nh}`,'']);high=nh;}else{const nl=variant==='lo'?mid:mid+1;rows.push([`low = ${low}, high = ${high}, middle = ${mid}: ${k} > ${a[mid]} → low = ${nl}`,'']);low=nl;}}
+if(!hung&&pos<0)rows.push([variant==='lt'?`low (${low}) < high (${high}) is false → stop without checking index ${low}`:`low (${low}) > high (${high}) → stop`,'skipped']);if(hung)rows.push(['… the range stopped shrinking: low and high repeat forever','skipped']);trace('#bugTrace',rows);
+const present=a.indexOf(k);cells('#bugCells',a.map((v,i)=>[v,`[${i}]`,i===pos?'hit':hung&&i===lastMid?'bad':(i<low||i>high)&&!hung?'out':'']));
+let verdict;if(hung)verdict=`Infinite loop: stopped after 12 steps. ${variant==='hi'?'high = middle':'low = middle'} can leave the range unchanged.`;else if(pos>=0)verdict=`Found in position ${pos} after ${steps} comparison${steps===1?'':'s'} · correct`;else if(present>=0)verdict=`Reported “not found”, but ${k} is at index ${present}: wrong answer`;else verdict=`${k} is not in the array · correct after ${steps} comparisons`;out.textContent=verdict;}
+document.querySelector('#bugVariant').addEventListener('change',bugRender);document.querySelector('#bugKey').addEventListener('input',bugRender);bugRender();
+// ---- case study
+const srRec=[[1187,'Ben',[62,74,88]],[1503,'Devi',[71,80,64]],[2750,'Chen',[85,59,77]],[3042,'Aina',[78,66,90]],[4011,'Elle',[90,82,95]]];
+function srRender(){const k=readInt(document.querySelector('#srKey')),out=document.querySelector('#srResult');let pos=-1,steps=0;const path=[];if(k!==null){let low=0,high=srRec.length-1;while(low<=high){const mid=Math.trunc((low+high)/2);steps++;path.push(mid);if(srRec[mid][0]===k){pos=mid;break;}if(k<srRec[mid][0])high=mid-1;else low=mid+1;}}
+const tb=document.querySelector('#srRows');tb.replaceChildren(...srRec.map(([id,name,m],i)=>{const tr=document.createElement('tr');if(i===pos)tr.className='hitrow';else if(path.includes(i))tr.className='cmprow';[String(i),String(id),name,...m.map(String),fmt2(m.reduce((s,x)=>s+x,0)/m.length)].forEach(c=>tr.appendChild(el('td',c)));return tr;}));
+out.textContent=k===null?'Enter a whole-number ID.':pos>=0?`${srRec[pos][1]} (row ${pos}): ${srRec[pos][2].join(' ')} · middles checked: ${path.join(', ')}`:`No student with ID ${k} · middles checked: ${path.join(', ')}`;}
+document.querySelector('#srKey').addEventListener('input',srRender);srRender();
+document.querySelectorAll('.download').forEach(b=>b.addEventListener('click',()=>{const a=document.createElement('a'),u=URL.createObjectURL(new Blob([b.previousElementSibling.textContent+'\n'],{type:'text/plain'}));a.href=u;a.download=b.dataset.name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}));
+// ---- ragged builder
+let rgRows=[];
+function rgRender(){const t=document.querySelector('#rgLens').value.trim(),nul=document.querySelector('#rgNull').checked,out=document.querySelector('#rgResult'),box=document.querySelector('#rgBox');const lens=t===''?[]:t.split(/[\s,]+/).map(Number);if(lens.length===0||lens.length>6||lens.some(n=>!Number.isInteger(n)||n<0||n>12)){rgRows=null;box.replaceChildren();out.textContent='Enter 1 to 6 row lengths, each a whole number from 0 to 12.';rgAccess();return;}rgRows=lens.map((n,r)=>nul&&r===lens.length-1?null:n);box.replaceChildren(...rgRows.map((n,r)=>{const d=el('div');d.appendChild(el('b',`num[${r}]`));if(n===null){d.append(' = null · row not created');return d;}d.append(` = new int[${n}] · length ${n}`);d.appendChild(n?miniArr(Array(n).fill(0)):el('div','(empty row: valid, but has no elements)','emptyrow'));return d;}));const total=rgRows.reduce((s,n)=>s+(n||0),0);out.textContent=`num.length = ${rgRows.length} · ${total} int elements`+(nul?' · num.length still counts the null row':'');rgAccess();}
+function rgAccess(){const r=readInt(document.querySelector('#rgRow')),c=readInt(document.querySelector('#rgCol')),out=document.querySelector('#rgAccess');if(!rgRows){out.textContent='Build a valid ragged array first.';return;}if(r===null||c===null){out.textContent='Enter whole numbers for r and c.';return;}const n=rgRows.length;if(r<0||r>=n){out.textContent=`num[${r}][${c}] → ArrayIndexOutOfBoundsException: Index ${r} out of bounds for length ${n} (the row index fails first)`;out.className='result bad';return;}if(rgRows[r]===null){out.textContent=`num[${r}][${c}] → NullPointerException: row ${r} was never created`;out.className='result bad';return;}const len=rgRows[r];if(c<0||c>=len){out.textContent=`num[${r}][${c}] → ArrayIndexOutOfBoundsException: Index ${c} out of bounds for length ${len} (row ${r} has indexes ${len?`0 to ${len-1}`:'none'})`;out.className='result bad';return;}out.textContent=`num[${r}][${c}] is valid (value 0) · row ${r} has indexes 0 to ${len-1}`;out.className='result';}
+document.querySelector('#rgLens').addEventListener('input',rgRender);document.querySelector('#rgNull').addEventListener('change',rgRender);['rgRow','rgCol'].forEach(id=>document.getElementById(id).addEventListener('input',rgAccess));rgRender();
+// ---- shared stepper helpers
+function codeLines(target,lines,now){document.querySelector(target).replaceChildren(...lines.map((t,k)=>el('span',t,'line'+(now.includes(k)?' now':''))));}
+function varsBox(target,pairs){document.querySelector(target).replaceChildren(...pairs.map(([k,v])=>{const s=el('span');s.appendChild(el('small',k));s.append(String(v));return s;}));}
+function autoplay(btn,stepFn,isDone){let timer=null;const stop=()=>{if(timer){clearInterval(timer);timer=null;}btn.textContent='Play';btn.setAttribute('aria-pressed','false');};btn.addEventListener('click',()=>{if(timer){stop();return;}if(isDone())return;btn.textContent='Pause';btn.setAttribute('aria-pressed','true');const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;timer=setInterval(()=>{if(isDone()||stepFn()===false)stop();},reduce?1500:900);});return stop;}
+// ---- bubble stepper
+const bsLines=['for (int pass = 1; pass < b.length; pass++) {','    boolean swapped = false;','    for (int i = 0; i < b.length - pass; i++) {','        if (b[i] > b[i + 1]) {','            int hold = b[i];','            b[i] = b[i + 1];','            b[i + 1] = hold;','            swapped = true;','        }','    }','    if (!swapped) break;','}'];
+let bsS=null;const bsScore={right:0,total:0};
+function bsReset(){bsStop();const v=parseInts(document.querySelector('#bsInput').value);bsScore.right=bsScore.total=0;document.querySelector('#bsFeedback').textContent='';if(v===null||v.length<2||v.length>10){bsS=null;cells('#bsCells',[]);varsBox('#bsVars',[]);codeLines('#bsCode',bsLines,[]);document.querySelector('#bsSay').textContent='Enter 2 to 10 whole numbers.';document.querySelector('#bsAsk').hidden=true;document.querySelector('#bsScore').textContent='';['#bsNext','#bsAuto'].forEach(s=>document.querySelector(s).disabled=true);return;}bsS={a:v,n:v.length,pass:1,i:0,phase:'start',hold:null,comps:0,swaps:0,swapped:false,line:[0,1],say:`Start: pass = 1, swapped = false. Pass 1 compares b[0]…b[${v.length-1}].`,fixed:0};bsRender();}
+function bsAdvance(){const s=bsS;s.i++;if(s.i>=s.n-s.pass){s.phase='endpass';}else s.phase='compare';}
+function bsStep(){const s=bsS;if(!s||s.phase==='done')return false;const a=s.a;
+if(s.phase==='start'){s.phase='compare';}
+if(s.phase==='compare'){const x=a[s.i],y=a[s.i+1];s.comps++;s.line=[2,3];if(x>y){s.phase='s1';s.say=`Pass ${s.pass}, i = ${s.i}: is b[${s.i}] (${x}) > b[${s.i+1}] (${y})? Yes → swap them.`;s.cur='cmp';}else{s.say=`Pass ${s.pass}, i = ${s.i}: is b[${s.i}] (${x}) > b[${s.i+1}] (${y})? No → keep, move i on.`;s.cur='cmp';bsAdvance();s.keepAt=s.i-1;}return true;}
+s.keepAt=null;
+if(s.phase==='s1'){s.hold=a[s.i];s.line=[4];s.say=`hold = b[${s.i}] → hold is ${s.hold}. The left value is now safe.`;s.phase='s2';s.cur='swap';return true;}
+if(s.phase==='s2'){a[s.i]=a[s.i+1];s.line=[5];s.say=`b[${s.i}] = b[${s.i+1}] → both cells show ${a[s.i]} for a moment; ${s.hold} survives only in hold.`;s.phase='s3';return true;}
+if(s.phase==='s3'){a[s.i+1]=s.hold;s.swaps++;s.swapped=true;s.line=[6,7];s.say=`b[${s.i+1}] = hold → ${s.hold} moves right. swapped = true.`;s.cur='swap';bsAdvance();s.keepAt=s.i-1;s.hold=null;return true;}
+if(s.phase==='endpass'){s.line=[10];s.fixed=s.pass;const last=s.n-s.pass;if(!s.swapped){s.say=`End of pass ${s.pass}: no swaps, so the array is sorted → break after ${s.comps} comparisons.`;s.phase='done';s.fixed=s.n;return true;}if(s.pass>=s.n-1){s.say=`End of pass ${s.pass}: b[${last}] = ${a[last]} is final, and so is b[0]. Sorted after ${s.comps} comparisons and ${s.swaps} swaps.`;s.phase='done';s.fixed=s.n;return true;}s.say=`End of pass ${s.pass}: b[${last}] = ${a[last]} is in its final place. swapped was true, so start pass ${s.pass+1} with i = 0.`;s.pass++;s.i=0;s.swapped=false;s.phase='compare';s.line=[0,1];return true;}
+return false;}
+function bsRender(){const s=bsS;const n=s.n;const pairI=s.phase==='s1'||s.phase==='s2'||s.phase==='s3'?s.i:(s.keepAt!=null&&s.keepAt>=0?s.keepAt:null);const showPair=s.phase!=='start'&&s.phase!=='done'&&pairI!==null&&s.line[0]!==0;cells('#bsCells',s.a.map((v,k)=>{let c=k>=n-s.fixed?'final':'';let lab=`[${k}]`;if(showPair&&(k===pairI||k===pairI+1)){c=s.cur==='swap'&&(s.phase!=='compare'&&s.phase!=='endpass'||s.line.includes(6))?'swap':'cmp';lab+=k===pairI?' i':' i+1';}if(s.phase==='done')c='final';return [v,lab,c];}));document.querySelector('#bsHold').textContent=s.hold===null?'–':s.hold;varsBox('#bsVars',[['pass',s.pass],['i',s.phase==='done'?'–':s.i>=n-s.pass?`${s.i} (stop)`:s.i],['swapped',s.swapped],['comparisons',s.comps],['swaps',s.swaps]]);codeLines('#bsCode',bsLines,s.line);document.querySelector('#bsSay').textContent=s.say;const predict=document.querySelector('#bsPredict').checked,asking=predict&&(s.phase==='compare'||s.phase==='start');const ask=document.querySelector('#bsAsk');ask.hidden=!asking;if(asking){const i=s.phase==='start'?0:s.i;document.querySelector('#bsQ').textContent=`Pass ${s.pass}, i = ${i}: compare b[${i}] = ${s.a[i]} with b[${i+1}] = ${s.a[i+1]}. Swap or keep?`;}document.querySelector('#bsNext').disabled=s.phase==='done'||asking;document.querySelector('#bsAuto').disabled=s.phase==='done'||predict;document.querySelector('#bsScore').textContent=bsScore.total?`Your predictions: ${bsScore.right} / ${bsScore.total} correct`:'';}
+function bsAnswer(swap){const s=bsS;if(!s)return;if(s.phase==='start')s.phase='compare';const i=s.i,x=s.a[i],y=s.a[i+1],need=x>y;bsScore.total++;const fb=document.querySelector('#bsFeedback');if(swap===need){bsScore.right++;fb.className='feedback correct';fb.textContent=`Correct: ${x} ${need?'>':'<='} ${y}, so ${need?'swap':'keep'}.`;}else{fb.className='feedback incorrect';fb.textContent=`Not quite: ${x} ${need?'>':'<='} ${y}, so the pair must be ${need?'swapped':'kept'}. Swap only when the left value is larger.`;}bsStep();if(need){bsStep();bsStep();bsStep();}while(bsS.phase==='endpass')bsStep();bsRender();}
+document.querySelector('#bsNext').addEventListener('click',()=>{bsStep();if(bsS)bsRender();});
+const bsStop=autoplay(document.querySelector('#bsAuto'),()=>{const r=bsStep();if(bsS)bsRender();return r;},()=>!bsS||bsS.phase==='done');
+document.querySelector('#bsReset').addEventListener('click',bsReset);document.querySelector('#bsInput').addEventListener('input',bsReset);document.querySelector('#bsPredict').addEventListener('change',()=>{bsStop();if(bsS)bsRender();});
+document.querySelector('#bsRandom').addEventListener('click',()=>{document.querySelector('#bsInput').value=Array.from({length:6},()=>Math.floor(Math.random()*90)+10).join(' ');bsReset();});
+document.querySelector('#bsSwapAns').addEventListener('click',()=>bsAnswer(true));document.querySelector('#bsKeepAns').addEventListener('click',()=>bsAnswer(false));bsReset();
+// ---- bubble practice
+let bq=null;
+function bqPass(a,pass){const b=a.slice();let sw=0;for(let i=0;i<b.length-pass;i++)if(b[i]>b[i+1]){const h=b[i];b[i]=b[i+1];b[i+1]=h;sw++;}return {b,sw};}
+function bqNew(){const pool=[];while(pool.length<6){const x=Math.floor(Math.random()*90)+10;if(!pool.includes(x))pool.push(x);}if(pool.every((x,i)=>i===0||pool[i-1]<x))pool.reverse();const p1=bqPass(pool,1),p2=bqPass(p1.b,2);bq={a:pool,p1,p2};document.querySelector('#bqQ').textContent=`Bubble sort into ascending order: ${pool.join(' ')}`;['#bqP1','#bqP2','#bqSw'].forEach(s=>document.querySelector(s).value='');document.querySelector('#bqFeedback').textContent='';trace('#bqWork',[]);}
+function bqWork(){const rows=[];let b=bq.a.slice();for(let pass=1;pass<=2;pass++){for(let i=0;i<b.length-pass;i++){const x=b[i],y=b[i+1];if(x>y){b[i]=y;b[i+1]=x;}rows.push([`Pass ${pass}, i = ${i}: ${x} vs ${y} → ${x>y?'swap':'keep'} · ${b.join(' ')}`,x>y?'taken':'']);}rows.push([`After pass ${pass}: ${b.join(' ')} (${b[b.length-pass]} is final)`,'skipped']);}trace('#bqWork',rows);}
+document.querySelector('#bqCheck').addEventListener('click',()=>{const a1=parseInts(document.querySelector('#bqP1').value),a2=parseInts(document.querySelector('#bqP2').value),sw=readInt(document.querySelector('#bqSw')),fb=document.querySelector('#bqFeedback');const same=(x,y)=>x&&x.length===y.length&&x.every((v,i)=>v===y[i]);const r=[same(a1,bq.p1.b),same(a2,bq.p2.b),sw===bq.p1.sw];const n=r.filter(Boolean).length;fb.className='feedback '+(n===3?'correct':'incorrect');fb.textContent=n===3?'All three correct. Try a new question, or use the stepper to check a longer trace.':`${n} of 3 correct. `+[r[0]?'':'Pass 1 is not right: did the largest value end at the last index?',r[1]?'':'Pass 2 is not right: start again at i = 0 and stop one place earlier.',r[2]?'':'Count every swap in pass 1, not just the moves of the largest value.'].filter(Boolean).join(' ');});
+document.querySelector('#bqShow').addEventListener('click',bqWork);document.querySelector('#bqNew').addEventListener('click',bqNew);bqNew();
+// ---- binary stepper
+const bvLines=['int low = 0, high = num.length - 1;','while (low <= high) {','    int middle = (low + high) / 2;','    if (key == num[middle]) { position = middle; break; }','    else if (key < num[middle]) high = middle - 1;','    else low = middle + 1;','}','// position is -1 if the loop ends without a match'];
+let bvS=null;const bvScore={right:0,total:0};
+function bvReset(){bvStop();bvScore.right=bvScore.total=0;['#bvMidFb','#bvDirFb'].forEach(s=>document.querySelector(s).textContent='');const v=parseInts(document.querySelector('#bvInput').value),k=readInt(document.querySelector('#bvKey'));if(v===null||v.length===0||v.length>20||k===null){bvS=null;cells('#bvCells',[]);varsBox('#bvVars',[]);codeLines('#bvCode',bvLines,[]);document.querySelector('#bvSay').textContent='Enter 1 to 20 whole numbers and a whole-number key.';['#bvAskMid','#bvAskDir'].forEach(s=>document.querySelector(s).hidden=true);['#bvNext','#bvAuto'].forEach(s=>document.querySelector(s).disabled=true);document.querySelector('#bvScore').textContent='';return;}const sorted=v.every((x,i)=>i===0||v[i-1]<=x);bvS={a:v,key:k,low:0,high:v.length-1,mid:null,pos:-1,phase:'init',comps:0,line:[0],sorted,say:(sorted?'':'Warning: the values are not in ascending order, so binary search may give a wrong answer. ')+`Start: low = 0, high = ${v.length-1}. The key ${k}, if present, is somewhere in indexes 0…${v.length-1}.`};bvRender();}
+function bvStep(){const s=bvS;if(!s||s.phase==='done')return false;const a=s.a;
+if(s.phase==='init'||s.phase==='test'){s.line=[1];if(s.low<=s.high){s.phase='mid';s.say=`while (low <= high): ${s.low} <= ${s.high} is true → ${s.high-s.low+1} candidate${s.high===s.low?'':'s'} left, keep searching.`;}else{s.phase='done';s.line=[1,7];s.say=`while (low <= high): ${s.low} <= ${s.high} is false → the range is empty. ${s.key} is not in the array (position -1) after ${s.comps} comparison${s.comps===1?'':'s'}.`;s.mid=null;}return true;}
+if(s.phase==='mid'){s.mid=Math.trunc((s.low+s.high)/2);s.line=[2];s.say=`middle = (${s.low} + ${s.high}) / 2 = ${s.low+s.high} / 2 = ${s.mid}${(s.low+s.high)%2?' (integer division rounds down)':''}. num[${s.mid}] = ${a[s.mid]}.`;s.phase='cmp';return true;}
+if(s.phase==='cmp'){const m=a[s.mid];s.comps++;if(s.key===m){s.line=[3];s.pos=s.mid;s.phase='done';s.say=`${s.key} == num[${s.mid}] (${m}) → found! position = ${s.mid} after ${s.comps} comparison${s.comps===1?'':'s'}.`;}else if(s.key<m){s.line=[3,4];s.say=`${s.key} < ${m} → the key can only be on the left. high = middle - 1 = ${s.mid-1}; indexes ${s.mid}…${s.high} are discarded.`;s.high=s.mid-1;s.phase='test';}else{s.line=[3,5];s.say=`${s.key} > ${m} → the key can only be on the right. low = middle + 1 = ${s.mid+1}; indexes ${s.low}…${s.mid} are discarded.`;s.low=s.mid+1;s.phase='test';}return true;}
+return false;}
+function bvRender(){const s=bvS,n=s.a.length,ended=s.phase==='done';cells('#bvCells',s.a.map((v,k)=>{const t=[];if(!ended||s.pos<0){if(k===s.low&&s.low<=s.high)t.push('L');if(s.mid!==null&&k===s.mid&&s.phase==='cmp')t.push('M');if(k===s.high&&s.low<=s.high)t.push('H');}if(ended&&s.pos===k)t.push('M');const out=k<s.low||k>s.high;return [v,`[${k}]${t.length?' '+t.join(''):''}`,k===s.pos?'hit':(s.mid===k&&s.phase==='cmp')?'cmp':out?'out':''];}));const r=document.querySelector('#bvRange');if(s.low<=s.high){r.style.left=`${s.low/n*100}%`;r.style.width=`${(s.high-s.low+1)/n*100}%`;}else{r.style.width='0';}const showMid=s.mid!==null&&(s.phase==='cmp'||s.phase==='test'||(ended&&s.pos>=0));varsBox('#bvVars',[['key',s.key],['low',s.low],['high',s.high],['middle',showMid?s.mid:'–'],['num[middle]',showMid?s.a[s.mid]:'–'],['comparisons',s.comps]]);codeLines('#bvCode',bvLines,s.line);document.querySelector('#bvSay').textContent=s.say;const predict=document.querySelector('#bvPredict').checked;const askMid=predict&&s.phase==='mid',askDir=predict&&s.phase==='cmp';document.querySelector('#bvAskMid').hidden=!askMid;document.querySelector('#bvAskDir').hidden=!askDir;if(askMid){document.querySelector('#bvQMid').textContent=`low = ${s.low}, high = ${s.high}. What is middle?`;document.querySelector('#bvMidAns').value='';}if(askDir)document.querySelector('#bvQDir').textContent=`key = ${s.key}, num[${s.mid}] = ${s.a[s.mid]}. What happens next?`;document.querySelector('#bvNext').disabled=ended||askMid||askDir;document.querySelector('#bvAuto').disabled=ended||predict;document.querySelector('#bvScore').textContent=bvScore.total?`Your predictions: ${bvScore.right} / ${bvScore.total} correct`:'';}
+function bvRunToQuestion(){while(bvS&&bvS.phase!=='done'&&bvS.phase!=='mid'&&bvS.phase!=='cmp')bvStep();}
+document.querySelector('#bvNext').addEventListener('click',()=>{bvStep();if(bvS){if(document.querySelector('#bvPredict').checked)bvRunToQuestion();bvRender();}});
+const bvStop=autoplay(document.querySelector('#bvAuto'),()=>{const r=bvStep();if(bvS)bvRender();return r;},()=>!bvS||bvS.phase==='done');
+document.querySelector('#bvMidCheck').addEventListener('click',()=>{const s=bvS;if(!s||s.phase!=='mid')return;const g=readInt(document.querySelector('#bvMidAns')),fb=document.querySelector('#bvMidFb');const want=Math.trunc((s.low+s.high)/2);if(g===null){fb.className='feedback incorrect';fb.textContent='Type a whole number.';return;}bvScore.total++;if(g===want){bvScore.right++;fb.className='feedback correct';fb.textContent=`Correct: (${s.low} + ${s.high}) / 2 = ${want}.`;}else{fb.className='feedback incorrect';fb.textContent=`Not quite: (${s.low} + ${s.high}) / 2 = ${s.low+s.high} / 2 = ${want} with integer division.`;}document.querySelector('#bvDirFb').textContent='';bvStep();bvRender();});
+document.querySelector('#bvMidAns').addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('#bvMidCheck').click();});
+function bvDir(choice){const s=bvS;if(!s||s.phase!=='cmp')return;const m=s.a[s.mid],want=s.key===m?'found':s.key<m?'left':'right',fb=document.querySelector('#bvDirFb');bvScore.total++;if(choice===want){bvScore.right++;fb.className='feedback correct';fb.textContent=`Correct: ${s.key} ${want==='found'?'==':want==='left'?'<':'>'} ${m}.`;}else{fb.className='feedback incorrect';fb.textContent=`Not quite: ${s.key} ${want==='found'?'==':want==='left'?'<':'>'} ${m}, so ${want==='found'?'it is found':want==='left'?'go left':'go right'}.`;}document.querySelector('#bvMidFb').textContent='';bvStep();bvRunToQuestion();bvRender();}
+document.querySelector('#bvLeft').addEventListener('click',()=>bvDir('left'));document.querySelector('#bvRight').addEventListener('click',()=>bvDir('right'));document.querySelector('#bvFound').addEventListener('click',()=>bvDir('found'));
+document.querySelector('#bvPredict').addEventListener('change',()=>{bvStop();if(bvS){if(document.querySelector('#bvPredict').checked)bvRunToQuestion();bvRender();}});
+['bvInput','bvKey'].forEach(id=>document.getElementById(id).addEventListener('input',bvReset));document.querySelector('#bvReset').addEventListener('click',()=>{bvReset();if(bvS&&document.querySelector('#bvPredict').checked){bvRunToQuestion();bvRender();}});
+function sortedRandom(n,max){const s=new Set();while(s.size<n)s.add(Math.floor(Math.random()*max)+1);return [...s].sort((a,b)=>a-b);}
+document.querySelector('#bvRandom').addEventListener('click',()=>{const a=sortedRandom(15,99);let k;if(Math.random()<0.7)k=a[Math.floor(Math.random()*a.length)];else{do{k=Math.floor(Math.random()*100)+1;}while(a.includes(k));}document.querySelector('#bvInput').value=a.join(' ');document.querySelector('#bvKey').value=k;bvReset();if(bvS&&document.querySelector('#bvPredict').checked){bvRunToQuestion();bvRender();}});bvReset();
+// ---- binary practice
+let bx=null;
+function bxSolve(a,key){let low=0,high=a.length-1;const rows=[],mids=[];let pos=-1;while(low<=high){const mid=Math.trunc((low+high)/2);mids.push(mid);const m=a[mid];if(m===key){rows.push([String(rows.length+1),String(low),String(high),String(mid),String(m),'found']);pos=mid;break;}if(key<m){rows.push([String(rows.length+1),String(low),String(high),String(mid),String(m),`${key} < ${m}: high = ${mid-1}`]);high=mid-1;}else{rows.push([String(rows.length+1),String(low),String(high),String(mid),String(m),`${key} > ${m}: low = ${mid+1}`]);low=mid+1;}}if(pos<0)rows.push(['','','','','',`low (${low}) > high (${high}): not found, -1`]);return {rows,mids,pos};}
+function bxNew(){const n=10+Math.floor(Math.random()*7),a=sortedRandom(n,99);let key;if(Math.random()<0.65)key=a[Math.floor(Math.random()*n)];else{do{key=Math.floor(Math.random()*100)+1;}while(a.includes(key));}bx={a,key,sol:bxSolve(a,key)};document.querySelector('#bxQ').textContent=`Search for ${key} in this ascending array of ${n} values (indexes 0 to ${n-1}).`;cells('#bxCells',a.map((v,i)=>[v,`[${i}]`,'']));document.querySelector('#bxMids').value='';document.querySelector('#bxPos').value='';document.querySelector('#bxFeedback').textContent='';document.querySelector('#bxTable').hidden=true;}
+document.querySelector('#bxCheck').addEventListener('click',()=>{const m=parseInts(document.querySelector('#bxMids').value),p=readInt(document.querySelector('#bxPos')),fb=document.querySelector('#bxFeedback');const okM=m&&m.length===bx.sol.mids.length&&m.every((v,i)=>v===bx.sol.mids[i]);const okP=p===bx.sol.pos;fb.className='feedback '+(okM&&okP?'correct':'incorrect');if(okM&&okP){fb.textContent=`Correct: ${bx.sol.mids.length} comparison${bx.sol.mids.length===1?'':'s'}, position ${bx.sol.pos}.`;return;}let hint='';if(m&&!okM){const k=m.findIndex((v,i)=>v!==bx.sol.mids[i]);hint=k===-1?`Your list has ${m.length} middles; the search examines ${bx.sol.mids.length}.`:`Your middle number ${k+1} (${m[k]}) is not right. Recalculate (low + high) / 2 after updating low or high.`;}else if(!m)hint='Type the middle indexes as whole numbers separated by spaces.';fb.textContent=[okM?'Middles correct.':hint,okP?'Position correct.':`Position: if the key is never equal to num[middle], the answer is -1.`].join(' ');});
+document.querySelector('#bxShow').addEventListener('click',()=>{rowsOf('#bxRows',bx.sol.rows);document.querySelector('#bxTable').hidden=false;cells('#bxCells',bx.a.map((v,i)=>[v,`[${i}]`,i===bx.sol.pos?'hit':bx.sol.mids.includes(i)?'cmp':'']));});
+document.querySelector('#bxNew').addEventListener('click',bxNew);bxNew();
+</script></body></html>

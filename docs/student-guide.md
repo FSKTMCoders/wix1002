@@ -10,7 +10,7 @@
 4. Run Java solutions in your own IDE or terminal. Compare actual output with your predictions and correct any differences.
 5. Record your work in your own forks of the companion repositories, following their instructions below.
 
-Week 1's Tutorial 0 and Lab 0 provide introductory practice and workspace setup. Pages marked **Coming soon** are placeholders for unreleased website materials.
+Week 1's Tutorial 0 and Lab 0 provide introductory practice and workspace setup. Pages marked **Coming soon** are placeholders for unreleased website materials. Week 6 has no tutorial or lab because of the Viva 1 session.
 
 ## Prepare Java
 
