@@ -12,7 +12,7 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 ## Available materials
 
-The website currently contains materials for **Weeks 1–5** in all three sections, plus the **Week 6 lecture**. Week 6 has no tutorial or lab because of the **Viva 1 session**; those pages say so. Weeks 7–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight the **Week 6 Lecture**, plus **Tutorial 4 and Lab 4** from Week 5 (Week 6 has no tutorial or lab).
+The website currently contains materials for **Weeks 1–5** in all three sections, plus the **Week 6 lecture**. Week 6 has no tutorial or lab because of the **Viva 1 session**; those pages say so. Weeks 7–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banner currently highlights the **Week 6 Lecture**; its tutorial and lab cards show **Viva 1** placeholders, because Week 6 has no tutorial or lab.
 
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
