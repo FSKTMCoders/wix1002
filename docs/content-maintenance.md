@@ -53,13 +53,13 @@ Availability is maintained manually; creating a page does not update the indexes
 | Tutorial | Update its card, worksheet number, topic, status, link text, and count in `tutorials/index.html`. |
 | Lab | Update its card, worksheet number, topic, status, link text, and count in `labs/index.html`. |
 
-Keep each section's available and coming-soon counts totalling 14. Week 6's tutorial and lab cards are **Viva 1 Session** notices and count as “1 viva week”, so those sections read “5 available · 1 viva week · 8 coming soon”. Remove placeholder accessibility labels when a card becomes available. Root `index.html`'s weekly grid and count track **lectures**; its separate featured cards link to selected tutorial and lab releases.
+Keep each section's available and coming-soon counts totalling 14. Week 6's tutorial and lab cards are **Viva 1 Questions Released** notices and count as “1 viva week”, so those sections read “5 available · 1 viva week · 8 coming soon”. Remove placeholder accessibility labels when a card becomes available. Root `index.html`'s weekly grid and count track **lectures**; its separate featured cards link to selected tutorial and lab releases.
 
 Update the [README materials table](../README.md#available-materials) and current availability description whenever the release state changes. Keep student and maintenance guidance consistent with any changed controls or workflow.
 
 ## Manage NEW banners separately
 
-The homepage currently highlights the **Week 6 Lecture** as NEW; its tutorial and lab cards are **Viva 1** placeholders (no NEW banner) linking to the Week 6 notices, because Week 6 has no tutorial or lab. NEW banners are an editorial choice, separate from whether a page is available. Publishing or correcting material should retain the current highlights unless the release update also calls for moving them.
+The homepage currently highlights the **Week 6 Lecture** as NEW; its tutorial and lab cards are NEW **Viva 1 Questions Released** banners linking to the Week 6 notices, because Week 6 has no tutorial or lab. NEW banners are an editorial choice, separate from whether a page is available. Publishing or correcting material should retain the current highlights unless the release update also calls for moving them.
 
 When moving a highlight, update the corresponding featured card in root `index.html`: its link, displayed week or worksheet number, heading, description, and call to action. The current featured cards use `.available` and `.new-release`; retain the reduced-motion treatment for the animation. Check all three cards rather than assuming their labels share the same number.
 

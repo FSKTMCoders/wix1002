@@ -12,7 +12,7 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 ## Available materials
 
-The website currently contains materials for **Weeks 1–5** in all three sections, plus the **Week 6 lecture**. Week 6 has no tutorial or lab because of the **Viva 1 session**; those pages say so. Weeks 7–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banner currently highlights the **Week 6 Lecture**; its tutorial and lab cards show **Viva 1** placeholders, because Week 6 has no tutorial or lab.
+The website currently contains materials for **Weeks 1–5** in all three sections, plus the **Week 6 lecture**. Week 6 has no tutorial or lab because it is the **release of the Viva 1 questions**; those pages say so. Weeks 7–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banner currently highlights the **Week 6 Lecture**; its tutorial and lab cards are NEW **Viva 1 Questions Released** banners, because Week 6 has no tutorial or lab.
 
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
@@ -21,7 +21,7 @@ The website currently contains materials for **Weeks 1–5** in all three sectio
 | 3 | [Flow of Control: Selection & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week3/) | [Tutorial 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/tutorials/week3/) | [Lab 2 · Java Fundamental](https://fsktmcoders.github.io/wix1002/labs/week3/) |
 | 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | [Tutorial 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/tutorials/week4/) | [Lab 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/labs/week4/) |
 | 5 | [Arrays & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week5/) | [Tutorial 4 · Flow of Control (Repetition)](https://fsktmcoders.github.io/wix1002/tutorials/week5/) | [Lab 4 · Flow of Control (Repetition)](https://fsktmcoders.github.io/wix1002/labs/week5/) |
-| 6 | [Arrays in Depth & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week6/) | Viva 1 Session (no tutorial) | Viva 1 Session (no lab) |
+| 6 | [Arrays in Depth & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week6/) | Viva 1 questions released (no tutorial) | Viva 1 questions released (no lab) |
 
 **Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2; Week 4 contains Tutorial 3 and Lab 3; Week 5 contains Tutorial 4 and Lab 4. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
 
