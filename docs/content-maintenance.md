@@ -13,7 +13,11 @@ Directory names describe the **teaching week**, while tutorial/lab titles descri
 | 3 | `lectures/week3/` | Tutorial 2 · `tutorials/week3/` | Lab 2 · `labs/week3/` |
 | 4 | `lectures/week4/` | Tutorial 3 · `tutorials/week4/` | Lab 3 · `labs/week4/` |
 | 5 | `lectures/week5/` | Tutorial 4 · `tutorials/week5/` | Lab 4 · `labs/week5/` |
-| N | `lectures/weekN/` | Tutorial N−1 · `tutorials/weekN/` | Lab N−1 · `labs/weekN/` |
+| 6 | `lectures/week6/` | Viva 1 notice · `tutorials/week6/` | Viva 1 notice · `labs/week6/` |
+| 7 | `lectures/week7/` | Tutorial 5 · `tutorials/week7/` | Lab 5 · `labs/week7/` |
+| N ≥ 7 | `lectures/weekN/` | Tutorial N−2 · `tutorials/weekN/` | Lab N−2 · `labs/weekN/` |
+
+Week 6 is the Viva 1 week and has no tutorial or lab, so from Week 7 the worksheet number is the teaching week minus 2 (it was minus 1 up to Week 5). The coming-soon placeholder cards for Weeks 8–14 follow this rule; check each new worksheet's own number when it arrives.
 
 Retain this convention in titles, headings, navigation labels, downloads, and cards. Companion repository folders use worksheet numbers, for example `tutorial-02/` and `lab-02/`. Do not rename website week directories to match those folders.
 
@@ -22,7 +26,7 @@ Retain this convention in titles, headings, navigation labels, downloads, and ca
 1. Read the source worksheet or lecture material and identify the learning outcomes, required inputs, units, sample runs, and question numbering.
 2. Replace the appropriate `<section>/weekN/index.html` availability page. Use an existing released page with suitable controls as a starting point, then update its title, description, headings, content, IDs, and navigation.
 3. Add relevant worked examples, visuals, checks, and explanations. Identify browser simulations as demonstrations; verify Java solutions separately with JDK 27.
-4. Keep an original worksheet download when source material is supplied. Put new PDF/image files beside the weekly page and link them with relative paths. Weeks 4 and 5 follow this pattern (for example `T-1002-04.pdf`, `L-1002-04.pdf`, and `Lab4-JDK27-Models.zip`). Existing Week 3 pages embed downloads; preserve those unless deliberately migrating them and updating every reference.
+4. Keep an original worksheet download when source material is supplied. Put new PDF/image files beside the weekly page and link them with relative paths. Weeks 4, 5, and 7 follow this pattern (for example `T-1002-05.pdf`, `L-1002-05.pdf`, and `Lab5-JDK27-Models.zip`). Existing Week 3 pages embed downloads; preserve those unless deliberately migrating them and updating every reference.
 5. Verify all download buttons, including generated Java files and any bundled ZIP. Keep downloaded models consistent with the displayed code and worksheet requirements.
 6. Update release cards and counts as described below only when the material is ready. Preview and validate before publishing.
 
@@ -53,13 +57,13 @@ Availability is maintained manually; creating a page does not update the indexes
 | Tutorial | Update its card, worksheet number, topic, status, link text, and count in `tutorials/index.html`. |
 | Lab | Update its card, worksheet number, topic, status, link text, and count in `labs/index.html`. |
 
-Keep each section's available and coming-soon counts totalling 14. Week 6's tutorial and lab cards are **Viva 1 Questions Released** notices and count as “1 viva week”, so those sections read “5 available · 1 viva week · 8 coming soon”. Remove placeholder accessibility labels when a card becomes available. Root `index.html`'s weekly grid and count track **lectures**; its separate featured cards link to selected tutorial and lab releases.
+Keep each section's available and coming-soon counts totalling 14. Week 6's tutorial and lab cards are **Viva 1 Questions Released** notices and count as “1 viva week”, so those sections read “6 available · 1 viva week · 7 coming soon”. Remove placeholder accessibility labels when a card becomes available. Root `index.html`'s weekly grid and count track **lectures**; its separate featured cards link to selected tutorial and lab releases.
 
 Update the [README materials table](../README.md#available-materials) and current availability description whenever the release state changes. Keep student and maintenance guidance consistent with any changed controls or workflow.
 
 ## Manage NEW banners separately
 
-The homepage currently highlights the **Week 6 Lecture** as NEW; its tutorial and lab cards are NEW **Viva 1 Questions Released** banners linking to the Week 6 notices, because Week 6 has no tutorial or lab. NEW banners are an editorial choice, separate from whether a page is available. Publishing or correcting material should retain the current highlights unless the release update also calls for moving them.
+The homepage currently highlights the **Week 7 Lecture**, **Tutorial 5**, and **Lab 5** as NEW. NEW banners are an editorial choice, separate from whether a page is available. Publishing or correcting material should retain the current highlights unless the release update also calls for moving them.
 
 When moving a highlight, update the corresponding featured card in root `index.html`: its link, displayed week or worksheet number, heading, description, and call to action. The current featured cards use `.available` and `.new-release`; retain the reduced-motion treatment for the animation. Check all three cards rather than assuming their labels share the same number.
 

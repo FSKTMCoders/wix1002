@@ -12,7 +12,7 @@ Interactive course materials for **WIX1002 Fundamentals of Programming** at the 
 
 ## Available materials
 
-The website currently contains materials for **Weeks 1–5** in all three sections, plus the **Week 6 lecture**. Week 6 has no tutorial or lab because it is the **release of the Viva 1 questions**; those pages say so. Weeks 7–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banner currently highlights the **Week 6 Lecture**; its tutorial and lab cards are NEW **Viva 1 Questions Released** banners, because Week 6 has no tutorial or lab.
+The website currently contains materials for **Weeks 1–7** in all three sections, except that Week 6 has no tutorial or lab because it is the **release of the Viva 1 questions**; those pages say so. Weeks 8–14 have availability pages and are marked **Coming soon**. The homepage's **NEW** banners currently highlight the **Week 7 Lecture**, **Tutorial 5**, and **Lab 5**.
 
 | Teaching week | Lecture | Tutorial | Lab |
 | --- | --- | --- | --- |
@@ -22,15 +22,16 @@ The website currently contains materials for **Weeks 1–5** in all three sectio
 | 4 | [Flow of Control: Repetition & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week4/) | [Tutorial 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/tutorials/week4/) | [Lab 3 · Flow of Control (Selection)](https://fsktmcoders.github.io/wix1002/labs/week4/) |
 | 5 | [Arrays & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week5/) | [Tutorial 4 · Flow of Control (Repetition)](https://fsktmcoders.github.io/wix1002/tutorials/week5/) | [Lab 4 · Flow of Control (Repetition)](https://fsktmcoders.github.io/wix1002/labs/week5/) |
 | 6 | [Arrays in Depth & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week6/) | Viva 1 questions released (no tutorial) | Viva 1 questions released (no lab) |
+| 7 | [Java Methods & Vibe Coding](https://fsktmcoders.github.io/wix1002/lectures/week7/) | [Tutorial 5 · Arrays](https://fsktmcoders.github.io/wix1002/tutorials/week7/) | [Lab 5 · Arrays](https://fsktmcoders.github.io/wix1002/labs/week7/) |
 
-**Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2; Week 4 contains Tutorial 3 and Lab 3; Week 5 contains Tutorial 4 and Lab 4. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
+**Numbering:** tutorials and labs practise the previous week's lecture. Teaching Week 1 starts with Tutorial 0 and Lab 0; Week 2 contains Tutorial 1 and Lab 1; Week 3 contains Tutorial 2 and Lab 2; Week 4 contains Tutorial 3 and Lab 3; Week 5 contains Tutorial 4 and Lab 4. Week 6 is the Viva 1 week with no tutorial or lab, so from Week 7 the worksheet number is the teaching week minus 2: Week 7 contains Tutorial 5 and Lab 5. Website folders always follow the **teaching week**, so Tutorial 2 is at `tutorials/week3/`, and Lab 2 is at `labs/week3/`.
 
 ## Learning features
 
 - Lectures include reading and teaching views, fullscreen and print controls, worked examples, interactive activities, self-checks, and guided AI-assisted programming exercises.
 - Tutorial 0 includes a 40-mark practice activity with feedback and saved progress. Later tutorials include planning exercises, answer checks, interactive models, and Java solutions.
-- Labs cover IDE setup, Git and GitHub, Java programs, visual explanations, and interactive calculation traces. Labs 2 and 3 also offer individual Java downloads and a ZIP of all six models.
-- Original worksheet PDFs are available from the Week 2–4 tutorial and lab pages.
+- Labs cover IDE setup, Git and GitHub, Java programs, visual explanations, and interactive calculation traces. Labs 2–5 also offer individual Java downloads and a ZIP of all the models.
+- Original worksheet PDFs are available from the tutorial and lab pages of Weeks 2–5 and 7.
 - Selected activities save notes or progress in the current browser and provide exports. Browser activities illustrate behaviour; run Java programs separately using JDK 27.
 
 See the [student guide](docs/student-guide.md) for setup, saved progress, downloads, and the recommended study workflow.
