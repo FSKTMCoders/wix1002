@@ -1,1 +1,469 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="WIX1002 Week 8 labs materials."><title>Week 8 Labs · WIX1002</title><link rel="stylesheet" href="../../assets/course.css"></head><body><header><div class="topbar"><a href="../../" aria-label="WIX1002 course home"><img class="logo" src="https://portal.um.edu.my/frontpage-umportal/assets/images/img-logo-UM-new.webp" alt="Universiti Malaya"></a><span class="courselabel">WIX1002 · LABS</span><nav class="topnav" aria-label="Course navigation"><a href="../../lectures/">Lectures</a><a href="../../labs/" aria-current="page">Labs</a><a href="../../tutorials/">Tutorials</a></nav></div></header><main><div class="placeholder"><div class="eyebrow">WIX1002 · LABS · WEEK 08</div><h1>Lab materials<br><span>coming soon</span></h1><p>Week 8 labs materials have not been released yet.</p><div class="actions"><a class="open" href="../">All weekly labs</a><a class="secondary" href="../../">Course home</a></div></div></main><footer><span>Faculty Of Computer Science and Information Technology<br>Universiti Malaya</span><span>WIX1002 · Fundamentals of Programming</span></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 8 · Lab 6 · Java Methods · WIX1002</title><meta name="description" content="WIX1002 Week 8 Lab 6 for JDK 27: triangular numbers, multiPrint triangles and diamonds, reversing the integers in an array, the Euclidean GCD, a multiplication game, and palindromic primes and emirps, each built from static methods with interactive checks and Java models."><style>
+:root{--ink:#18304b;--navy:#092b58;--blue:#175db0;--teal:#087f83;--gold:#efbd44;--paper:#f5f8fc;--line:#d7e3ee;--muted:#51657b}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;font:18px/1.65 "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper)}a{color:var(--blue)}button,input{font:inherit}button,a.button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #ecad27;outline-offset:4px}header{height:82px;background:white;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 30px;border-bottom:1px solid var(--line);gap:20px}.brand{display:flex;align-items:center;gap:20px}.brand img{width:188px;height:55px;object-fit:contain}.brand small{font-size:13px;line-height:1.45;color:var(--muted);border-left:1px solid var(--line);padding-left:20px}.tools{display:flex;gap:8px;align-items:center}.secondary{background:white;border:1px solid #b7cce0;color:var(--navy);border-radius:8px;padding:8px 15px;font-size:14px}.button{background:var(--navy);color:white;border:0;border-radius:8px;padding:11px 20px;display:inline-block;text-decoration:none;font-size:16px}.progress{height:3px;background:var(--gold);position:fixed;top:81px;left:0;z-index:30;width:0}.layout{display:grid;grid-template-columns:275px minmax(0,1fr);max-width:1600px;margin:auto}aside{position:sticky;top:85px;height:calc(100vh - 85px);overflow:auto;padding:26px 20px 40px;border-right:1px solid var(--line)}aside h3{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:0 12px 16px}nav a{display:flex;gap:12px;padding:10px 12px;font-size:13px;line-height:1.4;color:var(--muted);text-decoration:none;border-radius:7px}nav a span{font-weight:700;color:#899aaf}nav a:hover,nav a.active{background:#e5eef9;color:var(--navy)}main{min-width:0;padding:34px 45px 80px}.lesson{background:white;border:1px solid var(--line);border-radius:16px;padding:44px;margin-bottom:32px;box-shadow:0 4px 14px #15375504;scroll-margin-top:100px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:3px;color:var(--teal)}.eyebrow span{color:#8b9eb3}h2{font-size:clamp(30px,3vw,46px);line-height:1.2;letter-spacing:-1.2px;color:var(--navy);margin:14px 0 18px}h3{font-size:21px;line-height:1.35;color:var(--navy);margin:16px 0 10px}p{margin:12px 0}.lead{font-size:21px;line-height:1.55;color:var(--muted);margin-bottom:28px}.accent{color:var(--teal)}.instructor{font-size:22px;font-weight:650}.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}.bigidea{font-size:26px;line-height:1.4;margin:28px 0}.heroart{padding:35px;background:#edf5fb;border-radius:20px;text-align:center}.orbit{border:1px solid #b8cce0;border-radius:10px;background:white;padding:14px;font-size:18px;font-weight:600}.orbit.dark{color:white;background:var(--navy);border:0}.linkline{width:2px;height:25px;background:var(--teal);margin:auto}.heroart p{font-size:14px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}.cards article{border-top:3px solid var(--teal);padding:8px 19px 18px;background:#f4f8fc;border-radius:0 0 9px 9px}.cards p{margin-bottom:0}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin:22px 0}.split>div{min-width:0}.callout{border-left:4px solid var(--teal);background:#eaf7f5;border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}.activity{border:1px solid #eed58e;background:#fff9e8;padding:20px 24px;border-radius:10px;margin:24px 0}.activity>b{color:#80601a}.note,.source{font-size:14px;color:var(--muted);margin:20px 0}.note{padding-top:15px;border-top:1px solid var(--line)}pre{background:#102943;color:#e4f2ff;border-radius:10px;padding:22px;overflow:auto;font:15px/1.8 Consolas,"Courier New",monospace;tab-size:4;margin:15px 0}code{font-family:Consolas,"Courier New",monospace;font-size:.9em;background:#eaf0f7;padding:2px 5px;border-radius:4px;color:#164880}pre code{background:none;padding:0;color:inherit;font-size:inherit}.tablewrap{overflow:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:16px;text-align:left}th{background:#edf3fa;color:var(--navy);font-size:13px;letter-spacing:.3px}th,td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}td:first-child{font-weight:600}details{border:1px solid var(--line);border-radius:8px;margin:15px 0;background:#fbfdff}summary{cursor:pointer;font-weight:600;padding:15px 19px;color:var(--navy)}details>div,details>p,details>pre{margin:0;padding:0 20px 20px}details>pre{margin:10px 20px 20px;padding:16px}ul,ol{padding-left:24px}li{padding-left:5px;margin:8px 0}.steps{list-style:none;counter-reset:step;padding:0}.steps li{counter-increment:step;position:relative;border-bottom:1px solid var(--line);padding:16px 0 16px 58px;margin:0}.steps li::before{content:counter(step);position:absolute;left:0;top:18px;width:34px;height:34px;border-radius:50%;background:#e7f1fb;color:var(--blue);font-weight:700;text-align:center;line-height:34px}.steps p{margin:5px 0}.ipo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.ipo article{background:#edf4fb;padding:22px;border-radius:12px}.ipo article:nth-child(2){background:#e9f7f4}.ipo article:nth-child(3){background:#fff6da}.ipo span{font-size:12px;letter-spacing:2px;font-weight:700}.ipo label{display:block;font-size:14px}.ipo input{width:100%;border:1px solid #b9cddd;border-radius:6px;padding:10px;background:white}.result{font-size:23px;font-weight:700;color:var(--navy);display:block;margin-top:20px;overflow-wrap:anywhere}.symbols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;text-align:center;font-size:14px}.symbols svg{width:100%;height:90px;fill:#edf4fb;stroke:#175db0;stroke-width:2}.symbols p{margin:5px 0}.flowchart{width:100%;max-height:650px;background:#f7faff;border-radius:12px;padding:10px}.flowchart rect,.flowchart g path{fill:#e4f1fa;stroke:#244f80;stroke-width:2}.flowchart g:has(path) path{fill:#edf8f1}.flowchart text{font:17px "Segoe UI",sans-serif;fill:#18304b}.flowchart .arrow{fill:none;stroke:#244f80;stroke-width:2}.tint{background:#eef4fa;padding:20px;border-radius:10px}.quizitem{padding:24px 0;border-bottom:1px solid var(--line)}.quizitem h3{font-size:19px}.answers{display:grid;gap:8px}.answers button{text-align:left;background:white;border:1px solid #bfd2e4;border-radius:7px;padding:12px 16px;color:var(--ink);font-size:16px}.answers button.selected{border:2px solid var(--blue);background:#eef5ff}.feedback{font-size:16px;padding:12px 0}.correct{color:#076d50}.incorrect{color:#8c431c}.bottomnav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--line);padding:10px 30px;display:none;align-items:center;justify-content:center;gap:22px;z-index:30}.bottomnav span{font-size:14px;color:var(--muted)}body.teach .layout{display:block;max-width:1250px}body.teach aside{display:none}body.teach main{padding:26px 35px 95px}body.teach .lesson{display:none;margin:0;min-height:calc(100vh - 215px)}body.teach .lesson.current{display:block}body.teach .bottomnav{display:flex}body.teach h2{font-size:42px}footer{text-align:center;color:var(--muted);font-size:13px;padding:10px 20px 50px}#menuButton{display:none}
+@media(max-width:1100px){.layout{grid-template-columns:230px minmax(0,1fr)}main{padding:25px}.lesson{padding:30px}.three,.ipo{grid-template-columns:1fr}.three pre{font-size:14px}.hero{grid-template-columns:1fr}.heroart{display:none}.symbols{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){body{font-size:17px}header{padding:10px 15px;height:76px}.brand img{width:145px;height:48px}.brand small{display:none}.tools{gap:5px}.secondary{padding:7px 9px;font-size:12px}.progress{top:75px}#menuButton{display:block}.layout{display:block}aside{display:none;position:fixed;top:76px;left:0;background:white;z-index:19;width:min(340px,90vw);height:calc(100vh - 76px)}body.menu-open aside{display:block}main{padding:18px 12px 50px}.lesson{padding:24px 19px;border-radius:10px}.cards,.split{grid-template-columns:1fr;gap:16px}h2,body.teach h2{font-size:31px}.lead{font-size:19px}.symbols{grid-template-columns:repeat(2,1fr)}body.teach main{padding:18px 12px 90px}.bottomnav{padding:10px}pre{font-size:13px;padding:16px}th,td{padding:12px;font-size:14px}.instructor{font-size:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,aside,.tools,.progress,.bottomnav,footer,.button,.secondary{display:none!important}.layout{display:block}main{padding:0}.lesson,body.teach .lesson{display:block!important;min-height:0;border:0;box-shadow:none;padding:16px 0;margin:0 0 30px;break-inside:auto}h2{font-size:27px}.lead{font-size:17px}body{background:white;font-size:13px}pre{white-space:pre-wrap;background:#f0f4f9;color:#162c43;font-size:11px}h2,h3,summary{break-after:avoid}tr,pre,.cards article,.activity{break-inside:avoid}.flowchart{max-height:430px}details>div,details>p{display:block}.heroart{display:none}table{font-size:12px}.quizitem{break-inside:avoid}}
+
+/* Larger lecture typography and explicit form contrast. */
+:root{color-scheme:light}body{font-size:22px;line-height:1.65}.layout{max-width:1800px;grid-template-columns:270px minmax(0,1fr)}main{padding:32px}.lesson{padding:40px}h2,body.teach h2{font-size:clamp(38px,3.5vw,54px)}h3{font-size:26px}.lead{font-size:26px}.instructor{font-size:27px}.bigidea{font-size:31px}.eyebrow{font-size:15px}nav a{font-size:16px}nav a span{font-size:14px}.note,.source{font-size:18px}.brand small{font-size:15px}.secondary{font-size:16px}.button{font-size:20px}.bottomnav span{font-size:18px}pre{font-size:19px;line-height:1.8}table{font-size:20px}th{font-size:17px}.symbols{font-size:19px}.symbols svg{height:110px}.result{font-size:30px}.ipo label{font-size:19px}.ipo span{font-size:16px}.quizitem h3{font-size:24px}.answers button,.feedback{font-size:21px}.orbit{font-size:23px}.heroart p{font-size:18px}.flowchart text{font-size:20px}body.teach .layout{max-width:1600px}.three{grid-template-columns:1fr}.three article{display:grid;grid-template-columns:1fr 1.5fr;column-gap:25px}.three article h3{grid-column:1;grid-row:1}.three article p{grid-column:1;grid-row:2}.three article pre{grid-column:2;grid-row:1 / span 3;font-size:19px;white-space:pre-wrap}.ipo input,.circlelab input{color:#092b58!important;-webkit-text-fill-color:#092b58!important;caret-color:#092b58;opacity:1;color-scheme:light;background:#fff!important;border:2px solid #829fbc;border-radius:8px;font:700 27px/1.4 "Segoe UI",Arial,sans-serif;width:100%;min-height:64px;padding:12px 16px}.ipo input::selection,.circlelab input::selection{background:#cfe5ff;color:#092b58}input:focus-visible{outline:3px solid #e4af29;outline-offset:3px}#screenStatus:not(:empty){position:fixed;top:90px;right:25px;max-width:420px;background:#fff7df;border:1px solid #e3c471;padding:15px;z-index:100;font-size:18px;border-radius:8px}.newvisual{background:#f3f8fe;border:1px solid #cbdced;border-radius:15px;padding:26px;margin:28px 0 34px}.newvisual>svg{display:block;width:100%;height:auto}.newvisual figcaption{font-size:18px;color:#4d647c;margin-top:20px;line-height:1.6}.vtitle{font:700 23px "Segoe UI",Arial,sans-serif;fill:#092b58}.vsub{font:20px "Segoe UI",Arial,sans-serif;fill:#3d5872}.visualkicker,.languagevisual span,.javajourney span,.aiworkflow span,.formularesult span{font-size:15px;color:#087f83;letter-spacing:1.3px;font-weight:700;display:block;margin-bottom:10px}.languagevisual,.javajourney,.aiworkflow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.languagevisual>div,.javajourney>div,.aiworkflow>div{padding:20px;background:#fff;border:1px solid #cfdeee;border-radius:10px;min-width:0}.languagevisual strong,.javajourney strong,.aiworkflow strong{display:block;font-size:25px;color:#092b58;margin-bottom:15px}.languagevisual code,.javajourney code{display:block;overflow-wrap:anywhere;font-size:18px;margin-bottom:15px}.languagevisual p,.aiworkflow p{font-size:20px}.languagevisual figcaption{grid-column:1 / -1}.binary{font:23px Consolas,monospace;letter-spacing:2px;color:#175db0;padding:8px;background:#eef5fd}.javajourney small{font-size:19px;display:block;color:#4d647c}.javajourney small code{display:inline;font-size:inherit}.platforms{margin:20px 0 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px;font-size:20px}.platforms span{padding:8px 20px;border:1px solid #aac6e1;border-radius:6px;background:#fff}.selectionlab,.circlelab{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.selectionlab figcaption,.circlelab figcaption{grid-column:1 / -1}.selectionlab label,.circlelab label{font-size:22px;font-weight:600;display:block}.selectionlab input{width:100%;margin:22px 0 4px;accent-color:#175db0;min-height:25px}.rangelabels{display:flex;justify-content:space-between;font-size:18px}.decisionoutput{border-left:4px solid #087f83;padding:20px;background:#e2f5ee;border-radius:0 12px 12px 0}.decisionoutput strong{display:block;font-size:27px;margin:15px 0}.decisionoutput p{font-size:20px}.classframe{padding:22px;border:3px solid #175db0;border-radius:12px;color:#175db0}.methodframe{padding:20px;border:3px solid #087f83;border-radius:10px;margin-top:18px;color:#087f83}.statementframe{padding:18px;border-left:5px solid #bb870b;background:#fff6d9;color:#18304b;margin-top:18px}.statementframe code{font-size:22px;overflow-wrap:anywhere}.statementframe p{font-size:20px}.feedbackstrip{background:#e1f2ed;border-left:5px solid #087f83;padding:18px;margin-top:20px;font-size:21px}.circlelab svg{width:100%;height:auto}.formularesult{padding:18px;background:white;border-radius:9px;margin-top:18px;border:1px solid #cbdced}.formularesult output{font-size:28px;font-weight:700;color:#092b58}#circleFeedback{font-size:19px}.heroart{display:block}
+@media(max-width:1200px){.languagevisual,.javajourney,.aiworkflow{grid-template-columns:1fr}.languagevisual figcaption{grid-column:1}.newvisual>svg{min-width:650px}.newvisual:has(>svg){overflow-x:auto}.ipo{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.heroart{padding:20px}.newvisual .vsub{font-size:21px}.symbols{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){body{font-size:20px}header{height:auto;min-height:112px;flex-wrap:wrap;padding:10px 14px;gap:9px}.brand{width:100%}.brand img{width:165px;height:45px}.tools{width:100%;justify-content:space-between}.secondary{font-size:13px;padding:7px 9px}.progress{top:111px}aside{top:112px;height:calc(100vh - 112px)}html{scroll-padding-top:128px}.lesson{scroll-margin-top:128px;padding:25px 20px}main{padding:16px 12px}.lead{font-size:23px}h2,body.teach h2{font-size:36px}h3{font-size:25px}.instructor{font-size:23px}.bigidea{font-size:26px}pre{font-size:17px}.note,.source{font-size:17px}th,td{font-size:18px;padding:12px}.selectionlab,.circlelab{grid-template-columns:1fr}.selectionlab figcaption,.circlelab figcaption{grid-column:1}.three article{display:block}.three article pre{font-size:17px}.newvisual{padding:18px;margin:25px 0}.statementframe code{font-size:17px}.classframe,.methodframe{padding:15px}.heroart p{font-size:18px}.symbols{font-size:17px;grid-template-columns:repeat(2,1fr)}.button{font-size:18px}body.teach main{padding-bottom:100px}.bottomnav span{font-size:16px}}
+@media print{.newvisual{break-inside:avoid;padding:15px;margin:16px 0}.newvisual>svg{min-width:0;max-height:240px}.newvisual figcaption{font-size:11px}.languagevisual,.javajourney,.aiworkflow{grid-template-columns:repeat(3,1fr)}.languagevisual strong,.javajourney strong,.aiworkflow strong{font-size:16px}.newvisual p,.newvisual small{font-size:12px}.newvisual span,.languagevisual code,.javajourney code{font-size:10px}body{font-size:13px}h2,body.teach h2{font-size:27px}h3{font-size:18px}.lead{font-size:17px}table,th,td{font-size:12px}pre,.three article pre{font-size:11px}.note{font-size:11px}.circlelab{grid-template-columns:1fr 1fr}.formularesult output{font-size:18px}.ipo input,.circlelab input{font-size:18px;min-height:40px}#screenStatus{display:none}}
+.facultyname{font-size:25px;line-height:1.55;color:var(--navy);margin:0 0 25px}.facultyname strong{font-weight:700;display:inline-block;margin-top:8px}@media(max-width:760px){.facultyname{font-size:22px}}@media print{.facultyname{font-size:17px}}.coursehome{display:inline-block;color:#087f83;font-size:20px;font-weight:650;text-decoration:none;margin:0 0 22px;padding:8px 0}body.teach .coursehome{font-size:18px;margin-bottom:8px}@media print{.coursehome{display:none}}
+input[type=number],select{color:#092b58;background:#fff;border:2px solid #829fbc;border-radius:8px;font:700 25px/1.4 Arial;padding:12px;width:100%;max-width:340px;display:block;margin:12px 0}input[type=checkbox]{width:23px;height:23px;accent-color:#087f83;vertical-align:middle;margin-right:8px}label{font-size:22px;display:block}.controls{display:flex;flex-wrap:wrap;gap:25px}.trace{display:grid;gap:10px;margin:20px 0}.trace div{padding:12px 16px;border-left:4px solid #9fb3c9;background:#e9f0f7;font-size:21px}.trace div.taken{border-color:#087f83;background:#e2f4ee}.trace div.skipped{opacity:.65}.prompt{border:1px solid #cbdced;background:#f0f6fd;border-radius:12px;padding:25px}.download{margin-bottom:15px}pre{tab-size:4}.heroart .cards{font-size:20px}body.teach .lesson{height:auto} @media print{details{break-inside:auto}.download{display:none}.trace{display:block}}@media(max-width:760px){header{height:125px;display:grid;grid-template-columns:1fr;gap:4px;padding:8px 15px}.brand img{height:45px}.tools{display:flex;justify-content:flex-start;gap:5px}.tools .secondary{font-size:12px;padding:7px 8px}.progress{top:124px}aside{top:125px;height:calc(100vh - 125px)}.lesson{scroll-margin-top:140px}html{scroll-padding-top:140px}.controls{display:block}.controls label{margin:10px 0}.trace div{font-size:18px}label{font-size:20px}}
+@media print{body{font-size:13px}.lead{font-size:17px}h2,body.teach h2{font-size:27px}h3{font-size:18px}pre{font-size:11px}th,td{font-size:12px}.eyebrow,.note,.source{font-size:11px}.newvisual{padding:12px}.result{font-size:17px}.trace div{font-size:13px}.facultyname,.instructor{font-size:17px}input[type=number],select{font-size:15px}.cards{display:block}.cards article{margin-bottom:12px}}
+
+textarea{display:block;width:100%;border:2px solid #829fbc;border-radius:8px;background:#fff;color:#092b58;font:19px/1.6 Consolas,monospace;padding:15px;resize:vertical;margin:12px 0}input[type=number]{color:#092b58;background:white}.complete{padding:15px;background:#eaf7f5;border-radius:8px;margin-top:25px;font-size:19px}.feedback{min-height:40px}.typefeedback{font-size:17px;display:block;margin-top:10px}.flow svg{display:block;max-width:650px;margin:auto}.lesson>label{margin-top:25px}.tools a{color:#092b58;text-decoration:none}.resourcebar{display:flex;gap:12px;flex-wrap:wrap}.resourcebar .secondary{display:inline-block;text-decoration:none}.storage-note{font-size:17px;color:#51657b}#saveStatus:not(:empty){padding:12px;color:#8c431c}.counter{font-size:25px;font-weight:700}.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:760px){.note-grid{grid-template-columns:1fr}.tools a{font-size:12px}.tools{flex-wrap:wrap}header{height:140px}aside{top:140px;height:calc(100vh - 140px)}.progress{top:139px}.lesson{scroll-margin-top:150px}th,td{font-size:16px}select{font-size:17px;max-width:200px}}@media print{textarea,.complete,.storage-note,.resourcebar,button{display:none}.flow{break-inside:avoid}header{display:none!important}}
+input[type=text]{color:#092b58;background:#fff;border:2px solid #829fbc;border-radius:8px;font:700 25px/1.4 Arial;padding:12px;width:100%;max-width:340px;display:block;margin:12px 0}.controls input[type=number]{max-width:200px}.controls select{max-width:200px}#q3Explorer pre{min-height:60px}#q3Explorer h3{margin-top:0}.numbertiles div.picked{background:#e2f4ee;border-color:#087f83}.dice div{font-size:44px;line-height:1.1;text-align:center}.dice div:last-child{font-size:30px}#commissionRows tr.band td{background:#e2f4ee}#circlePlot{max-width:420px;margin:auto}.split .newvisual>svg{min-width:0}@media(max-width:760px){input[type=text]{font-size:19px}.dice div{font-size:34px}}@media print{input[type=text]{font-size:15px}}
+
+.trace div{overflow-wrap:anywhere}.source-note{font-size:18px;color:#51657b}
+.tiles{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0}.tiles span{min-width:52px;text-align:center;border:2px solid #b7cce0;border-radius:7px;background:#fff;padding:5px 5px 3px;font:700 20px/1.3 Consolas,"Courier New",monospace;color:#092b58}.tiles span small{display:block;font:600 13px/1.3 "Segoe UI",Arial,sans-serif;color:#51657b;white-space:nowrap}.tiles span.hit{background:#e2f4ee;border-color:#087f83}.tiles span.min,.tiles span.cmp{background:#fff1d0;border-color:#bb870b}.tiles span.rej{background:#fde6e1;border-color:#b5432a;text-decoration:line-through}.tiles span.miss{opacity:.45}.tiles span.out{opacity:.38}table.numeric td{text-align:right;font-family:Consolas,monospace}table.numeric td:first-child{text-align:left}table.numeric td.total{font-weight:700;color:#092b58}p code,li code,td code,.callout code{overflow-wrap:anywhere}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:17px;color:var(--muted);margin-top:10px}.legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:2px solid;vertical-align:-2px;margin-right:6px}.say{display:block;margin-top:14px;padding:12px 16px;border-left:4px solid #087f83;background:#e2f4ee;font-size:19px;line-height:1.5;color:#123}.say:empty{display:none}
+/* Week 8 · Lab 6 methods visuals */
+.dots{margin:14px 0 6px;color:#087f83;font:18px/1.15 Consolas,"Courier New",monospace;letter-spacing:3px}.emptyrow{font-size:16px;color:#51657b}
+.tiles span.over{background:#fde6e1;border-color:#b5432a}
+pre.console{background:#102943;color:#e4f2ff;font:18px/1.5 Consolas,"Courier New",monospace;border-radius:8px;padding:12px 16px;min-height:48px;white-space:pre;overflow:auto;margin:14px 0}
+table.mini{font-size:17px}table.mini th,table.mini td{padding:8px 12px}table.mini td{font-family:Consolas,"Courier New",monospace}tr.hitrow td{background:#e2f4ee}
+.newvisual .controls{margin:10px 0;align-items:flex-end}.newvisual h3{margin-top:22px}
+@media(max-width:760px){.dots{font-size:14px;letter-spacing:2px}pre.console{font-size:15px}table.mini{font-size:14px}table.mini th,table.mini td{padding:6px 8px}}
+@media print{pre.console{font-size:11px;background:#f0f4f9;color:#162c43;white-space:pre-wrap}.dots{font-size:10px}table.mini{font-size:11px}.tiles span.over{background:#fde6e1}}
+</style></head><body><header><div class="brand"><a href="../../" aria-label="Course home"><img src="https://portal.um.edu.my/frontpage-umportal/assets/images/img-logo-UM-new.webp" alt="Universiti Malaya"></a><small>WIX1002 · WEEK 08<br>Lab 06 · JDK 27</small></div><div class="tools"><button class="secondary" id="menuButton">Contents</button><button class="secondary" id="teachButton" aria-pressed="false">Teach mode</button><button class="secondary" id="fullscreenButton">Fullscreen</button><button class="secondary" id="printButton">Print / PDF</button></div></header><div id="screenStatus" role="status"></div><div class="progress"></div><div class="layout"><aside><h3>Week 8 · Lab 6</h3><nav><a href="#s1"><span>00</span>Overview and downloads</a><a href="#q1"><span>01</span>Triangular numbers</a><a href="#q2"><span>02</span>multiPrint: triangles and diamonds</a><a href="#q3"><span>03</span>Reverse the integers in an array</a><a href="#q4"><span>04</span>GCD by the Euclidean algorithm</a><a href="#q5"><span>05</span>Multiplication game</a><a href="#q6"><span>06</span>Palindromic primes and emirps</a><a href="#finish"><span>07</span>Run, test, and explain</a></nav></aside><main><section class="lesson" id="s1"><div class="eyebrow">WEEK 08 · LAB 06</div><h2>Java Methods</h2><p class="lead">Six programs that apply the Week 7 lecture: value-returning and void methods, parameters, an array changed through its reference, the Euclidean algorithm, a game built on a boolean method, and prime tests that call each other.</p><p class="facultyname">Faculty Of Computer Science and Information Technology<br><strong>Universiti Malaya</strong></p><p class="instructor">Ts. Dr. Mohamad Hazim Md Hanif</p><div class="resourcebar"><a class="button" href="#q1">Start Question 1</a><a class="secondary" download="L-1002-06.pdf" href="L-1002-06.pdf">Download original Lab 6 PDF</a><a class="secondary" href="../../lectures/week7/">Review Week 7 lecture</a><a class="secondary" href="../../tutorials/week8/">Tutorial 6</a></div><div class="callout">Week 8 uses Lab 6 (Week 6 was the Viva 1 week). There is no lecture this week because of the online mid-semester test; Lab 6 practises the Week 7 lecture, Java Methods. Build each method yourself, test it on its own, then use it in the program.</div><p class="counter" id="completionCount" aria-live="polite">0 / 6 tasks completed</p><p class="storage-note">Notes and completion ticks are saved in this browser when storage is available. They are not submitted or graded. Export your notes before changing devices.</p><div class="resourcebar"><button class="secondary" id="exportNotes">Export my lab notes</button><button class="secondary" id="resetProgress">Clear my notes and progress</button><a class="secondary" id="downloadAll" download="Lab6-JDK27-Models.zip" href="Lab6-JDK27-Models.zip">Download all Java models (ZIP)</a></div><p id="saveStatus" role="status"></p></section>
+
+<section class="lesson" id="q1"><div class="eyebrow">LAB 06 · QUESTION 01</div><h2>Triangular numbers</h2><p class="lead">Write a Java method that returns a triangular number. A triangular number is defined as 1 + 2 + 3 + … + n. Then, write a Java program to use the method to display the first 20 triangular numbers.</p><pre><code>The first 20 triangular numbers
+    1    3    6   10   15   21   28   36   45   55
+   66   78   91  105  120  136  153  171  190  210</code></pre><p class="source-note">Output of the model. The worksheet gives no sample run; these values are fixed.</p><div class="newvisual"><label for="q1N">n (1–60)</label><input id="q1N" type="number" step="1" min="1" max="60" value="5"><div id="q1Dots" class="dots" aria-hidden="true"></div><output id="q1Result" class="result" aria-live="polite"></output><h3>The 20 values the program prints</h3><div id="q1Tiles" class="tiles" role="img" aria-label="The first 20 triangular numbers"></div></div><details><summary>Model IPO and pseudocode</summary><div><p>Method input: n. Process: add 1 to n. Method output: the sum, returned to the caller. The program calls the method 20 times and prints each value.</p><pre><code>METHOD triangular(n)
+    SET sum = 0
+    FOR i = 1 TO n
+        sum = sum + i
+    RETURN sum
+END METHOD
+
+START
+FOR n = 1 TO 20
+    DISPLAY triangular(n), 10 values per line
+END</code></pre></div></details><details><summary>Reveal complete JDK 27 program</summary><div><pre><code>public class TriangularNumbers {
+    // Precondition: n &gt;= 1.
+    // Postcondition: returns the nth triangular number, 1 + 2 + ... + n.
+    public static int triangular(int n) {
+        int sum = 0;
+        for (int i = 1; i &lt;= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("The first 20 triangular numbers");
+        for (int n = 1; n &lt;= 20; n++) {
+            System.out.printf("%5d", triangular(n));
+            if (n % 10 == 0) {
+                System.out.println();
+            }
+        }
+    }
+}</code></pre><button class="secondary downloadJava" data-program="TriangularNumbers.java">Download TriangularNumbers.java</button></div></details><div class="callout">The method computes one value and returns it; <code>main</code> decides how to display it. That separation lets you reuse and test the method on its own: <code>triangular(4)</code> must be 10. The formula n(n + 1) / 2 gives the same values without a loop; the loop follows the worksheet's definition. An int holds every triangular number up to n = 65535.</div><label for="notes1">Your code, predicted results, and test notes</label><textarea id="notes1" data-save="notes1" rows="5" placeholder="Write your plan, code attempt, or evidence from running the Java program."></textarea><label class="complete"><input type="checkbox" class="done" data-save="done1"> I ran my program, checked its result, and can explain it</label></section>
+
+<section class="lesson" id="q2"><div class="eyebrow">LAB 06 · QUESTION 02</div><h2>multiPrint: triangles and diamonds</h2><p class="lead">Write a Java method <code>multiPrint(int n, char c)</code> that prints n copies of character c. Then, write a Java program to use the method to display the triangles and diamonds.</p><pre><code>Enter the size: 4
+Triangle
+*
+**
+***
+****
+Centred triangle
+   *
+  ***
+ *****
+*******
+Diamond
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *</code></pre><p class="source-note">Output of the model for size 4. The worksheet does not show the figures, so this lab assumes three shapes: a right-angled triangle, a centred triangle, and a diamond, each drawn only with <code>multiPrint</code> calls and line breaks. Other triangles and diamonds are equally valid if they are built from <code>multiPrint</code>.</p><div class="newvisual"><div class="controls"><div style="flex:2 1 220px"><label for="q2Shape">Shape</label><select id="q2Shape"><option value="right">Right-angled triangle</option><option value="centred">Centred triangle</option><option value="diamond" selected>Diamond</option></select></div><div style="flex:1 1 140px"><label for="q2Size">Size (1–12)</label><input id="q2Size" type="number" step="1" min="1" max="12" value="4"></div></div><pre class="console" id="q2Art" aria-label="The shape as the program prints it"></pre><output id="q2Result" class="result" aria-live="polite"></output><div class="tablewrap"><table class="mini"><thead><tr><th>Row</th><th>Calls made for this row</th></tr></thead><tbody id="q2Calls"></tbody></table></div></div><details><summary>Model IPO and pseudocode</summary><div><p>multiPrint input: a count and a character; output: that many characters on the current line. Each shape method decides how many spaces and stars each row needs, then ends the line.</p><pre><code>METHOD multiPrint(n, c)
+    REPEAT n TIMES: DISPLAY c (no line break)
+
+METHOD centredTriangle(size)
+    FOR row = 1 TO size
+        multiPrint(size - row, ' ')
+        multiPrint(2 * row - 1, '*')
+        end the line
+
+METHOD diamond(size)
+    centredTriangle(size)
+    FOR row = size - 1 DOWN TO 1
+        multiPrint(size - row, ' ')
+        multiPrint(2 * row - 1, '*')
+        end the line
+
+START
+INPUT size
+IF size &lt; 1 DISPLAY "The size must be at least 1." and STOP
+rightTriangle(size), centredTriangle(size), diamond(size)
+END</code></pre></div></details><details><summary>Reveal complete JDK 27 program</summary><div><pre><code>import java.util.Scanner;
+
+public class MultiPrint {
+    // Precondition: none; nothing is printed when n &lt;= 0.
+    // Postcondition: prints n copies of c on the current line, without a line break.
+    public static void multiPrint(int n, char c) {
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print(c);
+        }
+    }
+
+    // Precondition: size &gt;= 1.
+    // Postcondition: prints a right-angled triangle; row r has r stars.
+    public static void rightTriangle(int size) {
+        for (int row = 1; row &lt;= size; row++) {
+            multiPrint(row, '*');
+            System.out.println();
+        }
+    }
+
+    // Precondition: size &gt;= 1.
+    // Postcondition: prints a centred triangle; row r has size - r spaces and 2r - 1 stars.
+    public static void centredTriangle(int size) {
+        for (int row = 1; row &lt;= size; row++) {
+            multiPrint(size - row, ' ');
+            multiPrint(2 * row - 1, '*');
+            System.out.println();
+        }
+    }
+
+    // Precondition: size &gt;= 1.
+    // Postcondition: prints a diamond 2 * size - 1 rows high: the centred triangle,
+    //                then the same rows upside down without repeating the widest row.
+    public static void diamond(int size) {
+        centredTriangle(size);
+        for (int row = size - 1; row &gt;= 1; row--) {
+            multiPrint(size - row, ' ');
+            multiPrint(2 * row - 1, '*');
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the size: ");
+        int size = keyboard.nextInt();
+        if (size &lt; 1) {
+            System.out.println("The size must be at least 1.");
+            return;
+        }
+
+        System.out.println("Triangle");
+        rightTriangle(size);
+        System.out.println("Centred triangle");
+        centredTriangle(size);
+        System.out.println("Diamond");
+        diamond(size);
+    }
+}</code></pre><button class="secondary downloadJava" data-program="MultiPrint.java">Download MultiPrint.java</button></div></details><div class="callout"><code>multiPrint</code> does one small job and does not end the line, so its caller decides when to call <code>System.out.println()</code>. Row r of the centred triangle needs size − r spaces and 2r − 1 stars: check this on paper for size 4 before coding. The diamond reuses <code>centredTriangle</code> for its top half, because a method can call another method. <code>multiPrint(0, ' ')</code> prints nothing, which is exactly what the widest row needs.</div><label for="notes2">Your code, predicted results, and test notes</label><textarea id="notes2" data-save="notes2" rows="5" placeholder="Write your plan, code attempt, or evidence from running the Java program."></textarea><label class="complete"><input type="checkbox" class="done" data-save="done2"> I ran my program, checked its result, and can explain it</label></section>
+
+<section class="lesson" id="q3"><div class="eyebrow">LAB 06 · QUESTION 03</div><h2>Reverse the integers in an array</h2><p class="lead">Write a Java method that accepts an array of 10 integers. The method should reverse the integer in the array. Example, if the number is 1234, the number will change to 4321.</p><pre><code>Before: 8543 4287 9093 7023 1051 9051 8052 7900 2717 6445
+After : 3458 7824 3909 3207 1501 1509 2508 97 7172 5446</code></pre><p class="source-note">Example run of the model, which fills the array with random values from 0 to 9999; yours will differ. The worksheet gives no sample run. Notice 7900 → 97.</p><div class="newvisual"><label for="q3In">10 non-negative integers</label><input id="q3In" type="text" value="1234 1200 0 7 56 9999 1001 120 5050 908" autocomplete="off" spellcheck="false" style="max-width:none"><div class="controls"><button class="secondary" id="q3Random" type="button">Random 0–9999</button><div style="flex:0 1 200px"><label for="q3Sel">Trace element</label><select id="q3Sel"></select></div></div><h3>Before <code>reverseAll(numbers)</code></h3><div id="q3Before" class="tiles" role="img" aria-label="The array before the call"></div><h3>After: the same array, changed by the method</h3><div id="q3After" class="tiles" role="img" aria-label="The array after the call"></div><output id="q3Result" class="result" aria-live="polite"></output><div id="q3Trace" class="trace" aria-live="polite"></div></div><details><summary>Model IPO and pseudocode</summary><div><p>reverse input: one non-negative int; output: its digits reversed. reverseAll input: the array; it returns nothing but replaces every element through the shared reference.</p><pre><code>METHOD reverse(number)
+    SET reversed = 0
+    WHILE number &gt; 0
+        reversed = reversed * 10 + number % 10
+        number = number / 10
+    RETURN reversed
+
+METHOD reverseAll(numbers)
+    FOR i = 0 TO numbers.length - 1
+        numbers[i] = reverse(numbers[i])
+
+START
+FILL numbers[10] with random integers from 0 to 9999
+DISPLAY numbers
+reverseAll(numbers)
+DISPLAY numbers
+END</code></pre></div></details><details><summary>Reveal complete JDK 27 program</summary><div><pre><code>import java.util.Random;
+
+public class ReverseDigits {
+    // Precondition: number &gt;= 0 and its reverse fits in an int.
+    // Postcondition: returns the digits of number in reverse order (1234 -&gt; 4321, 1200 -&gt; 21, 0 -&gt; 0).
+    public static int reverse(int number) {
+        int reversed = 0;
+        while (number &gt; 0) {
+            reversed = reversed * 10 + number % 10;   // append the last digit
+            number /= 10;                             // remove the last digit
+        }
+        return reversed;
+    }
+
+    // Precondition: numbers has 10 elements, each meeting the precondition of reverse.
+    // Postcondition: every element is replaced by its reverse. The caller's array changes,
+    //                because the method receives a copy of the reference to the same array.
+    public static void reverseAll(int[] numbers) {
+        for (int i = 0; i &lt; numbers.length; i++) {
+            numbers[i] = reverse(numbers[i]);
+        }
+    }
+
+    // Postcondition: prints the label and the elements on one line.
+    public static void printArray(String label, int[] numbers) {
+        System.out.print(label + ":");
+        for (int i = 0; i &lt; numbers.length; i++) {
+            System.out.print(" " + numbers[i]);
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] numbers = new int[10];
+        for (int i = 0; i &lt; numbers.length; i++) {
+            numbers[i] = random.nextInt(10000);   // 0 to 9999
+        }
+
+        printArray("Before", numbers);
+        reverseAll(numbers);                       // no return value: the array itself changes
+        printArray("After ", numbers);
+    }
+}</code></pre><button class="secondary downloadJava" data-program="ReverseDigits.java">Download ReverseDigits.java</button></div></details><div class="callout"><code>reverseAll</code> is <code>void</code>, yet <code>main</code> sees the change: the method receives a copy of the <em>reference</em>, so both lead to the same array (Week 7, pass-by-value). Each element is reversed by a separate method, <code>reverse(int)</code>, which you can test alone. The worksheet does not cover these cases, so the model states them: trailing zeros disappear (1200 → 21, because 0021 is the int 21); 0 stays 0; one digit is unchanged. The precondition asks for non-negative values; for a negative number you could return <code>-reverse(-number)</code>. A 10-digit int can overflow when reversed: 1999999999 reversed does not fit in an int.</div><label for="notes3">Your code, predicted results, and test notes</label><textarea id="notes3" data-save="notes3" rows="5" placeholder="Write your plan, code attempt, or evidence from running the Java program."></textarea><label class="complete"><input type="checkbox" class="done" data-save="done3"> I ran my program, checked its result, and can explain it</label></section>
+
+<section class="lesson" id="q4"><div class="eyebrow">LAB 06 · QUESTION 04</div><h2>GCD by the Euclidean algorithm</h2><p class="lead">Write a Java method that implements Euclidean Algorithm to return the greatest common divisor of two positive integers. Then, write a program to get the GCD for (24, 8) and (200, 625).</p><pre><code>GCD(24, 8) = 8
+GCD(200, 625) = 25</code></pre><p class="source-note">Output of the model for the two pairs in the worksheet.</p><div class="newvisual"><div class="controls"><div style="flex:1 1 150px"><label for="q4A">a</label><input id="q4A" type="number" step="1" min="1" value="200"></div><div style="flex:1 1 150px"><label for="q4B">b</label><input id="q4B" type="number" step="1" min="1" value="625"></div></div><div class="controls"><button class="secondary q4Preset" type="button" data-a="24" data-b="8">(24, 8)</button><button class="secondary q4Preset" type="button" data-a="200" data-b="625">(200, 625)</button><button class="secondary q4Preset" type="button" data-a="17" data-b="5">(17, 5)</button></div><div class="tablewrap"><table class="numeric mini"><thead><tr><th>Step</th><th>a</th><th>b</th><th>remainder = a % b</th></tr></thead><tbody id="q4Rows"></tbody></table></div><output id="q4Result" class="result" aria-live="polite"></output></div><details><summary>Model IPO and pseudocode</summary><div><p>Input: two positive integers. Process: replace (a, b) by (b, a % b) until b is 0. Output: a, the greatest common divisor.</p><pre><code>METHOD gcd(a, b)
+    WHILE b ≠ 0
+        remainder = a % b
+        a = b
+        b = remainder
+    RETURN a
+
+START
+DISPLAY "GCD(24, 8) = " and gcd(24, 8)
+DISPLAY "GCD(200, 625) = " and gcd(200, 625)
+END</code></pre></div></details><details><summary>Reveal complete JDK 27 program</summary><div><pre><code>public class EuclidGCD {
+    // Precondition: a &gt; 0 and b &gt; 0.
+    // Postcondition: returns the greatest common divisor of a and b.
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int remainder = a % b;
+            a = b;
+            b = remainder;
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("GCD(24, 8) = " + gcd(24, 8));
+        System.out.println("GCD(200, 625) = " + gcd(200, 625));
+    }
+}</code></pre><button class="secondary downloadJava" data-program="EuclidGCD.java">Download EuclidGCD.java</button></div></details><div class="callout">Euclid's idea: gcd(a, b) = gcd(b, a % b), and gcd(a, 0) = a. The remainder is always smaller than b, so the numbers shrink and the loop must end. If a &lt; b, the first step just swaps them (200 % 625 = 200). The parameters a and b are the method's own copies, so changing them inside <code>gcd</code> does not affect the caller. The precondition asks for positive integers: gcd(0, 0) is undefined, and because Java's % keeps the sign of its left operand, a negative argument can give a negative result.</div><label for="notes4">Your code, predicted results, and test notes</label><textarea id="notes4" data-save="notes4" rows="5" placeholder="Write your plan, code attempt, or evidence from running the Java program."></textarea><label class="complete"><input type="checkbox" class="done" data-save="done4"> I ran my program, checked its result, and can explain it</label></section>
+
+<section class="lesson" id="q5"><div class="eyebrow">LAB 06 · QUESTION 05</div><h2>Multiplication game</h2><p class="lead">Write a Java method that accepts three parameters, the method will compare whether the third parameter value is equal to the multiplication of parameter 1 and parameter 2. Then, write a Java multiplication game for any random number within 0 – 12.</p><pre><code>Enter negative number to quit.
+5 x 8 = 40
+Enter negative number to quit.
+7 x 9 = 16
+Enter negative number to quit.
+6 x 6 = 36
+Enter negative number to quit.
+3 x 2 = -1
+Your Score is 2</code></pre><p class="source-note">Example output from the worksheet. The game gives no feedback per question: each correct answer adds 1 to the score, and a negative answer ends the game.</p><div class="newvisual"><h3>Play the game</h3><pre class="console" id="q5Console" aria-live="polite"></pre><div class="controls"><div style="flex:1 1 160px"><label for="q5Ans">Your answer</label><input id="q5Ans" type="number" step="1" autocomplete="off"></div></div><div class="controls"><button class="button" id="q5Submit" type="button">Enter</button><button class="secondary" id="q5New" type="button">New game</button></div><output id="q5Score" class="result" aria-live="polite"></output><p class="note">Browser random draws illustrate the game; they are independent of Java’s Random.</p><h3>Check the method</h3><div class="tablewrap"><table class="mini"><thead><tr><th>Call</th><th>Returns</th></tr></thead><tbody id="q5Rows"></tbody></table></div><div class="controls"><div style="flex:1 1 110px"><label for="q5X">first</label><input id="q5X" type="number" step="1" value="12"></div><div style="flex:1 1 110px"><label for="q5Y">second</label><input id="q5Y" type="number" step="1" value="12"></div><div style="flex:1 1 110px"><label for="q5Z">answer</label><input id="q5Z" type="number" step="1" value="144"></div></div><output id="q5Check" class="result" aria-live="polite"></output></div><details><summary>Model IPO and pseudocode</summary><div><p>isCorrect input: two factors and an answer; output: true or false. The game repeats: draw two numbers from 0 to 12, ask, read the answer, stop on a negative answer, otherwise add 1 to the score when isCorrect is true.</p><pre><code>METHOD isCorrect(first, second, answer)
+    RETURN answer = first * second
+
+START
+SET score = 0
+LOOP
+    first = random 0 to 12, second = random 0 to 12
+    DISPLAY "Enter negative number to quit."
+    DISPLAY first, " x ", second, " = " (same line as the answer)
+    INPUT answer
+    IF answer &lt; 0 THEN EXIT LOOP
+    IF isCorrect(first, second, answer) THEN score = score + 1
+DISPLAY "Your Score is ", score
+END</code></pre></div></details><details><summary>Reveal complete JDK 27 program</summary><div><pre><code>import java.util.Random;
+import java.util.Scanner;
+
+public class MultiplicationGame {
+    // Precondition: none.
+    // Postcondition: returns true when answer is equal to first * second.
+    public static boolean isCorrect(int first, int second, int answer) {
+        return answer == first * second;
+    }
+
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        Random random = new Random();
+        int score = 0;
+
+        while (true) {
+            int first = random.nextInt(13);    // 0 to 12
+            int second = random.nextInt(13);
+            System.out.println("Enter negative number to quit.");
+            System.out.print(first + " x " + second + " = ");
+            int answer = keyboard.nextInt();
+            if (answer &lt; 0) {
+                break;                         // a negative answer ends the game
+            }
+            if (isCorrect(first, second, answer)) {
+                score++;
+            }
+        }
+        System.out.println("Your Score is " + score);
+    }
+}</code></pre><button class="secondary downloadJava" data-program="MultiplicationGame.java">Download MultiplicationGame.java</button></div></details><div class="callout"><code>isCorrect</code> returns a <code>boolean</code>, so the call can be the condition itself: <code>if (isCorrect(first, second, answer))</code>. <code>nextInt(13)</code> gives 0 to 12. The prompt uses <code>println</code> and the question uses <code>print</code>, so the answer is typed on the question's line, as in the sample. The negative answer is tested before scoring, so −1 ends the game without counting as a question. The model assumes whole-number input.</div><label for="notes5">Your code, predicted results, and test notes</label><textarea id="notes5" data-save="notes5" rows="5" placeholder="Write your plan, code attempt, or evidence from running the Java program."></textarea><label class="complete"><input type="checkbox" class="done" data-save="done5"> I ran my program, checked its result, and can explain it</label></section>
+
+<section class="lesson" id="q6"><div class="eyebrow">LAB 06 · QUESTION 06</div><h2>Palindromic primes and emirps</h2><p class="lead">Write a Java method that determine whether a number is a palindromic prime and another method that determine whether a number is emirp (the number is a prime number and the reverse also a prime number and is not palindromic prime). Then, write a Java program to use the methods to display the first 20 palindromic prime and emirp.</p><pre><code>The first 20 palindromic primes
+     2     3     5     7    11   101   131   151   181   191
+   313   353   373   383   727   757   787   797   919   929
+The first 20 emirps
+    13    17    31    37    71    73    79    97   107   113
+   149   157   167   179   199   311   337   347   359   389</code></pre><p class="source-note">Output of the model. The worksheet gives no sample run; these lists are fixed.</p><div class="newvisual"><label for="q6N">Number to test (0 to 9999999)</label><input id="q6N" type="number" step="1" min="0" max="9999999" value="13"><div class="tablewrap"><table class="mini"><thead><tr><th>Method call</th><th>Returns</th></tr></thead><tbody id="q6Rows"></tbody></table></div><output id="q6Result" class="result" aria-live="polite"></output><h3>The first 20 palindromic primes</h3><div id="q6Pal" class="tiles" role="img" aria-label="The first 20 palindromic primes"></div><h3>The first 20 emirps, with each reverse</h3><div id="q6Emirp" class="tiles" role="img" aria-label="The first 20 emirps and their reverses"></div></div><details><summary>Model IPO and pseudocode</summary><div><p>Five small methods. Output: two lists of 20 numbers, 10 per line. Each loop tests 2, 3, 4, … and stops when 20 matches have been printed.</p><pre><code>METHOD isPrime(n): n ≥ 2 and no divisor from 2 to √n
+METHOD reverse(n): the digits of n in reverse order
+METHOD isPalindrome(n): n = reverse(n)
+METHOD isPalindromicPrime(n): isPrime(n) AND isPalindrome(n)
+METHOD isEmirp(n): isPrime(n) AND isPrime(reverse(n)) AND NOT isPalindromicPrime(n)
+
+START
+SET count = 0, number = 2
+WHILE count &lt; 20
+    IF isPalindromicPrime(number) THEN DISPLAY number, count = count + 1
+    number = number + 1
+REPEAT the same loop with isEmirp
+END</code></pre></div></details><details><summary>Reveal complete JDK 27 program</summary><div><pre><code>public class PalindromicPrimeEmirp {
+    // Precondition: none.
+    // Postcondition: returns true when number is prime (greater than 1, no divisor from 2 to its square root).
+    public static boolean isPrime(int number) {
+        if (number &lt; 2) {
+            return false;
+        }
+        for (int divisor = 2; divisor * divisor &lt;= number; divisor++) {
+            if (number % divisor == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Precondition: number &gt;= 0.
+    // Postcondition: returns the digits of number in reverse order.
+    public static int reverse(int number) {
+        int reversed = 0;
+        while (number &gt; 0) {
+            reversed = reversed * 10 + number % 10;
+            number /= 10;
+        }
+        return reversed;
+    }
+
+    // Precondition: number &gt;= 0.
+    // Postcondition: returns true when number reads the same backwards.
+    public static boolean isPalindrome(int number) {
+        return number == reverse(number);
+    }
+
+    // Postcondition: returns true when number is both prime and a palindrome.
+    public static boolean isPalindromicPrime(int number) {
+        return isPrime(number) &amp;&amp; isPalindrome(number);
+    }
+
+    // Postcondition: returns true when number is prime, its reverse is prime,
+    //                and it is not a palindromic prime.
+    public static boolean isEmirp(int number) {
+        return isPrime(number) &amp;&amp; isPrime(reverse(number)) &amp;&amp; !isPalindromicPrime(number);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("The first 20 palindromic primes");
+        int count = 0;
+        for (int number = 2; count &lt; 20; number++) {
+            if (isPalindromicPrime(number)) {
+                count++;
+                System.out.printf("%6d", number);
+                if (count % 10 == 0) {
+                    System.out.println();
+                }
+            }
+        }
+
+        System.out.println("The first 20 emirps");
+        count = 0;
+        for (int number = 2; count &lt; 20; number++) {
+            if (isEmirp(number)) {
+                count++;
+                System.out.printf("%6d", number);
+                if (count % 10 == 0) {
+                    System.out.println();
+                }
+            }
+        }
+    }
+}</code></pre><button class="secondary downloadJava" data-program="PalindromicPrimeEmirp.java">Download PalindromicPrimeEmirp.java</button></div></details><div class="callout">Five methods with one job each, built on one another: <code>isEmirp</code> calls <code>isPrime</code> twice and <code>isPalindromicPrime</code> once. 11 is a palindromic prime, so it is not an emirp even though its reverse is prime. 23 is prime but 32 is not, so 23 is not an emirp. The loops count matches, not candidates: they run until 20 numbers have been found, as in Lab 4's first n primes.</div><label for="notes6">Your code, predicted results, and test notes</label><textarea id="notes6" data-save="notes6" rows="5" placeholder="Write your plan, code attempt, or evidence from running the Java program."></textarea><label class="complete"><input type="checkbox" class="done" data-save="done6"> I ran my program, checked its result, and can explain it</label></section>
+
+<section class="lesson" id="finish"><div class="eyebrow">LAB 06 · COMPLETION</div><h2>Run, test, and explain</h2><ol><li>Save each model with exactly the filename shown; your own project structure may differ.</li><li>Confirm java --version and javac --version both report JDK 27.</li><li>Compile and run from the folder containing the source file:</li></ol><pre><code>javac --release 27 TriangularNumbers.java
+java TriangularNumbers</code></pre><p>Repeat for the other classes, or download the ZIP containing all six models and a README. The models put each task's logic in static methods with precondition and postcondition comments, use Scanner and Random where needed, assume numeric input of the requested type, and need no preview features or external libraries.</p><div class="callout">Browser activities use JavaScript to demonstrate the methods. They do not compile your Java code. Browser random draws are independent of Java’s Random.</div><h3>Show your tutor</h3><p>Show all six programs, and test each method on its own before using it: <code>triangular(1)</code> is 1 and <code>triangular(20)</code> is 210; <code>multiPrint(0, '*')</code> prints nothing and size 1 draws a single star; <code>reverse(1234)</code> is 4321, <code>reverse(1200)</code> is 21 and <code>reverse(0)</code> is 0, with the array printed before and after <code>reverseAll</code>; <code>gcd(24, 8)</code> is 8, <code>gcd(200, 625)</code> is 25, <code>gcd(17, 5)</code> is 1 and <code>gcd(9, 9)</code> is 9; <code>isCorrect(7, 9, 16)</code> is false, and a game that ends at once scores 0; <code>isEmirp(13)</code> is true but <code>isEmirp(11)</code> and <code>isEmirp(23)</code> are false.</p><h3>Optional AI review</h3><p>If AI use is allowed, ask it to review a <code>reverseAll</code> that builds a new array inside the method and returns nothing, or an <code>isEmirp</code> that forgets the palindrome test. Predict which output changes before reading the AI answer, then explain it using pass-by-value or the emirp definition.</p><h3>Source and references</h3><ul><li>Original source: L-1002-06.pdf, Lab 6: Java Methods. All six tasks are covered, including the multiplication game's example output. The worksheet says “that determine” and “the first 20 palindromic prime and emirp”; the tasks are unchanged.</li><li><a href="../../lectures/week7/">Week 7 lecture: Java Methods &amp; Vibe Coding</a></li><li><a href="https://docs.oracle.com/javase/specs/jls/se27/html/jls-8.html#jls-8.4">Java SE 27 language specification: method declarations (§8.4)</a></li><li><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Random.html">JDK 27 Random API</a></li><li><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Scanner.html">JDK 27 Scanner API</a></li></ul><p class="source-note">Behaviour the worksheet does not specify (the triangle and diamond shapes, a size below 1, trailing zeros and negative numbers when reversing, non-positive GCD arguments, and the layout of the lists) is stated explicitly in each model.</p></section></main></div><div class="bottomnav"><button class="secondary" id="prev">← Previous</button><span id="pageCount"></span><button class="button" id="next">Next →</button></div><footer>WIX1002 · Week 8 · Lab 6 · JDK 27 · Universiti Malaya</footer><script>
+const lessons=[...document.querySelectorAll('.lesson')],links=[...document.querySelectorAll('nav a')];let current=0,teach=false;
+function go(n){current=Math.max(0,Math.min(lessons.length-1,n));lessons.forEach((s,i)=>s.classList.toggle('current',i===current));links.forEach((a,i)=>a.classList.toggle('active',i===current));document.querySelector('#pageCount').textContent=`${current+1} / ${lessons.length}`;document.querySelector('#prev').disabled=current===0;document.querySelector('#next').disabled=current===lessons.length-1;document.querySelector('.progress').style.width=`${(current+1)/lessons.length*100}%`;if(teach){history.replaceState(null,'','#'+lessons[current].id);window.scrollTo(0,0);}}
+links.forEach((a,i)=>a.addEventListener('click',e=>{document.body.classList.remove('menu-open');if(teach){e.preventDefault();go(i);}}));
+document.querySelector('#teachButton').onclick=()=>{teach=!teach;document.body.classList.toggle('teach',teach);document.querySelector('#teachButton').textContent=teach?'Reading mode':'Teach mode';document.querySelector('#teachButton').setAttribute('aria-pressed',String(teach));go(current);if(!teach)lessons[current].scrollIntoView();};
+document.querySelector('#menuButton').onclick=()=>document.body.classList.toggle('menu-open');
+document.querySelector('#prev').onclick=()=>go(current-1);document.querySelector('#next').onclick=()=>go(current+1);
+document.querySelector('a.button[href="#q1"]').onclick=e=>{if(teach){e.preventDefault();go(1);}};
+document.addEventListener('keydown',e=>{if(!teach||/INPUT|TEXTAREA|SELECT|SUMMARY|BUTTON/.test(e.target.tagName))return;if(e.key==='ArrowRight'){e.preventDefault();go(current+1);}if(e.key==='ArrowLeft'){e.preventDefault();go(current-1);}});
+const observer=new IntersectionObserver(entries=>{if(teach)return;const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);if(visible.length)go(lessons.indexOf(visible[0].target));},{rootMargin:'-140px 0px -40% 0px',threshold:[0,.1,.3]});lessons.forEach(s=>observer.observe(s));go(Math.max(0,lessons.findIndex(s=>'#'+s.id===location.hash)));
+document.querySelector('#fullscreenButton').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(e){document.querySelector('#screenStatus').textContent='Fullscreen is unavailable in this viewer. Open this page in a browser tab.';}};
+document.addEventListener('fullscreenchange',()=>document.querySelector('#fullscreenButton').textContent=document.fullscreenElement?'Exit fullscreen':'Fullscreen');
+document.querySelector('#printButton').onclick=()=>{const ds=[...document.querySelectorAll('details')],states=ds.map(d=>d.open);ds.forEach(d=>d.open=true);window.print();ds.forEach((d,i)=>d.open=states[i]);};
+const stored=[...document.querySelectorAll('[data-save]')],storageKey='wix1002-week8-lab6-v1';
+function updateProgress(){document.querySelector('#completionCount').textContent=[...document.querySelectorAll('.done')].filter(e=>e.checked).length+' / 6 tasks completed';}
+function snapshot(){return Object.fromEntries(stored.map(e=>[e.dataset.save,e.type==='checkbox'?e.checked:e.value]));}
+function persist(){try{localStorage.setItem(storageKey,JSON.stringify(snapshot()));}catch(e){document.querySelector('#saveStatus').textContent='Browser storage is unavailable. Export your notes before leaving.';}updateProgress();}
+try{const saved=JSON.parse(localStorage.getItem(storageKey)||'{}');stored.forEach(e=>{if(Object.hasOwn(saved,e.dataset.save)){if(e.type==='checkbox')e.checked=saved[e.dataset.save]===true;else if(typeof saved[e.dataset.save]==='string')e.value=saved[e.dataset.save];}});}catch(e){document.querySelector('#saveStatus').textContent='Saved notes could not be restored. You can still use and export this page.';}
+stored.forEach(e=>e.addEventListener(e.type==='checkbox'?'change':'input',persist));updateProgress();
+function download(text,name,type='text/plain'){const a=document.createElement('a'),u=URL.createObjectURL(new Blob([text],{type}));a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+document.querySelector('#exportNotes').onclick=()=>download('WIX1002 · Week 8 · Lab 6\n\n'+stored.filter(e=>e.tagName==='TEXTAREA').map(e=>e.dataset.save+'\n'+e.value).join('\n\n')+'\n\nCompleted: '+[...document.querySelectorAll('.done')].filter(e=>e.checked).length+'/6\n','Lab6-MyNotes.txt');
+document.querySelector('#resetProgress').onclick=()=>{if(!confirm('Clear your saved notes and completion ticks for Lab 6?'))return;stored.forEach(e=>{if(e.type==='checkbox')e.checked=false;else e.value='';});persist();document.querySelectorAll('.feedback').forEach(e=>e.textContent='');};
+
+function numberValue(id){const e=document.getElementById(id);if(e.value.trim()==='')return null;const v=Number(e.value);return Number.isFinite(v)?v:null;}
+function intValue(id){const v=numberValue(id);return v!==null&&Number.isInteger(v)&&v>=-2147483648&&v<=2147483647?v:null;}
+function setTrace(id,rows){document.getElementById(id).replaceChildren(...rows.map(r=>{const [t,c]=Array.isArray(r)?r:[r,''];const d=document.createElement('div');d.textContent=t;if(c)d.className=c;return d;}));}
+function tileRow(id,items){document.getElementById(id).replaceChildren(...items.map(([v,label,cls])=>{const s=document.createElement('span');s.textContent=v;if(label){const sm=document.createElement('small');sm.textContent=label;s.appendChild(sm);}if(cls)s.className=cls;return s;}));}
+function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+const rnd=n=>Math.floor(Math.random()*n);
+const $=id=>document.getElementById(id);
+function rowsOf(id,rows){$(id).replaceChildren(...rows.map(r=>{const tr=document.createElement('tr');if(r.cls)tr.className=r.cls;(r.cells||r).forEach(c=>{const td=document.createElement('td');td.textContent=c;tr.appendChild(td);});return tr;}));}
+
+// ---- Q1 triangular numbers
+function triangular(n){let s=0;for(let i=1;i<=n;i++)s+=i;return s;}
+function q1(){const n=intValue('q1N'),out=$('q1Result');tileRow('q1Tiles',Array.from({length:20},(_,k)=>[triangular(k+1),`n=${k+1}`,k+1===n?'hit':'']));if(n===null||n<1||n>60){out.textContent='Enter a whole number n from 1 to 60.';$('q1Dots').replaceChildren();return;}const t=triangular(n);out.textContent=`triangular(${n}) = ${n<=8?Array.from({length:n},(_,i)=>i+1).join(' + '):`1 + 2 + … + ${n}`} = ${t} · check: ${n} × ${n+1} / 2 = ${n*(n+1)/2}`;$('q1Dots').replaceChildren(...(n<=20?Array.from({length:n},(_,r)=>el('div','●'.repeat(r+1))):[el('div',`(${t} dots: the picture is drawn up to n = 20)`,'emptyrow')]));}
+$('q1N').addEventListener('input',q1);q1();
+
+// ---- Q2 multiPrint shapes
+function shapeRows(shape,size){const rows=[],cen=r=>[[size-r,' '],[2*r-1,'*']];if(shape==='right'){for(let r=1;r<=size;r++)rows.push([[r,'*']]);}else{for(let r=1;r<=size;r++)rows.push(cen(r));if(shape==='diamond')for(let r=size-1;r>=1;r--)rows.push(cen(r));}return rows;}
+function q2(){const shape=$('q2Shape').value,size=intValue('q2Size'),out=$('q2Result');if(size===null||size<1||size>12){out.textContent='Enter a size from 1 to 12. (The Java model prints a message for a size below 1.)';$('q2Art').textContent='';rowsOf('q2Calls',[]);return;}const rows=shapeRows(shape,size);$('q2Art').textContent=rows.map(r=>r.map(([n,c])=>c.repeat(n)).join('')).join('\n');rowsOf('q2Calls',rows.map((r,k)=>[String(k+1),r.map(([n,c])=>`multiPrint(${n}, '${c}');`).join(' ')+' System.out.println();']));const calls=rows.reduce((a,r)=>a+r.length,0),stars=rows.reduce((a,r)=>a+r.filter(([,c])=>c==='*').reduce((s,[n])=>s+n,0),0),empty=rows.reduce((a,r)=>a+r.filter(([n])=>n===0).length,0);const pl=(k,w)=>`${k} ${w}${k===1?'':'s'}`;out.textContent=`${pl(rows.length,'row')} · ${pl(calls,'multiPrint call')} · ${pl(stars,'star')}`+(empty?` · ${pl(empty,'call')} with n = 0 ${empty===1?'prints':'print'} nothing`:'');}
+['q2Shape','q2Size'].forEach(id=>$(id).addEventListener('input',q2));q2();
+
+// ---- Q3 reverse the integers in an array
+function revJava(x){let r=0;while(x>0){r=(Math.imul(r,10)+x%10)|0;x=Math.trunc(x/10);}return r;}
+$('q3Sel').replaceChildren(...Array.from({length:10},(_,i)=>{const o=el('option',`numbers[${i}]`);o.value=String(i);return o;}));
+function q3(){const toks=$('q3In').value.trim().split(/[\s,]+/).filter(Boolean),out=$('q3Result');const bad=t=>!/^\d+$/.test(t)||Number(t)>2147483647;if(toks.length!==10||toks.some(bad)){out.textContent=toks.some(t=>/^-\d+$/.test(t))?'The precondition asks for non-negative integers. (For a negative number you could return -reverse(-number).)':'Enter exactly 10 whole numbers from 0 to 2147483647.';['q3Before','q3After'].forEach(id=>$(id).replaceChildren());setTrace('q3Trace',[]);return;}const a=toks.map(Number),pick=Number($('q3Sel').value),after=a.map(revJava),truth=a.map(v=>Number(String(v).split('').reverse().join(''))),over=a.map((v,i)=>truth[i]!==after[i]);tileRow('q3Before',a.map((v,i)=>[v,`[${i}]`,i===pick?'cmp':'']));tileRow('q3After',after.map((v,i)=>[v,`[${i}]`+(over[i]?' overflow':''),over[i]?'over':i===pick?'cmp':'hit']));const n=over.filter(Boolean).length;out.textContent=n?`${n} element${n>1?'s':''} overflowed: the true reverse does not fit in an int, so Java stores a wrong value. The precondition rules this out.`:'reverseAll returned nothing, but every element of the caller’s array has changed.';let x=a[pick],r=0;const rows=[];if(x===0)rows.push(['number = 0: the loop condition number > 0 is false at once, so reverse returns 0','skipped']);while(x>0){const d=x%10,nr=(Math.imul(r,10)+d)|0,nx=Math.trunc(x/10);rows.push([`number = ${x} · last digit ${x} % 10 = ${d} · reversed = ${r} × 10 + ${d} = ${nr} · number = ${x} / 10 = ${nx}`,'taken']);r=nr;x=nx;}rows.push([`numbers[${pick}] = reverse(${a[pick]}) = ${after[pick]}`+(over[pick]?' (overflow)':''),'']);setTrace('q3Trace',rows);}
+$('q3In').addEventListener('input',q3);$('q3Sel').addEventListener('change',q3);$('q3Random').addEventListener('click',()=>{$('q3In').value=Array.from({length:10},()=>rnd(10000)).join(' ');q3();});q3();
+
+// ---- Q4 Euclidean algorithm
+function q4(){const A=intValue('q4A'),B=intValue('q4B'),out=$('q4Result');if(A===null||B===null||A<=0||B<=0){out.textContent='Precondition: a and b must both be positive integers.';rowsOf('q4Rows',[]);return;}let a=A,b=B,k=0;const rows=[];while(b!==0){k++;const r=a%b;rows.push([String(k),String(a),String(b),`${a} % ${b} = ${r}`]);a=b;b=r;}rows.push({cells:['end',String(a),'0','b = 0 → return a'],cls:'hitrow'});rowsOf('q4Rows',rows);out.textContent=`gcd(${A}, ${B}) = ${a} after ${k} remainder step${k>1?'s':''} · check: ${A} = ${a} × ${A/a} and ${B} = ${a} × ${B/a}`;}
+['q4A','q4B'].forEach(id=>$(id).addEventListener('input',q4));document.querySelectorAll('.q4Preset').forEach(b=>b.addEventListener('click',()=>{$('q4A').value=b.dataset.a;$('q4B').value=b.dataset.b;q4();}));q4();
+
+// ---- Q5 multiplication game
+const isCorrect=(x,y,z)=>z===x*y;let game;
+function gameRender(){$('q5Console').textContent=game.lines.slice(-14).join('\n');$('q5Score').textContent=game.over?`Game over · Your Score is ${game.score}`:`Questions answered: ${game.asked} · score so far: ${game.score}`;$('q5Submit').disabled=game.over;$('q5Ans').disabled=game.over;}
+function gameAsk(){game.x=rnd(13);game.y=rnd(13);game.lines.push('Enter negative number to quit.',`${game.x} x ${game.y} = `);gameRender();}
+function gameNew(){game={score:0,asked:0,lines:[],over:false};gameAsk();}
+function gameEnter(){if(game.over)return;const v=intValue('q5Ans');if(v===null){$('q5Score').textContent='Type a whole number first (a negative number quits).';return;}game.lines[game.lines.length-1]+=String(v);$('q5Ans').value='';if(v<0){game.over=true;game.lines.push(`Your Score is ${game.score}`);gameRender();return;}game.asked++;if(isCorrect(game.x,game.y,v))game.score++;gameAsk();$('q5Ans').focus();}
+$('q5Submit').addEventListener('click',gameEnter);$('q5Ans').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();gameEnter();}});$('q5New').addEventListener('click',gameNew);gameNew();
+rowsOf('q5Rows',[[5,8,40],[7,9,16],[6,6,36],[0,12,0]].map(([x,y,z])=>({cells:[`isCorrect(${x}, ${y}, ${z})`,String(isCorrect(x,y,z))],cls:isCorrect(x,y,z)?'hitrow':''})));
+function q5Check(){const x=intValue('q5X'),y=intValue('q5Y'),z=intValue('q5Z');$('q5Check').textContent=x===null||y===null||z===null?'Enter three whole numbers.':`isCorrect(${x}, ${y}, ${z}) returns ${isCorrect(x,y,z)} because ${x} × ${y} = ${x*y}`;}
+['q5X','q5Y','q5Z'].forEach(id=>$(id).addEventListener('input',q5Check));q5Check();
+
+// ---- Q6 palindromic primes and emirps
+function isPrime(n){if(n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true;}
+function rev(n){let r=0;while(n>0){r=r*10+n%10;n=Math.trunc(n/10);}return r;}
+const isPal=n=>n===rev(n),isPalPrime=n=>isPrime(n)&&isPal(n),isEmirp=n=>isPrime(n)&&isPrime(rev(n))&&!isPalPrime(n);
+const firstPal=[],firstEmirp=[];for(let n=2;firstPal.length<20;n++)if(isPalPrime(n))firstPal.push(n);for(let n=2;firstEmirp.length<20;n++)if(isEmirp(n))firstEmirp.push(n);
+function q6(){const n=intValue('q6N'),out=$('q6Result');tileRow('q6Pal',firstPal.map((v,k)=>[v,`#${k+1}`,v===n?'hit':'']));tileRow('q6Emirp',firstEmirp.map(v=>[v,`↔ ${rev(v)}`,v===n?'hit':'']));if(n===null||n<0||n>9999999){out.textContent='Enter a whole number from 0 to 9999999.';rowsOf('q6Rows',[]);return;}const r=rev(n),p=isPrime(n),pr=isPrime(r),pal=isPal(n),pp=isPalPrime(n),em=isEmirp(n);rowsOf('q6Rows',[[`isPrime(${n})`,String(p)],[`reverse(${n})`,String(r)],[`isPrime(${r})`,String(pr)],[`isPalindrome(${n})`,String(pal)],[`isPalindromicPrime(${n})`,String(pp)],[`isEmirp(${n})`,String(em)]].map(c=>({cells:c,cls:c[1]==='true'?'hitrow':''})));out.textContent=pp?`${n} is a palindromic prime, so it is not an emirp.`:em?`${n} is an emirp: ${n} and ${r} are both prime, and ${n} is not a palindrome.`:!p?`${n} is not prime, so it is neither.`:`${n} is prime, but its reverse ${r} is not prime, so it is not an emirp.`;}
+$('q6N').addEventListener('input',q6);q6();
+const programs={"EuclidGCD.java": "public class EuclidGCD {\n    // Precondition: a > 0 and b > 0.\n    // Postcondition: returns the greatest common divisor of a and b.\n    public static int gcd(int a, int b) {\n        while (b != 0) {\n            int remainder = a % b;\n            a = b;\n            b = remainder;\n        }\n        return a;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"GCD(24, 8) = \" + gcd(24, 8));\n        System.out.println(\"GCD(200, 625) = \" + gcd(200, 625));\n    }\n}\n", "MultiPrint.java": "import java.util.Scanner;\n\npublic class MultiPrint {\n    // Precondition: none; nothing is printed when n <= 0.\n    // Postcondition: prints n copies of c on the current line, without a line break.\n    public static void multiPrint(int n, char c) {\n        for (int i = 0; i < n; i++) {\n            System.out.print(c);\n        }\n    }\n\n    // Precondition: size >= 1.\n    // Postcondition: prints a right-angled triangle; row r has r stars.\n    public static void rightTriangle(int size) {\n        for (int row = 1; row <= size; row++) {\n            multiPrint(row, '*');\n            System.out.println();\n        }\n    }\n\n    // Precondition: size >= 1.\n    // Postcondition: prints a centred triangle; row r has size - r spaces and 2r - 1 stars.\n    public static void centredTriangle(int size) {\n        for (int row = 1; row <= size; row++) {\n            multiPrint(size - row, ' ');\n            multiPrint(2 * row - 1, '*');\n            System.out.println();\n        }\n    }\n\n    // Precondition: size >= 1.\n    // Postcondition: prints a diamond 2 * size - 1 rows high: the centred triangle,\n    //                then the same rows upside down without repeating the widest row.\n    public static void diamond(int size) {\n        centredTriangle(size);\n        for (int row = size - 1; row >= 1; row--) {\n            multiPrint(size - row, ' ');\n            multiPrint(2 * row - 1, '*');\n            System.out.println();\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner keyboard = new Scanner(System.in);\n        System.out.print(\"Enter the size: \");\n        int size = keyboard.nextInt();\n        if (size < 1) {\n            System.out.println(\"The size must be at least 1.\");\n            return;\n        }\n\n        System.out.println(\"Triangle\");\n        rightTriangle(size);\n        System.out.println(\"Centred triangle\");\n        centredTriangle(size);\n        System.out.println(\"Diamond\");\n        diamond(size);\n    }\n}\n", "MultiplicationGame.java": "import java.util.Random;\nimport java.util.Scanner;\n\npublic class MultiplicationGame {\n    // Precondition: none.\n    // Postcondition: returns true when answer is equal to first * second.\n    public static boolean isCorrect(int first, int second, int answer) {\n        return answer == first * second;\n    }\n\n    public static void main(String[] args) {\n        Scanner keyboard = new Scanner(System.in);\n        Random random = new Random();\n        int score = 0;\n\n        while (true) {\n            int first = random.nextInt(13);    // 0 to 12\n            int second = random.nextInt(13);\n            System.out.println(\"Enter negative number to quit.\");\n            System.out.print(first + \" x \" + second + \" = \");\n            int answer = keyboard.nextInt();\n            if (answer < 0) {\n                break;                         // a negative answer ends the game\n            }\n            if (isCorrect(first, second, answer)) {\n                score++;\n            }\n        }\n        System.out.println(\"Your Score is \" + score);\n    }\n}\n", "PalindromicPrimeEmirp.java": "public class PalindromicPrimeEmirp {\n    // Precondition: none.\n    // Postcondition: returns true when number is prime (greater than 1, no divisor from 2 to its square root).\n    public static boolean isPrime(int number) {\n        if (number < 2) {\n            return false;\n        }\n        for (int divisor = 2; divisor * divisor <= number; divisor++) {\n            if (number % divisor == 0) {\n                return false;\n            }\n        }\n        return true;\n    }\n\n    // Precondition: number >= 0.\n    // Postcondition: returns the digits of number in reverse order.\n    public static int reverse(int number) {\n        int reversed = 0;\n        while (number > 0) {\n            reversed = reversed * 10 + number % 10;\n            number /= 10;\n        }\n        return reversed;\n    }\n\n    // Precondition: number >= 0.\n    // Postcondition: returns true when number reads the same backwards.\n    public static boolean isPalindrome(int number) {\n        return number == reverse(number);\n    }\n\n    // Postcondition: returns true when number is both prime and a palindrome.\n    public static boolean isPalindromicPrime(int number) {\n        return isPrime(number) && isPalindrome(number);\n    }\n\n    // Postcondition: returns true when number is prime, its reverse is prime,\n    //                and it is not a palindromic prime.\n    public static boolean isEmirp(int number) {\n        return isPrime(number) && isPrime(reverse(number)) && !isPalindromicPrime(number);\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"The first 20 palindromic primes\");\n        int count = 0;\n        for (int number = 2; count < 20; number++) {\n            if (isPalindromicPrime(number)) {\n                count++;\n                System.out.printf(\"%6d\", number);\n                if (count % 10 == 0) {\n                    System.out.println();\n                }\n            }\n        }\n\n        System.out.println(\"The first 20 emirps\");\n        count = 0;\n        for (int number = 2; count < 20; number++) {\n            if (isEmirp(number)) {\n                count++;\n                System.out.printf(\"%6d\", number);\n                if (count % 10 == 0) {\n                    System.out.println();\n                }\n            }\n        }\n    }\n}\n", "ReverseDigits.java": "import java.util.Random;\n\npublic class ReverseDigits {\n    // Precondition: number >= 0 and its reverse fits in an int.\n    // Postcondition: returns the digits of number in reverse order (1234 -> 4321, 1200 -> 21, 0 -> 0).\n    public static int reverse(int number) {\n        int reversed = 0;\n        while (number > 0) {\n            reversed = reversed * 10 + number % 10;   // append the last digit\n            number /= 10;                             // remove the last digit\n        }\n        return reversed;\n    }\n\n    // Precondition: numbers has 10 elements, each meeting the precondition of reverse.\n    // Postcondition: every element is replaced by its reverse. The caller's array changes,\n    //                because the method receives a copy of the reference to the same array.\n    public static void reverseAll(int[] numbers) {\n        for (int i = 0; i < numbers.length; i++) {\n            numbers[i] = reverse(numbers[i]);\n        }\n    }\n\n    // Postcondition: prints the label and the elements on one line.\n    public static void printArray(String label, int[] numbers) {\n        System.out.print(label + \":\");\n        for (int i = 0; i < numbers.length; i++) {\n            System.out.print(\" \" + numbers[i]);\n        }\n        System.out.println();\n    }\n\n    public static void main(String[] args) {\n        Random random = new Random();\n        int[] numbers = new int[10];\n        for (int i = 0; i < numbers.length; i++) {\n            numbers[i] = random.nextInt(10000);   // 0 to 9999\n        }\n\n        printArray(\"Before\", numbers);\n        reverseAll(numbers);                       // no return value: the array itself changes\n        printArray(\"After \", numbers);\n    }\n}\n", "TriangularNumbers.java": "public class TriangularNumbers {\n    // Precondition: n >= 1.\n    // Postcondition: returns the nth triangular number, 1 + 2 + ... + n.\n    public static int triangular(int n) {\n        int sum = 0;\n        for (int i = 1; i <= n; i++) {\n            sum += i;\n        }\n        return sum;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"The first 20 triangular numbers\");\n        for (int n = 1; n <= 20; n++) {\n            System.out.printf(\"%5d\", triangular(n));\n            if (n % 10 == 0) {\n                System.out.println();\n            }\n        }\n    }\n}\n"};
+document.querySelectorAll(".downloadJava").forEach(b=>b.onclick=()=>download(programs[b.dataset.program],b.dataset.program));
+</script></body></html>

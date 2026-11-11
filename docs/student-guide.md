@@ -5,12 +5,12 @@
 ## Start here
 
 1. Open the lecture for your teaching week. Read the examples and predict outputs before trying the interactive activities.
-2. Complete the tutorial and lab linked from their section indexes. These practise the previous week's lecture: Week 3 contains Tutorial 2 and Lab 2, covering Java fundamentals from Week 2; Week 4 contains Tutorial 3 and Lab 3, covering selection from Week 3; Week 5 contains Tutorial 4 and Lab 4, covering repetition from Week 4. Week 6 is the Viva 1 week, so Week 7 contains Tutorial 5 and Lab 5, covering arrays from Weeks 5 and 6.
+2. Complete the tutorial and lab linked from their section indexes. These practise the previous week's lecture: Week 3 contains Tutorial 2 and Lab 2, covering Java fundamentals from Week 2; Week 4 contains Tutorial 3 and Lab 3, covering selection from Week 3; Week 5 contains Tutorial 4 and Lab 4, covering repetition from Week 4. Week 6 is the Viva 1 week, so Week 7 contains Tutorial 5 and Lab 5, covering arrays from Weeks 5 and 6; Week 8 contains Tutorial 6 and Lab 6, covering methods from Week 7.
 3. Attempt each problem before revealing models. Explain the algorithm, inputs, outputs, and test cases in your own words.
 4. Run Java solutions in your own IDE or terminal. Compare actual output with your predictions and correct any differences.
 5. Record your work in your own forks of the companion repositories, following their instructions below.
 
-Week 1's Tutorial 0 and Lab 0 provide introductory practice and workspace setup. Pages marked **Coming soon** are placeholders for unreleased website materials. Week 6 has no tutorial or lab: it is the release of the Viva 1 questions.
+Week 1's Tutorial 0 and Lab 0 provide introductory practice and workspace setup. Pages marked **Coming soon** are placeholders for unreleased website materials. Week 6 has no tutorial or lab: it is the release of the Viva 1 questions. Week 8 has no lecture: it is the online mid-semester test.
 
 ## Prepare Java
 
